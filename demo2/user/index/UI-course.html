@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+	    <title>UI设计培训 - UI界面设计培训- UI界面设计训课程 - 莘+学院</title>
+	    
+	    <!--图标-->
+	    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+	    
+	    <link href="../css/bootstrap.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	   	<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+
+	    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+	    <link rel="stylesheet" type="text/css" href="../css/header/header.css"/>
+	    <link rel="stylesheet" type="text/css" href="../css/UI-course/main.css"/>
+	    <link rel="stylesheet" type="text/css" href="../css/modal.css"/>
+	    <link rel="stylesheet" type="text/css" href="../css/goTop.css"/>
+	    <!--页面等待-->
+	    <link rel="stylesheet" type="text/css" href="../css/加载页面.css"/>
+	    
+	    <script src="../js/jquery2.2.2.min.js"></script>
+	    <script src="../js/bootstrap.js"></script>
+	    <script src="../js/util.js" defer></script>
+	    <script src="../js/modal.js"></script>
+
+	    <script src="../js/header.js" defer></script>
+	    <script src="../js/login.js" defer></script>
+	    <script src="../js/ui-course/main.js" defer></script>
+	    <script src="../js/goTop.js" defer></script>
+	    
+	    <script src="../js/template.js"></script>
+		
+	</head>
+	<body>	
+		
+		<!--页面等待-->
+		<div class="beginAnamition">
+			<div class="waitAnimation">
+			</div>
+		</div>
+		<!-- 头部  分离 -->
+		<header id="head">
+			<section class="logo col-lg-3 col-xs-3" class="toplogo">
+				<a href="xJia.html"><img src="../img/logo2.png" /></a>
+			</section>
+			<section class="search col-lg-7 col-xs-7">
+				<input type="search" class="form-control col-sm-10" id="search"/>
+				<button type="button" id="searchBtn"><a href="javascript;"></a></button>
+				
+				<div class="hot-words">
+	                <a href="http://www.maiziedu.com/search/course/产品经理-1" target="_blank">产品经理</a>
+	                <a href="http://www.maiziedu.com/search/course/web前端-1" target="_blank">web前端</a>
+	                <a class="last" href="http://www.maiziedu.com/search/course/ui-1" target="_blank">ui</a>
+	            </div>
+	            
+	            <ul id="list">
+	  
+	            </ul>
+			
+				<!--下载app-->
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#appModal" class="app"></a>
+			</section>
+			
+			<!--未登录前-->
+			<section class="form col-lg-2 col-xs-2" id="dologinbox">
+				<a class="btn btn-success btn-sm" href="./resign.html">注册</a>
+				
+				<!--点击登录弹出登录模态框-->
+				<a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#loginModal">登录</a>
+			</section>
+			 
+			<!--登录后-->
+			<section class="form col-lg-2 col-xs-2" id="userMsg" style="display: none; padding-left:50px;">
+				<ul class="user" style="display: flex;text-align: center;">
+					<li class="fl" style="margin-right: 20px; width: 45px;height: 45px;border-radius: 50%;background: url(../img/iOS-img/2_small.jpg);"></li>
+					<li id="userMsgName" style="flex: 1; margin-right:5px; text-overflow: ellipsis; white-space: nowrap;overflow: hidden;width: 80px;"></li>
+					<li><a href="javascript:void(0)" style="font-size: 12px;" id="loginout">退出</a></li>
+				</ul>
+			</section>
+				
+		</header>
+			
+		<!--登录模态框-->
+		<!--登录-->
+		<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
+		<div style="display:table; width:100%; height:100%;">
+		<div style="vertical-align:middle; display:table-cell;">
+		<div class="modal-dialog" style="width:540px;">
+	    <div class="modal-content" style="border: none;">
+	        <div class="col-left"></div>
+	        <div class="col-right">
+	            <div class="modal-header">
+	                <button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	                <h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+	            </div>
+	            <div class="modal-body">
+	                <section class="box-login v5-input-txt" id="box-login">
+	                    <form id="login_form" action="dologin.php" method="post" autocomplete="off">
+	                        
+	                        <ul>
+	                            <li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+	                            <li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+	                            
+	                        </ul>
+	                    </form>
+	                    <p class="good-tips marginB10 text12"><a href="fogetPwd.html" id="btnForgetpsw" class="fr text12">忘记密码？</a>还没有账号？<a href="resign.html" id="btnRegister">立即注册</a></p>
+	                    <div class="login-box marginB10">
+	                        <button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin marginB10">登录</button>
+	                        <div id="login-form-tips" class="tips-error text12" style="display: none;">错误提示</div>
+	                    </div>
+	
+	                    
+	                    <div class="threeLogin text12"><span>其他方式登录</span><a class="nqq" href="/user/connect/?partner=qq"></a><a class="nwx" href="/user/connect/?partner=wechat"></a><!--<a class="nwb"></a>--></div>
+	                    
+	                </section>
+	            </div>
+	        </div>
+	    </div>
+	   </div></div></div></div>
+
+	   <!--下载app模态框-->
+		<div class="modal fade in" id="appModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
+		<div class="modal-content">
+			<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<div><img src="../img/appcode.png" width="200"/><span><br />扫码下载APP</span></div>
+		</div>
+		</div>
+		
+		
+		<!--主体部分-->
+		<main>
+			
+			<!--UI大图-->
+			<div class="top-banner">
+				<div class="banner-btn">
+					<a href="studyNow.html">立即学习</a>
+				</div>
+			</div>
+			
+			<!--导航  选项卡-->
+			<nav class="ui-nav" id="ui">
+				<a href="#ui" id="goIntro">课程介绍</a>
+				<a href="#ui" id="goContent">课程大纲</a>
+			</nav>
+			
+			<!--吸顶导航-->
+			<nav id="top-nav">
+				<h2 class="ui-h2">UI设计</h2>
+				<div>
+					<a href="#ui" id="topGoIntro">课程介绍</a>
+					<a href="#ui" id="topGoContent">课程大纲</a>
+				</div>
+			</nav>
+			
+			<!--课程介绍部分-->
+			<section class="ui-intro" id="ui-intro" style="display: block;">
+				
+				<!--介绍开始-->
+				<section class="ui" id="intro">
+					<script type="text/html" id="courseIntro">
+						{{each data}}
+					<h2 class="ui-h2">{{$value.result.courseName}}</h2>
+					<p>{{$value.result.introduction}}</p>
+					
+					<ul class="ui-process">
+						<li>
+							<img src="../img/UI-index/teck01.png" alt="" />
+							<p>印刷流程<br>广告设计<br>VI设计</p>
+							<div>平面设计师</div>
+						</li>
+						<li>
+							<img src="../img/UI-index/teck02.png"/>
+							<p>网页页面设计<br>Html+css前端<br>网站页面升级</p>
+							<div>网页设计师</div>
+						</li>
+						<li>
+							<img src="../img/UI-index/teck03.png"/>
+							<p>视觉营销创意设计<br>人机交互设计原则<br>UI设计交互与流程</p>
+							<div>UI/UE设计师</div>
+						</li>
+						<li>
+							<img src="../img/UI-index/teck04.png"/>
+							<p>项目把控能力<br>视觉战略定位<br>产品价值实现</p>
+							<div>设计总监</div>
+						</li>
+					</ul>
+					
+					<h3>莘+学院只培养相当于两年以上工作经验的UI设计师！</h3>
+					{{/each}}
+					</script>
+				<!--介绍结束-->
+				</section>
+				
+				<!--学习保障开始-->
+				<section class="ui-ensure">
+					<h2 class="ui-h2">「 莘+学院如何保证学习效果？ 」</h2>
+					<ul>
+						<li>	
+							<!--旋转小图标-->
+							<div><i></i></div>
+							<h4>线上视频</h4>
+							<p>700课时+</p>
+						</li>
+						<li>
+							<!--旋转小图标-->
+							<div><i></i></div>
+							<h4>一对一指导</h4>
+							<p>随意指导</p>
+						</li>
+						<li>
+							<!--旋转小图标-->
+							<div><i></i></div>
+							<h4>金牌讲师答疑</h4>
+							<p>随时答疑</p>
+						</li>
+						<li>
+							<!--旋转小图标-->
+							<div><i></i></div>
+							<h4>高薪就业</h4>
+							<p>满意为止</p>
+						</li>
+					</ul>
+					<div class="ui-system-container">
+						<div class="ensure-video video">
+							<a href="#videoModal" id="playVideo" data-toggle="modal" data-target="#videoModal">
+								<img src="../img/UI-index/video-1.jpg"/>
+								<img src="../img/UI-index/play-btn.png"/>
+								<div>
+									<p>快速认识莘+学院</p>
+								</div>
+							</a>
+						</div>
+						
+						<div class="ui-system">
+							<h5>强大的LPS4.0学习过程管理系统</h5>
+							<h6>学习过程任务制管理</h6>
+							<h6>学习效果监测实施调整进度</h6>
+							<h6>学员1V1约课模式</h6>
+							<h6>无缝对接1000+互联网企业</h6>
+						</div>
+					</div>
+				
+				<!--学习保障结束-->
+				</section>
+				
+				<!--老师开始-->
+				<section class="ui-teacher">
+					<h2 class="ui-h2">「 十年总监级大牛，手把手教你做UI设计！ 」</h2>
+					
+					<!--轮播图-->
+					<div class="body-banner">
+						<ul class="body-banner-container">
+							
+						</ul>
+						
+						<ul class="body-banner-intro">
+							<!--<li>
+								<h2 class="ui-h2"><b>马  青</b>    资深画师，概念设计师</h2>
+								<p>前腾讯TgameUI设计师索尼首席UI设计师参与过多款娱乐产品的的方案界面设计及APP界面设计，熟悉项目开发交互流程，有着丰富的UI设计和培训经验。 擅长界面设计、概念设计及传统美术绘画，作品多次发表于国内权威杂志《美术》和《中国版画年鉴》。</p>
+							</li>
+							<li>
+								<h2 class="ui-h2"><b>邢天博</b>    7年UI设计经验</h2>
+								<p>前百度UI资深设计师,凭借17年的美术功底，在美术设计领域，曾获取各类竞赛奖项达47次，曾在多家品牌营销公司、4A设计公司任职美术指导及设计总监。</p>
+							</li>
+							<li>
+								<h2 class="ui-h2"><b>刘昊琛</b>    资深UI设计师</h2>
+								<p>日本动漫《火影忍者》 设计主创之一,毕业于日本九州产业大学，专注移动产品及智能交互终端的UI设计；曾参与多个知名企业的大型平台项目的视觉设计、多款企业内部产品的APP设计等。</p>
+							</li>-->
+						</ul>
+					</div>
+				
+				<!--老师结束-->
+				</section>
+				
+				<!--学习路线规划开始-->
+				<section class="ui-path">
+				
+					<h2 class="ui-h2">学习路线规划</h2>
+					
+					<ul class="path" id="coursepath">
+						<script type="text/html" id="coursePath">
+							{{each data}}
+						<div>
+							<big>0</big>
+							<span>基础</span>
+						</div>
+						<div>
+							<big>UI</big>
+							<span>设计师</span>
+						</div>
+						
+						<li>
+							<h5>第一阶段</h5>
+							<p>{{($value.result.baseOutline[0]).slice(0,($value.result.baseOutline[0]).indexOf(':'))}}</p>
+							<div class="circle"></div>
+							<div></div>
+							<i></i>
+						</li>
+						
+						<li>
+							<h5>第二阶段</h5>
+							<p>{{($value.result.baseOutline[1]).slice(0,($value.result.baseOutline[1]).indexOf(':'))}}</p>
+							<div class="circle"></div>
+							<div class="line"></div>
+							<i></i>
+						</li>
+						<li>
+							<h5>第三阶段</h5>
+							<p>{{($value.result.baseOutline[2]).slice(0,($value.result.baseOutline[2]).indexOf(':'))}}</p>
+							<div class="circle"></div>
+							<div class="line"></div>
+							<i></i>
+						</li>
+						<li>
+							<h5>第四阶段</h5>
+							<p>{{($value.result.baseOutline[3]).slice(0,($value.result.baseOutline[3]).indexOf(':'))}}</p>
+							<div class="circle"></div>
+							<div class="line"></div>
+							<i></i>
+						</li>
+						<li>
+							<h5>第五阶段</h5>
+							<p>动效设计及项目实战</p>
+							<div class="circle"></div>
+							<div class="line"></div>
+							<i></i>
+						</li>
+						{{/each}}
+						</script>
+					</ul>
+				
+				
+				<!--学习规划路线结束-->
+				</section>
+				
+				<!--就业服务体系开始-->
+				<section class="ui-server">
+					
+					<h2 class="ui-h2">「 强大的就业服务体系 」</h2>
+					
+					<div class="ensure-video video">
+						<a href="#videoModal" id="playServeVideo" data-toggle="modal" data-target="#videoModal">
+							<img src="../img/UI-index/video-2.jpg"/>
+							<img src="../img/UI-index/play-btn.png"/>
+							<div>
+								<p>莘+学院就业合作</p>
+							</div>
+						</a>
+					</div>
+					
+					<em></em>
+					<em></em>
+					<em></em>
+					
+				</section>
+				<!--就业服务体系结束-->
+				
+				<!--选择莘+的理由开始-->
+				<section class="select">
+					
+					<h2 class="ui-h2">一千个选择莘+学院的理由，我们帮你想清楚了！</h2>
+					
+					<ul class="choice">
+						<li>
+							<span>莘+学院</span>
+							<i></i>
+							<b></b>
+							<div>
+								<img src="../img/UI-index/vs-icon.png"/>
+							</div>
+							<b></b>
+							<i></i>
+							<span>线下培训</span>
+						</li>
+						<li>
+							<p>不到线下1/3</p>
+							<i></i>
+							<b></b>
+							<div>
+								<h2 class="ui-h2">费用</h2>
+								<img src="../img/UI-index/jxly-back.png"/>
+							</div>
+							<b></b>
+							<i></i>
+							<p>只需 2－3W</p>
+						</li>
+						<li>
+							<p>随时随地，想学就学</p>
+							<i></i>
+							<b></b>
+							<div>
+								<h2 class="ui-h2">时间</h2>
+								<img src="../img/UI-index/jxly-back.png"/>
+							</div>
+							<b></b>
+							<i></i>
+							<p>时间固定，舟车劳顿</p>
+						</li>
+						<li>
+							<p>1对1教学，名师答疑辅导，反复学习</p>
+							<i></i>
+							<b></b>
+							<div>
+								<h2 class="ui-h2">模式</h2>
+								<img src="../img/UI-index/jxly-back.png"/>
+							</div>
+							<b></b>
+							<i></i>
+							<p>大班教学，不能反复学习，无人答疑</p>
+						</li>
+						<li>
+							<p>智能学习，签订协议保就业，不就业全退</p>
+							<i></i>
+							<b></b>
+							<div>
+								<h2 class="ui-h2">效果</h2>
+								<img src="../img/UI-index/jxly-back.png"/>
+							</div>
+							<b></b>
+							<i></i>
+							<p>传统教学，理论主导，无就业指导</p>
+						</li>
+					</ul>
+					
+					<div class="ensure-video video">
+						<a href="#videoModal" id="playSelectVideo" data-toggle="modal" data-target="#videoModal">
+							<img src="../img/UI-index/video-3.jpg"/>
+							<img src="../img/UI-index/play-btn.png"/>
+							<div>
+								<p>莘+学院金牌讲师访谈</p>
+							</div>
+						</a>
+					</div>
+					
+				</section>
+				<!--选择莘+的理由结束-->
+				
+				<!--尾部轮播图开始-->
+				<section class="foot-banner">
+					<h2 class="ui-h2">他们跟我们一起见证！</h2>
+				
+					<div class="foot-banner-wrap">
+						<ul class="foot-banner-content">
+							<li data-num="0">
+								<img src="../img/UI-index/aliyun-icon.png"/>
+								<p>
+									<img src="../img/UI-index/jytips01.png" alt="" />
+									莘+学院是IT在线教育的创领者，我们希望有更多像莘+一样的教育培训机构，将学习和就业效果做到极致。
+									<img src="../img/UI-index/jytips02.png" alt="" />
+								</p>
+							</li>
+							<li data-num="1">
+								<img src="../img/UI-index/360-icon.png"/>
+								<p>
+									<img src="../img/UI-index/jytips01.png" alt="" />
+									智能化、数据化的学习过程监控，领先创新的LPS在线教育模式，高效可靠的商业项目训练，为社会培养1万+的高技能IT人才，我们会同与莘+学院一道，以IT技术服务为核心服务更多的企业和个人。
+									<img src="../img/UI-index/jytips02.png" alt="" />
+								</p>
+							</li>
+							<li data-num="2">
+								<img src="../img/UI-index/baidu-icon.png"/>
+								<p>
+									<img src="../img/UI-index/jytips01.png" alt="" />
+									大数据显示，莘+学院是国内就业率最高的IT在线教育机构，我们很期待莘+学院的定制化就业学习模式，比如我想入职百度做UI，那么百度可以和莘+学院合作推出一套认证机制：某学员在莘+学院的学习数据达到某个标准，就可以直接入职百度的对应岗位实习。
+									<img src="../img/UI-index/jytips02.png" alt="" />
+								</p>
+							</li>
+							<li data-num="3">
+								<img src="../img/UI-index/aliyun-icon.png"/>
+								<p>
+									<img src="../img/UI-index/jytips01.png" alt="" />
+									莘+学院是IT在线教育的创领者，我们希望有更多像莘+一样的教育培训机构，将学习和就业效果做到极致。
+									<img src="../img/UI-index/jytips02.png" alt="" />
+								</p>
+							</li>
+						</ul>
+						
+						<ol class="foot-banner-num">
+							<li data-num="0"></li>
+							<li data-num="1"></li>
+							<li data-num="2"></li>
+						</ol>
+					</div>
+				
+				<!--尾部轮播图结束-->
+				</section>
+				
+				
+			</section>
+			
+			<!--课程大纲部分-->
+			<section class="ui-content" id="ui-content" style="display: none;">
+				
+				<!--课程体系-->
+				<div class="course-stystem">
+					<img src="../img/UI-index/page-t01.png"/>
+					<ul id="baseoutline">
+						<script type="text/html" id="courseBaseOutline">
+						{{each data}}
+						<li>
+							<img src="../img/UI-index/sitle1.png" alt="" />
+							<h2 class="ui-h2">{{($value.result.baseOutline[0]).slice(0,($value.result.baseOutline[0]).indexOf(':'))}}</h2>
+							<p>{{($value.result.baseOutline[0]).slice(($value.result.baseOutline[0]).indexOf(':')+1)}}</p>
+						</li>
+						<li>
+							<img src="../img/UI-index/sitle2.png" alt="" />
+							<h2 class="ui-h2">{{($value.result.baseOutline[1]).slice(0,($value.result.baseOutline[1]).indexOf(':'))}}</h2>
+							<p>{{($value.result.baseOutline[1]).slice(($value.result.baseOutline[1]).indexOf(':')+1)}}</p>
+						</li>
+						<li>
+							<img src="../img/UI-index/sitle3.png" alt="" />
+							<h2 class="ui-h2">{{($value.result.baseOutline[2]).slice(0,($value.result.baseOutline[2]).indexOf(':'))}}</h2>
+							<p>{{($value.result.baseOutline[2]).slice(($value.result.baseOutline[2]).indexOf(':')+1)}}</p>
+						</li>
+						<li>
+							<img src="../img/UI-index/sitle4.png" alt="" />
+							<h2 class="ui-h2">{{($value.result.baseOutline[3]).slice(0,($value.result.baseOutline[3]).indexOf(':'))}}</h2>
+							<p>{{($value.result.baseOutline[3]).slice(($value.result.baseOutline[3]).indexOf(':')+1)}}</p>
+						</li>
+						<!--<li>
+							<img src="../img/UI-index/sitle5.png" alt="" />
+							<h2 class="ui-h2">Html5学习篇</h2>
+							<p>基于web端知识的学习，在个人能力的基础上进一步提高，并能独立完成PC端及移动端的各种响应式网站制作。</p>
+						</li>-->
+						<li>
+							<img src="../img/UI-index/sitle5.png" alt="" />
+							<h2 class="ui-h2">动效设计及项目实战</h2>
+							<p>学习AE在UI交互过程中的动态效果设计方法和把握动画节奏。并以实战项目来进阶工作经验，让你快速成长为全能的UI设计师 。</p>
+						</li>
+						{{/each}}
+						</script>
+					</ul>
+				</div>
+				
+				<!--常见问题-->
+				<div class="ui-problem">
+					
+					<div class="problem-container">
+						<h2 class="ui-h2">常见问题</h2>
+						
+						<dl class="qlist">
+			                <dt><em><i></i>什么是“企业直通班“？</em></dt>
+			                <dd>
+			                    <p>“企业直通班”是莘+学院的核心产品，通过在线教学提升学生技能，保障就业效果。目前覆盖有UI设计、Android、iOS、Python、产品经理、嵌入式等十余个专业方向。选定专业方向并付费后，即可进入班级。每个班级学生不超过30人，有专业教师和班主任进行教学辅导与监督。全程贯穿项目制作来保障学员实践效果。每周会有直播班会进行答疑解惑、项目讨论、模拟面试等内容。最终由就业老师安排就业面试，顺利入职。</p>
+			                </dd>
+	           			</dl>
+	           			
+	           			<dl class="qlist">
+			                <dt><em><i></i>什么是LPS呢？</em></dt>
+			                <dd>
+			                    <p>“LPS（Learning Process System的缩写）是莘+学院自主研发的教学过程系统。LPS系统通过整合录播、直播、测试等环节的数据，结合人工智能和数据挖掘技术，提升了老师辅导和同学在线学习的效率和针对性，让学习及就业效果更有保障。LPS目前仍然在不断地进行升级与迭代，只为实现“有教无类，因材施教”的梦想。</p>
+			                </dd>
+	           			</dl>
+	           			
+	           			<dl class="qlist">
+	           				<dt><em><i></i>莘+学院的视频是免费的吗？</em></dt>
+	           				<dd>
+	           					<p>莘+学院官网的课程目前绝大多数是免费开放的。企业直通班的直播视频和各专业的最新视频是仅对企业直通班学员开放的。此外，企业直通班的同学还能够得到专业老师的一对一辅导和讲解、就业老师的就业推荐、班级同学的线上线下活动……</p>
+	           				</dd>
+	           			</dl>
+	           			
+	           			<dl class="qlist">
+	           				<dt><em><i></i>在职人员为什么更适合在线学习？</em></dt>
+	           				<dd>
+	           					<p>在职人士学习最关注学习时间和学习效果。如果脱产学习，时间成本和生活压力都很大。在莘+学院企业直通班，即可以使用移动设备随时随地学习，还可以在学业完成、面试通过后再离职。</p>
+	           				</dd>
+	           			</dl>
+	           			
+	           			<dl class="qlist">
+	           				<dt><em><i></i>自律性差，怎么保证完成学习呢？</em></dt>
+	           				<dd>
+	           					<p>我们通过改变学习过程，商业项目实战与知识点学习相结合的方式，让学习更有乐趣更有成就感。让同学一旦开始，就想学下去。另一方面，学习是一种习惯，需要自己和老师共同努力进行培养。同学遇到困难或者不适应时，我们会有专业老师和班主任对你进行解惑和监督。</p>
+	           				</dd>
+	           			</dl>
+	           			
+	           			<dl class="qlist">
+	           				<dt><em><i></i>相比线下培训机构，在线学习有什么好处呢？</em></dt>
+	           				<dd>
+	           					<p>最直接的好处：记录你的学习进度，通过网络，老师可以更有针对性地解决你的问题；比线下机构给予学生的辅导时间更加宽裕，更能保证你的学习效果。</p>
+	           					<p>更自由：我们可以使用电脑、手机等移动设备，随时随地进行学习。</p>
+	           					<p>更优质：你可以直接跟随国内一线企业工程师进行学习，经验更丰富，人脉更扎实。</p>
+	           					<p>更实惠：我们的性价比更高。因为我们省去了房租成本，提升了老师辅导的效率，所以同样的学习与就业效果，我们的价格更低。</p>
+	           				</dd>
+	           			</dl>
+	           			
+	           			<dl class="qlist">
+	           				<dt><em><i></i>莘+学院怎么保障就业的？</em></dt>
+	           				<dd>
+	           					<p>我们通过3种方式解决就业问题：</p>
+	           					<p>1.我们和智联招聘、拉勾网、猎聘网直接对接接口，进行岗位推荐和简历推送，让待就业学员最快匹配地点和岗位需求。</p>
+	           					<p>2.我们和近千家企业直接签约，保证长期提供指定岗位的人员推荐和培训。</p>
+	           					<p>3.每天都会有全国各地的创业型企业、软件园区、投后管理公司主动联系我们，提供招聘需求。</p>
+	           					<p>此外，我们还在不断提升自身的教学水平和学习效果，来满足更多企业更高岗位的技能需求，提升学员的就业质量。</p>
+	           				</dd>
+	           			</dl>
+					</div>
+					
+					
+					
+				<!--常见问题结束-->	
+				</div>
+				
+			</section>
+			
+		</main>
+		
+		<footer>
+			
+			<section class="ui-footer">
+				<div class="foot-logo"><img src="../img/UI-index/flogo.png"/></div>
+				<div class="contact">
+					<h2>400 862 8862</h2></div>
+				<div class="code">
+					<ul>
+						<li>
+							<img src="../img/weichat_code.png" alt="" />
+							<p>手机咨询老师</p>
+						</li>
+						<li>
+							<img src="../img/weibo_code.png" alt="" />
+							<p>手机浏览</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			
+		</footer>
+		
+		<!--回到顶部功能区-->
+		<div class="goTopBox">
+			<a href="javascript:void(0)" id="chatOnline"></a>
+			<a href="javascript:void(0)" id="callme"></a>
+			<a href="xJia.html" id="goHome">首页</a>
+			<a href="javascript:void(0)" id="goTop"></a>
+			
+		</div>
+		
+		
+		<!--//视频模态框-->
+		<div class="modal fade in" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
+			<div class="modal-content" style="background: transparent; height: 100%;width: 100%;">
+				<button type="button" id="video_close" class="close" data-dismiss="modal" style=" margin-left: calc(50% + 380px);margin-top: calc(50% - 620px);"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<video width="800" height="" style="margin-left: calc(50% - 400px);margin-top: calc(50% - 600px);">
+					<source src="" type="video/mp4"></source>
+					<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+						<param name="movie" value="myvideo.swf" />
+						<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+					</object>
+					当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+				</video>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

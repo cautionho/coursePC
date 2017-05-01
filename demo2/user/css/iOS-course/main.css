@@ -1,0 +1,750 @@
+@charset "utf-8";
+.user-select {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.ios-h2 {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  color: #115f9d;
+  line-height: 40px;
+}
+.ios-p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #666;
+  padding: 0 200px;
+}
+.ios-button {
+  display: inline-block;
+  width: 250px;
+  height: 50px;
+  background: #115f9d;
+  border: 1px solid #115f9d;
+  color: #fff;
+  border-radius: 5px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.ios-button:hover {
+  background: #fff;
+  color: #115f9d;
+}
+.nike-name {
+  width: 80px;
+  color: #999999;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
+main {
+  width: 100%;
+  min-width: 1340px;
+}
+main > .ios-title {
+  width: 100%;
+  height: 594px;
+  background: url(../../img/iOS-img/top-t.jpg) no-repeat center 0;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+main > .ios-title > h2 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-top: 200px;
+  line-height: 100px;
+}
+main > .ios-title > p {
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 200px;
+}
+main > .ios-title > .top-title-btn {
+  padding-top: 100px;
+}
+main > .ios-title > .top-title-btn > a {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  background: #5ECFBA;
+  margin: 0 30px;
+  line-height: 50px;
+  border-radius: 2px;
+  color: #fff;
+  border: 1px solid #5ecfba;
+  transition: all .2s;
+}
+main > .ios-title > .top-title-btn > a:hover {
+  background: transparent;
+}
+main > .ios-title > .top-title-btn > a:nth-of-type(2) {
+  background: transparent;
+}
+main > .ios-title > .top-title-btn > a:nth-of-type(2):hover {
+  background: #fff;
+  color: #5ECFBA;
+}
+main .ios-nav {
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  box-shadow: 0 1px 10px #ccc;
+}
+main .ios-nav > a {
+  display: inline-block;
+  margin: 0 50px;
+  font-size: 20px;
+  color: #115f9d;
+  padding: 0 5px;
+}
+main .ios-nav > a:nth-of-type(1) {
+  border-bottom: 3px solid #115f9d;
+}
+main > .ios-intro {
+  width: 100%;
+  text-align: center;
+}
+main > .ios-intro > .ios-point {
+  padding: 40px;
+  background: #F5F5F5;
+  margin-top: 5px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul {
+  position: relative;
+  padding: 40px 250px;
+  overflow: hidden;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li:not(.last) {
+  float: left;
+  display: inline-block;
+  width: 25%;
+  position: relative;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li:not(.last) i {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background: #5ecfba;
+  border-radius: 50%;
+  font-style: normal;
+  line-height: 35px;
+  color: #fff;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li:not(.last) > p {
+  font-size: 16px;
+  line-height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li:not(.last):nth-of-type(2) > i {
+  background: #5496D1;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li:not(.last):nth-of-type(3) > i {
+  background: #76C583;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li:not(.last):nth-of-type(4) > i {
+  background: #6951A1;
+}
+main > .ios-intro > .ios-point > .ios-point-title > ul li.last {
+  position: absolute;
+  width: 550px;
+  height: 1px ;
+  background: #ddd;
+  top: 60px;
+  left: 360px;
+  z-index: -1;
+}
+main > .ios-intro > .ios-point > .ios-point-img {
+  width: 1280px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul {
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li {
+  width: 300px;
+  height: 320px;
+  float: left;
+  margin-right: 20px;
+  position: relative;
+  background: #5ecfba;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(3) {
+  background: #5496d1;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(4),
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(5),
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(6),
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(7),
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(8) {
+  background: #76c583;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(9),
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(10),
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:nth-of-type(11) {
+  background: #6951a1;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:hover > div:nth-of-type(1) {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li:hover > div:nth-of-type(2) {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  text-align: left;
+  color: #fff;
+  transition: all 1s;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div:nth-of-type(2) {
+  background: rgba(0, 0, 0, 0.6);
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div.img-details > p {
+  line-height: 20px;
+  font-size: 12px;
+  padding-top: 30px;
+  overflow: hidden;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div.img-details h4 {
+	display: inline-block;
+  font-size: 20px;
+  line-height: 25px;
+	height: 60px;
+	margin-top: 10px;
+}
+
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div.img-details > ul{
+	
+}
+
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div.img-details > ul > li {
+  font-size: 14px;
+  line-height: 20px;
+}
+main > .ios-intro > .ios-point > .ios-point-img > ul > li > div.img-details > ul > li i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 50%;
+  line-height: 50px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+main > .ios-intro > .ios-point > .ios-point-img > .ios-point-bar {
+  width: 90%;
+  height: 15px;
+  background: rgba(200, 200, 200, 0.5);
+  margin: 40px auto;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+main > .ios-intro > .ios-point > .ios-point-img > .ios-point-bar > div {
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  background: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main > .ios-intro > .ios-teacher {
+  padding: 60px;
+  width: 100%;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container {
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+  padding: 40px;
+  margin-bottom: 150px;
+  text-align: center;
+  position: relative;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img > li {
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  transition: all 1s;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img > li > div {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 150px;
+  color: #fff;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img > li > div > p {
+  font-size: 18px;
+  line-height: 30px;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img > li > div > h2 {
+  font-size: 40px;
+  line-height: 60px;
+  padding-bottom: 10px;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img > li > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-img > li:not(.first) {
+  transform: translateY(450px);
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-num {
+  position: absolute;
+  bottom: -40px;
+  left: calc(50% - 90px);
+  z-index: 9;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-num > li {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-num > li > img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  transition: all .5s;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-num > li:nth-of-type(2) img {
+  width: 70px;
+  height: 70px;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-num > li:hover > div {
+  background: transparent;
+}
+main > .ios-intro > .ios-teacher > .ios-teacher-container > .ios-teacher-num > li > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all .5s;
+}
+main > .ios-intro > .ios-teacher > .student-works {
+  text-align: center;
+}
+main > .ios-intro .silder {
+  position: relative;
+  width: 800px;
+  height: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+main > .ios-intro .silder > .imgWarp {
+  position: absolute;
+  overflow: hidden;
+}
+main > .ios-intro .silder > .sliceImg {
+  position: absolute;
+  width: 800px;
+  height: 420px;
+}
+main > .ios-intro .silder > .sliceImg > li {
+  position: relative;
+  width: 100%;
+  height: 42px;
+}
+main > .ios-intro .silder > .stuWorkNum {
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+}
+main > .ios-intro .silder > .stuWorkNum > li {
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  float: left;
+  position: relative;
+  margin: 0 5px;
+  transition: all 1s;
+}
+main > .ios-intro .silder > .stuWorkNum > li:nth-of-type(1) {
+  width: 20px;
+  background: orange;
+}
+main > .ios-intro > .stu-success {
+  width: 100%;
+  height: 600px;
+  background: url(../../img/iOS-img/stustory.png) no-repeat 0 0;
+  background-size: cover;
+  padding: 80px 300px;
+  position: relative;
+}
+main > .ios-intro > .stu-success > .stu-story {
+  width: 400px;
+  height: 450px;
+  background: #fff;
+  padding: 40px;
+  position: relative;
+  color: #555;
+}
+main > .ios-intro > .stu-success > .stu-story > h2 {
+  font-size: 30px;
+  line-height: 60px;
+}
+main > .ios-intro > .stu-success > .stu-story > p {
+  text-indent: 2em;
+  font-size: 16px;
+  text-align: left;
+  line-height: 22px;
+}
+main > .ios-intro > .stu-success > .stu-story > div {
+  text-align: left;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+}
+main > .ios-intro > .stu-success > .stu-story > div > p {
+  font-size: 12px;
+  color: #A5A5A5;
+  line-height: 20px;
+}
+main > .ios-intro > .stu-success > .stu-story > div > h2 {
+  font-size: 20px;
+  line-height: 40px;
+}
+main > .ios-intro > .stu-success > .stu-story > div > h3 {
+  line-height: 24px;
+  color: #A1A1A1;
+}
+main > .ios-intro > .stu-success > .play-btn {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  background: url(../../img/sprite.png) no-repeat 0 -144px;
+  cursor: pointer;
+  top: calc(50%);
+  left: 650px;
+}
+main > .ios-intro > .why-study {
+  width: 100%;
+  padding: 40px;
+  background: #F5F5F5;
+}
+main > .ios-intro > .why-study > ol {
+  overflow: hidden;
+  padding: 20px 150px;
+  margin: 0 auto;
+}
+main > .ios-intro > .why-study > ol > li {
+  float: left;
+  margin: 0 calc((100% - 4*165px)/8);
+  padding: 5px;
+}
+main > .ios-intro > .why-study > .study-select {
+  width: 800px;
+  height: 504px;
+  position: relative;
+  border: 1px solid #cccccc;
+  margin: 50px auto;
+}
+main > .ios-intro > .why-study > .study-select > ul.why-study-title {
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+  display: flex;
+}
+main > .ios-intro > .why-study > .study-select > ul.why-study-title > li {
+  flex: 1;
+  float: left;
+  text-align: center;
+  line-height: 56px;
+  position: relative;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+}
+main > .ios-intro > .why-study > .study-select > ul.why-study-title > li:first-of-type {
+  background: #fff;
+}
+main > .ios-intro > .why-study > .study-select > div {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 446px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer {
+  display: none;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div {
+  width: 100%;
+  height: calc(100% - 120px);
+  overflow: hidden;
+  padding: 50px;
+  text-align: left;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > p {
+  text-indent: 2em;
+  line-height: 26px;
+  color: #666;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > p > a {
+  margin-left: 12px;
+  color: #115f9d;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li {
+  flex: 1;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li:before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: url(../../img/sprite.png) no-repeat 0 0;
+  margin: 0 auto 20px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li:nth-of-type(1):before {
+  background-position-y: -274px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li:nth-of-type(2):before {
+  background-position-y: -364px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li:nth-of-type(3):before {
+  background-position-y: -454px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li:nth-of-type(4):before {
+  background-position-y: -544px;
+}
+main > .ios-intro > .why-study > .study-select > div.whatCareer > div > ul li:nth-of-type(5):before {
+  background-position-y: -634px;
+}
+main > .ios-intro > .why-study > .study-select > div.getWhat > ul {
+  width: 100%;
+  height: calc(100% - 120px);
+  overflow: hidden;
+  padding: 25px;
+}
+main > .ios-intro > .why-study > .study-select > div.getWhat > ul > li {
+  float: left;
+  text-align: left;
+  width: 50%;
+  font-size: 14px;
+  line-height: 50px;
+  text-indent: 4em;
+}
+main > .ios-intro > .why-study > .study-select > div.getWhat > ul > li:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  margin-bottom: -5px;
+  background: url(../../img/sprite.png) no-repeat 0 -244px;
+}
+main > .ios-intro > .why-study .normalprice {
+  font-size: 18px;
+  color: #aaa;
+  font-weight: normal;
+  line-height: 50px;
+}
+main > .ios-intro > .why-study .myprice {
+  color: #777;
+}
+main > .ios-intro > .why-study .ios-price {
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+main > .ios-active > .about-works {
+  padding: 60px;
+}
+main > .ios-active > .about-works > .works-list {
+  width: 930px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+main > .ios-active > .about-works > .works-list > li {
+  width: 440px;
+  height: 400px;
+  border: 1px solid #e8e8e8;
+  box-sizing: border-box;
+  margin: 10px;
+  cursor: pointer;
+  float: left;
+  transition: all .5s;
+}
+main > .ios-active > .about-works > .works-list > li:hover {
+  box-shadow: 1px 1px 20px #ccc;
+}
+main > .ios-active > .about-works > .works-list > li > a {
+  display: block;
+  width: 100%;
+  height: 292px;
+  position: relative;
+}
+main > .ios-active > .about-works > .works-list > li > a > img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+main > .ios-active > .about-works > .works-list > li > a > p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total {
+  text-align: right;
+  padding: 20px;
+  color: #FFF;
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total > span:before {
+  content: '';
+  display: inline-block;
+  margin-top: -2px;
+  margin-right: 5px;
+  background: url(../../img/sprite.png) 0 0 no-repeat;
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total > .views-num {
+  margin-right: 15px;
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total > .views-num:before {
+  width: 18px;
+  height: 14px;
+  background-position: 0 -70px;
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total > .praise-num {
+  margin-right: 15px;
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total > .praise-num:before {
+  width: 15px;
+  height: 15px;
+  margin-top: -4px;
+  background-position: 0 -94px;
+}
+main > .ios-active > .about-works > .works-list > li > a > .num-total > .answer-num:before {
+  width: 16px;
+  height: 15px;
+  background-position: 0 -119px;
+}
+main > .ios-active > .about-works > .works-list > li > .info-box {
+  padding: 20px;
+}
+main > .ios-active > .about-works > .works-list > li > .info-box > .title {
+  font-size: 18px;
+  width: 100%;
+  display: block;
+  color: #666;
+  margin-bottom: 7px;
+}
+main > .ios-active > .about-works > .works-list > li > .info-box > .user-info > .user {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+main > .ios-active > .about-works > .works-list > li > .info-box > .user-info > .user > img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+main > .ios-active > .about-question {
+  width: 900px;
+  margin: 0 auto;
+}
+main > .ios-active > .about-question > .question-container {
+  padding-top: 30px;
+}
+main > .ios-active > .about-question > .question-container > li {
+  width: 100%;
+  height: 330px;
+  border-top: 1px solid #CCCCCC;
+  padding-top: 20px;
+}
+main > .ios-active > .about-question > .question-container > li > div {
+  float: left;
+  height: 100%;
+  padding-top: 30px;
+}
+main > .ios-active > .about-question > .question-container > li .question-left {
+  width: 50px;
+}
+main > .ios-active > .about-question > .question-container > li .question-left > img {
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 50%;
+}
+main > .ios-active > .about-question > .question-container > li .question-right {
+  width: calc(100% - 50px);
+  padding-left: 20px;
+}
+main > .ios-active > .about-question > .question-container > li .question-right b {
+  font-weight: 500;
+  font-size: 14px;
+  color: #aaa;
+}
+main > .ios-active > .about-question > .question-container > li .question-right a:last-of-type {
+  font-size: 14px;
+  display: inline-block;
+  color: #00b38a;
+  text-indent: 1em;
+}
+main > .ios-active > .about-question > .question-container > li .question-right p {
+  margin: 10px 0;
+}
+main > .ios-active > .about-question > .question-container > li .question-right > .answer {
+  background: #f5f5f5;
+  height: 150px;
+  padding: 20px;
+}
+main > .ios-active > .about-question > .question-container > li .question-right > .answer > div {
+  float: left;
+  height: 100%;
+}
+

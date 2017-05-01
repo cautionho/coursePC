@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <title>js控制</title>
+
+	    <!--图标-->
+	    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+
+	    <link href="../css/bootstrap.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	   	<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+
+	   	<!--页面等待-->
+		<link rel="stylesheet" type="text/css" href="../css/加载页面.css"/>
+
+		<!--登录-->
+	    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+	    <!--头部-->
+	    <link rel="stylesheet" type="text/css" href="../css/header/header.css"/>
+
+	    <!--主体部分-->
+	    <link rel="stylesheet" type="text/css" href="../css/studyNow/main.css"/>
+
+	    <!--尾部-->
+	    <link rel="stylesheet" type="text/css" href="../css/ios_study_footer.css"/>
+	    <!--模态框-->
+	    <link rel="stylesheet" type="text/css" href="../css/modal.css"/>
+	    <!--回到顶部-->
+	    <link rel="stylesheet" type="text/css" href="../css/goTop.css"/>
+
+	    <script src="../js/jquery2.2.2.min.js"></script>
+	    <script src="../js/bootstrap.js"></script>
+	    <script src="../js/util.js" defer></script>
+
+	    <!--头部-->
+	    <script src="../js/header.js" defer></script>
+	    <!--模态框-->
+	    <!--<script src="../js/modal.js" defer></script>-->
+	    <!--回到顶部-->
+	    <script src="../js/goTop.js" defer></script>
+	    <!--登录-->
+	    <script src="../js/login.js" defer></script>
+
+	</head>
+	<body>
+
+		<!--页面等待-->
+		<!--<div class="beginAnamition">
+			<div class="waitAnimation">
+			</div>
+		</div>-->
+		<!-- 头部  分离 -->
+		<header id="head">
+			<section class="logo col-lg-3 col-xs-3">
+				<a href="xJia.html"><img src="../img/logo2.png" /></a>
+			</section>
+			<section class="search col-lg-7 col-xs-7">
+				<input type="search" class="form-control col-sm-10" id="search"/>
+				<button type="button" id="searchBtn"><a href="javascript;"></a></button>
+
+				<div class="hot-words">
+                    <a href="http://www.maiziedu.com/search/course/产品经理-1" target="_blank">产品经理</a>
+                    <a href="http://www.maiziedu.com/search/course/web前端-1" target="_blank">web前端</a>
+                    <a class="last" href="http://www.maiziedu.com/search/course/ui-1" target="_blank">ui</a>
+                </div>
+
+                <ul id="list">
+
+                </ul>
+
+				<!--下载app-->
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#appModal" class="app"></a>
+			</section>
+
+			<!--未登录前-->
+			<section class="form col-lg-2 col-xs-2" id="dologinbox">
+				<a class="btn btn-success btn-sm" href="./resign.html">注册</a>
+
+				<!--点击登录弹出登录模态框-->
+				<a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#loginModal">登录</a>
+			</section>
+
+			<!--登录后-->
+			<section class="form col-lg-2 col-xs-2" id="userMsg" style="display: none; padding-left:50px;">
+				<ul class="user" style="display: flex;text-align: center;">
+					<li class="fl" style="margin-right: 20px; width: 45px;height: 45px;border-radius: 50%;background: url(../img/iOS-img/2_small.jpg);"></li>
+					<li id="userMsgName" style="flex: 1; margin-right:5px; text-overflow: ellipsis; white-space: nowrap;overflow: hidden;width: 80px;"></li>
+					<li><a href="javascript:void(0)" style="font-size: 12px;" id="loginout">退出</a></li>
+				</ul>
+
+			</section>
+
+		</header>
+
+		<!--登录模态框-->
+		<!--登录-->
+		<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
+		<div style="display:table; width:100%; height:100%;">
+		<div style="vertical-align:middle; display:table-cell;">
+		<div class="modal-dialog" style="width:540px;">
+	    <div class="modal-content" style="border: none;">
+	        <div class="col-left"></div>
+	        <div class="col-right">
+	            <div class="modal-header">
+	                <button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	                <h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+	            </div>
+	            <div class="modal-body">
+	                <section class="box-login v5-input-txt" id="box-login">
+	                    <form id="login_form" action="dologin.php" method="post" autocomplete="off">
+
+	                        <ul>
+	                            <li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+	                            <li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+
+	                        </ul>
+	                    </form>
+	                    <p class="good-tips marginB10 text12"><a href="fogetPwd.html" id="btnForgetpsw" class="fr text12">忘记密码？</a>还没有账号？<a href="resign.html" id="btnRegister">立即注册</a></p>
+	                    <div class="login-box marginB10">
+	                        <button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin marginB10">登录</button>
+	                        <div id="login-form-tips" class="tips-error text12" style="display: none;">错误提示</div>
+	                    </div>
+
+
+	                    <div class="threeLogin text12"><span>其他方式登录</span><a class="nqq" href="/user/connect/?partner=qq"></a><a class="nwx" href="/user/connect/?partner=wechat"></a><!--<a class="nwb"></a>--></div>
+
+	                </section>
+	            </div>
+	        </div>
+	    </div>
+	   </div></div></div></div>
+
+	   <!--下载app模态框-->
+		<div class="modal fade in" id="appModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
+		<div class="modal-content">
+			<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<div><img src="../img/appcode.png" width="200"/><span><br />扫码下载APP</span></div>
+		</div>
+		</div>
+
+		<main>
+
+			<div class="container">
+				<h1>js控制</h1>
+
+				<!--开始遍历-->
+				<div class="studyNow-intro">
+					<h2>产品经理</h2>
+					<p>本课程能够使您成为职业的产品经理，迅速上手开始产品经理相关工作。并对工作中各个关键环节通过系统化的、工具化的、科学的工作方法和流程开展工作。保证产品的工作顺利开展，让自己能够独立承担产品工作，并能成为产品经理团队核心，协调和处理多角色合作的工作。使自己对产品经理的职业发展路程和提高拓展方向有清晰的认识，能够持续不断地提高和成长。</p>
+					<div>
+						<span><b>#</b>26课程</span>
+						<span><b>*</b>210学习时长</span>
+						<span>xx人在学习</span>
+					</div>
+				</div>
+
+				<!--再次遍历-->
+				<div class="studyNow-step">
+					<h3>第几阶段：什么内容</h3>
+
+					<ul class="list-group courseList">
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+						<li class="list-group-item"><span class="glyphicon glyphicon-play"></span><a href="../../player/demo1.html?HTML+1" target="_blank">1</a></li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</main>
+
+		<footer>
+
+			<div class="foot-container">
+				<div class="foot-logo">
+					<img src="../img/iOS-img/footLogo.png"/>
+				</div>
+				<div class="foot-about">
+					<a href="javascript:void(0)">关于我们</a>|
+					<a href="javascript:void(0)">加入我们</a>|
+					<a href="javascript:void(0)">联系我们</a>
+					<p>Copyright © 2012-2016 麦子学院 All Right Reserved. 蜀ICP备13014270号-4</p>
+				</div>
+				<div class="foot-tel">
+					<span>服务热线：400-862-8862</span>
+					<a href="javascript:void(0)"></a>
+					<div class="wechatcode"></div>
+					<a href="javascript:void(0)"></a>
+
+				</div>
+			</div>
+
+		</footer>
+
+
+		<!--回到顶部功能区-->
+		<div class="goTopBox">
+			<a href="javascript:void(0)" id="chatOnline"></a>
+			<a href="javascript:void(0)" id="callme"></a>
+			<a href="xJia.html" id="goHome">首页</a>
+			<a href="javascript:void(0)" id="goTop"></a>
+
+		</div>
+
+	</body>
+</html>

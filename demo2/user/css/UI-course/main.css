@@ -1,0 +1,947 @@
+@charset "utf-8";
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.ui-h2 {
+  font-size: 30px;
+  line-height: 50px;
+  padding: 20px 0;
+}
+.video > a {
+  display: inline-block;
+  position: relative;
+}
+.video > a:hover > div {
+  background: rgba(255, 255, 255, 0.1);
+}
+.video > a > img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.video > a > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.video > a > div > p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 5px solid #a9a9a9;
+  margin: 0 auto;
+}
+.small {
+  width: 160px;
+  margin-top: 180px;
+}
+.big {
+  margin-top: 110px;
+}
+.sideImg {
+  width: 150px;
+  margin-top: calc(400px/2 - 75px);
+}
+.middleImg {
+  width: 277px;
+  margin-top: calc(400px/2 - 277px/2);
+}
+#top-nav {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: rgba(51, 51, 51, 0.95);
+  top: 0;
+  display: none;
+  z-index: 99;
+}
+#top-nav > h2 {
+  display: inline-block;
+  color: #fff;
+  padding: 0;
+  height: 70px;
+  line-height: 70px;
+  padding-left: 100px;
+}
+#top-nav > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+#top-nav > div > a {
+  display: inline-block;
+  height: 80%;
+  line-height: 60px;
+  margin: 0 67px;
+  padding: 0 5px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #00d0b0;
+}
+#top-nav > div > a:nth-of-type(1) {
+  border-bottom: 3px solid #00d0b0;
+}
+main {
+  width: 100%;
+  min-width: 1340px;
+}
+main > .top-banner {
+  width: 100%;
+  height: 710px;
+  position: relative;
+  background: url(../../img/UI-index/banner-t1.png) no-repeat center 90px, url(../../img/UI-index/banner.png);
+}
+main > .top-banner .banner-btn {
+  overflow: hidden;
+  position: absolute;
+  bottom: 70px;
+  left: calc(50% - 90px);
+}
+main > .top-banner .banner-btn > a {
+  display: block;
+  zoom: 1;
+  width: 180px;
+  height: 60px;
+  border-radius: 5px;
+  background: #fff;
+  float: left;
+  line-height: 55px;
+  text-align: center;
+  border: 1px solid transparent;
+  color: #5ecfba;
+}
+main > .top-banner .banner-btn > a:hover {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #fff;
+}
+main .ui-nav {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+main .ui-nav > a {
+  display: inline-block;
+  height: 100%;
+  line-height: 60px;
+  margin: 0 67px;
+  padding: 0 5px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #00d0b0;
+}
+main .ui-nav > a:nth-of-type(1) {
+  border-bottom: 3px solid #00d0b0;
+}
+main > .ui-intro {
+  width: 100%;
+  text-align: center;
+}
+main > .ui-intro .ui {
+  padding: 40px 40px 50px;
+}
+main > .ui-intro .ui > p {
+  line-height: 24px;
+  color: #a1a3a7;
+  width: 50%;
+  margin: 0 auto;
+}
+main > .ui-intro .ui > .ui-process {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  padding: 50px 0;
+}
+main > .ui-intro .ui > .ui-process > li {
+  float: left;
+  flex: 1;
+  height: 256px;
+  border: 1px solid #dddddd;
+  position: relative;
+  padding: 20px;
+  margin: 0 10px;
+  opacity: 0;
+}
+main > .ui-intro .ui > .ui-process > li > p {
+  line-height: 20px;
+  padding-top: 80px;
+  color: #999;
+}
+main > .ui-intro .ui > .ui-process > li > div {
+  position: absolute;
+  width: 115%;
+  height: 50px;
+  background: url(../../img/UI-index/teck-tips1.png) no-repeat 0 0;
+  background-size: 100% 100%;
+  left: -10px;
+  top: 100px;
+  line-height: 50px;
+  font-size: 22px;
+  color: #FFF;
+  transition: all .5s;
+}
+main > .ui-intro .ui > .ui-process > li > div:hover {
+  margin-top: -5px;
+}
+main > .ui-intro .ui > .ui-process > li:nth-of-type(1) > div {
+  z-index: 9;
+}
+main > .ui-intro .ui > .ui-process > li:nth-of-type(2) > div {
+  background-image: url(../../img/UI-index/teck-tips2.png);
+  z-index: 8;
+}
+main > .ui-intro .ui > .ui-process > li:nth-of-type(3) > div {
+  background-image: url(../../img/UI-index/teck-tips3.png);
+  z-index: 7;
+}
+main > .ui-intro .ui > .ui-process > li:nth-of-type(4) > div {
+  background-image: url(../../img/UI-index/teck-tips4.png);
+  z-index: 6;
+}
+main > .ui-intro .ui > h3 {
+  font-size: 28px;
+  line-height: 40px;
+  padding-bottom: 40px;
+  
+}
+main > .ui-intro .ui > a.cani {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  background: #00d0b0;
+  line-height: 50px;
+  border-radius: 5px;
+  color: #FFF;
+  border: 1px solid #00d0b0;
+}
+main > .ui-intro .ui > a.cani:hover {
+  color: #00d0b0;
+  background: #fff;
+}
+main > .ui-intro > .ui-ensure {
+  width: 100%;
+  padding: 40px 40px 60px;
+  overflow: hidden;
+  background: url(../../img/UI-index/lps-quan.png) no-repeat center 365px, #f5f5f5;
+}
+main > .ui-intro > .ui-ensure > ul {
+  width: 60%;
+  height: 222px;
+  margin: 20px auto;
+  overflow: hidden;
+  display: flex;
+}
+main > .ui-intro > .ui-ensure > ul > li {
+  flex: 1;
+  float: left;
+  padding: 10px;
+}
+main > .ui-intro > .ui-ensure > ul > li > div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #00d0b0;
+  margin: 0 auto;
+  transition: all 1s;
+  transform: rotate(0deg);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+main > .ui-intro > .ui-ensure > ul > li > div > i {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin: 20px auto 0;
+}
+main > .ui-intro > .ui-ensure > ul > li > div:hover {
+  background: #00d0b0;
+  transform: rotate(-360deg);
+}
+main > .ui-intro > .ui-ensure > ul > li > div:hover > i {
+  background-position: 0 -62px;
+}
+main > .ui-intro > .ui-ensure > ul > li:nth-of-type(1) i {
+  background: url(../../img/UI-index/xg-icon01.png) no-repeat 0 0;
+}
+main > .ui-intro > .ui-ensure > ul > li:nth-of-type(2) i {
+  background: url(../../img/UI-index/xg-icon02.png) no-repeat 1px -6px;
+}
+main > .ui-intro > .ui-ensure > ul > li:nth-of-type(3) i {
+  background: url(../../img/UI-index/xg-icon03.png) no-repeat 1px -2px;
+}
+main > .ui-intro > .ui-ensure > ul > li:nth-of-type(4) i {
+  background: url(../../img/UI-index/xg-icon04.png) no-repeat 1px -2px;
+}
+main > .ui-intro > .ui-ensure > ul > li > h4 {
+  font-size: 20px;
+  line-height: 40px;
+}
+main > .ui-intro > .ui-ensure > ul > li > p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #A5A5A5;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container {
+  margin: 0 auto;
+  width: 1190px;
+  overflow: hidden;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ensure-video {
+  text-align: left;
+  padding: 0 100px;
+  float: left;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system {
+  float: left;
+  text-align: left;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > h5 {
+  font-size: 26px;
+  color: #00d0b0;
+  margin-left: -15px;
+  line-height: 60px;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > h6 {
+  font-size: 16px;
+  color: #a1a3a7;
+  line-height: 30px;
+  text-indent: 2em;
+  background: url(../../img/UI-index/check-icon.png) no-repeat 0 15px;
+  padding: 15px 0;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > h6:nth-of-type(1) {
+  margin-left: 25px;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > h6:nth-of-type(2) {
+  margin-left: 45px;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > h6:nth-of-type(3) {
+  margin-left: 50px;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > h6:nth-of-type(4) {
+  margin-left: 35px;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > a {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background: #00d0b0;
+  line-height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  margin-left: 50px;
+  margin-top: 30px;
+  border: 1px solid #00d0b0;
+}
+main > .ui-intro > .ui-ensure > .ui-system-container > .ui-system > a:hover {
+  background: none;
+  color: #00d0b0;
+}
+main > .ui-intro > .ui-teacher {
+  width: 100%;
+  background: url(../../img/UI-index/dn-line.png) no-repeat center 450px, #00d0b0;
+}
+main > .ui-intro > .ui-teacher > h2 {
+  color: #fff;
+}
+main > .ui-intro > .ui-teacher > .body-banner {
+  width: 778px;
+  height: 600px;
+  padding: 0 91px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-container {
+  width: 778px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  position: absolute;
+  left: 0px;
+  margin: auto;
+  transition: all 1s;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-container > li {
+  margin: 0 35px;
+  height: inherit;
+  position: relative;
+  transition: all 1s;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-container > li > img {
+  transition: all 1s;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-intro {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 778px;
+  height: 180px;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-intro > li {
+  position: absolute;
+  float: left;
+  height: 100%;
+  width: inherit;
+  color: #fff;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-intro > li > h2 {
+  font-size: 24px;
+  line-height: 30px;
+}
+main > .ui-intro > .ui-teacher > .body-banner > .body-banner-intro > li > p {
+  text-align: left;
+  font-size: 14px;
+  text-indent: 2em;
+  line-height: 24px;
+}
+main > .ui-intro > .ui-teacher > .body-banner-btn {
+  padding: 50px;
+}
+main > .ui-intro > .ui-teacher > .body-banner-btn > a {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background: #fff;
+  color: #00d0b0;
+}
+main > .ui-intro > .ui-teacher > .body-banner-btn > a:hover {
+  color: #fff;
+  background: #00d0b0;
+}
+main > .ui-intro > .ui-path {
+  padding: 40px 40px 60px;
+}
+main > .ui-intro > .ui-path > ul {
+  position: relative;
+  width: 990px;
+  margin: 0 auto;
+  padding: 30px 0;
+  margin-bottom: 50px;
+  border-bottom: 2px dotted #00d0b0;
+  display: flex;
+}
+main > .ui-intro > .ui-path > ul > div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #00d0b0;
+  border-radius: 5px;
+  top: 225px;
+  color: #fff;
+}
+main > .ui-intro > .ui-path > ul > div:nth-of-type(2) {
+  right: 0;
+}
+main > .ui-intro > .ui-path > ul > div > big {
+  display: block;
+  font-size: 26px;
+  line-height: 35px;
+}
+main > .ui-intro > .ui-path > ul > li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+}
+main > .ui-intro > .ui-path > ul > li > h5 {
+  display: inline-block;
+  width: 115px;
+  height: 24px;
+  line-height: 24px;
+  color: #8C8C8C;
+  text-indent: 18px;
+}
+main > .ui-intro > .ui-path > ul > li > p {
+  background: #00d0b0;
+  display: inline-block;
+  width: 120px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 23px;
+  color: #fff;
+  border-radius: 20px;
+  margin-top: 2px;
+  overflow: hidden;
+}
+main > .ui-intro > .ui-path > ul > li > i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #00d0b0;
+  border-radius: 50%;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(1) {
+  left: 80px;
+  top: 98px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(1) > h5 {
+  background: url(../../img/UI-index/jx-icon01.png) no-repeat 10px 1px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(1) > div:last-of-type {
+  width: 1px ;
+  height: 50px;
+  background: -webkit-linear-gradient(top, #999999 50%, #ffffff);
+  margin: 0 auto;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(2) {
+  left: 40px;
+  top: 48px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(2) > h5 {
+  background: url(../../img/UI-index/jx-icon02.png) no-repeat 10px 1px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(2) > div:last-of-type {
+  width: 1px ;
+  height: 100px;
+  background: -webkit-linear-gradient(top, #999999 50%, #ffffff);
+  margin: 0 auto;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(3) {
+  left: 0px;
+  top: 108px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(3) > h5 {
+  background: url(../../img/UI-index/jx-icon03.png) no-repeat 10px 1px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(3) > div:last-of-type {
+  width: 1px ;
+  height: 40px;
+  background: -webkit-linear-gradient(top, #999999 50%, #ffffff);
+  margin: 0 auto;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(4) {
+  left: -30px;
+  top: 58px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(4) > h5 {
+  background: url(../../img/UI-index/jx-icon04.png) no-repeat 10px 1px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(4) > div:last-of-type {
+  width: 1px ;
+  height: 90px;
+  background: -webkit-linear-gradient(top, #999999 50%, #ffffff);
+  margin: 0 auto;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(5) {
+  left: -50px;
+  top: 38px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(5) > h5 {
+  background: url(../../img/UI-index/jx-icon05.png) no-repeat 10px 1px;
+}
+main > .ui-intro > .ui-path > ul > li:nth-of-type(5) > div:last-of-type {
+  width: 1px ;
+  height: 110px;
+  background: -webkit-linear-gradient(top, #999999 50%, #ffffff);
+  margin: 0 auto;
+}
+main > .ui-intro > .ui-path > a {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  background: #00d0b0;
+  line-height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  border: 1px solid #5ecfba;
+}
+main > .ui-intro > .ui-path > a:hover {
+  background: none;
+  color: #00d0b0;
+}
+main > .ui-intro > .ui-server {
+  position: relative;
+  background: #00d0b0;
+  padding-bottom: 60px;
+}
+main > .ui-intro > .ui-server > h2 {
+  padding: 40px;
+}
+main > .ui-intro > .ui-server > em {
+  display: inline-block;
+  position: absolute;
+}
+main > .ui-intro > .ui-server > em:first-of-type {
+  left: 200px;
+  top: 100px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+main > .ui-intro > .ui-server > em:nth-of-type(2) {
+  left: 300px;
+  bottom: 200px;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+main > .ui-intro > .ui-server > em:nth-of-type(3) {
+  right: 300px;
+  top: 200px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+main > .ui-intro > .select {
+  padding: 40px 40px 60px;
+}
+main > .ui-intro > .select > ul {
+  margin: 0 auto;
+  padding: 40px 40px 60px;
+}
+main > .ui-intro > .select > ul div {
+  display: inline-block;
+  width: 230px;
+  position: relative;
+}
+main > .ui-intro > .select > ul div > h2 {
+  position: absolute;
+  top: -15px;
+  left: 80px;
+  color: #fff;
+  font-size: 24px;
+}
+main > .ui-intro > .select > ul div > h2:before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: red;
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+main > .ui-intro > .select > ul > li {
+  margin: -10px;
+}
+main > .ui-intro > .select > ul > li > i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #00d0b0;
+  border-radius: 50%;
+  position: relative;
+  top: -20px;
+}
+main > .ui-intro > .select > ul > li > i:nth-of-type(1) {
+  left: 5px;
+}
+main > .ui-intro > .select > ul > li > i:nth-of-type(2) {
+  left: -5px;
+}
+main > .ui-intro > .select > ul > li b {
+  display: inline-block;
+  height: 2px;
+  width: 40px;
+  background: #00d0b0;
+  margin: 0 auto;
+  position: relative;
+  top: -23px;
+}
+main > .ui-intro > .select > ul > li > span {
+  display: inline-block;
+  font-size: 20px;
+  color: #00d0b0;
+  position: relative;
+  font-weight: 800;
+  top: -20px;
+}
+main > .ui-intro > .select > ul > li > span:last-of-type {
+  color: #A9A9A9;
+}
+main > .ui-intro > .select > ul > li > p {
+  display: inline-block;
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+  background: #00d0b0;
+  padding: 0 5px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 5px;
+  top: -20px;
+}
+main > .ui-intro > .select > ul > li > p:last-of-type {
+  background: #ccc;
+}
+main > .ui-intro > .select > ul > li:nth-of-type(2) h2:before {
+  background: url(../../img/UI-index/jxly-icon01.png) no-repeat 0 2px;
+}
+main > .ui-intro > .select > ul > li:nth-of-type(3) h2:before {
+  background: url(../../img/UI-index/jxly-icon02.png) no-repeat 0 1px;
+}
+main > .ui-intro > .select > ul > li:nth-of-type(4) h2:before {
+  background: url(../../img/UI-index/jxly-icon03.png) no-repeat 0 2px;
+}
+main > .ui-intro > .select > ul > li:last-of-type {
+  padding-right: 45px;
+}
+main > .ui-intro > .select > ul > li:last-of-type h2:before {
+  background: url(../../img/UI-index/jxly-icon04.png) no-repeat 0 2px;
+}
+main > .ui-intro > .foot-banner {
+  padding: 40px 40px 60px;
+  background: #00d0b0;
+  color: #fff;
+}
+main > .ui-intro > .foot-banner > h2 {
+  margin-bottom: 20px;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap {
+  width: 1000px;
+  height: 320px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap > .foot-banner-content {
+  position: relative;
+  left: 0;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap > .foot-banner-content > li {
+  width: 1000px;
+  height: 320px;
+  float: left;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap > .foot-banner-content > li > p {
+  font-size: 26px;
+  line-height: 50px;
+  padding: 0 100px;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap ol {
+  position: absolute;
+  bottom: 10px;
+  left: 450px;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap ol > li {
+  float: left;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border-radius: 50%;
+  margin: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all .5s;
+}
+main > .ui-intro > .foot-banner > .foot-banner-wrap ol > li:first-of-type {
+  background: #fff;
+}
+main .ui-content li:hover {
+  background: rgba(200, 200, 200, 0.2);
+}
+main .ui-content .course-stystem {
+  width: 100%;
+  padding: 60px;
+  text-align: center;
+}
+main .ui-content .course-stystem > img {
+  margin-bottom: 30px;
+}
+main .ui-content .course-stystem > ul {
+  width: 1008px;
+  margin: 0 auto;
+}
+main .ui-content .course-stystem > ul li {
+  height: 187px;
+  border: 2px solid #00d0b0;
+  margin: 30px 0;
+  position: relative;
+}
+main .ui-content .course-stystem > ul li > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main .ui-content .course-stystem > ul li > h2 {
+  color: #00d0b0;
+  font-size: 24px;
+  font-weight: 800;
+  padding-bottom: 0px;
+}
+main .ui-content .course-stystem > ul li > p {
+  padding: 20px 80px;
+  line-height: 25px;
+  font-size: 14px;
+  color: #646464;
+  padding-bottom: 12px;
+}
+main .ui-content .course-stystem > ul li > a {
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #00d0b0;
+  background: #00d0b0;
+  line-height: 25px;
+  color: #fff;
+}
+main .ui-content .ui-problem {
+  width: 100%;
+  background: rgba(220, 220, 220, 0.2);
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+main .ui-content .ui-problem > .problem-container {
+  width: 90%;
+  border-color: #00d0b0;
+  border-style: solid;
+  border-width: 1px 1px 0px 1px ;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: relative;
+}
+main .ui-content .ui-problem > .problem-container > h2 {
+  display: block;
+  width: 280px;
+  height: 60px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+  line-height: 55px;
+  border: 2px solid #00d0b0;
+  margin-top: -30px;
+  background: #F8F8F8;
+}
+main .ui-content .ui-problem > .problem-container > .qlist {
+  width: 992px;
+  margin: 0 auto 8px auto;
+  padding: 10px;
+}
+main .ui-content .ui-problem > .problem-container > .qlist > dt {
+  height: 45px;
+  padding: 5px 0 0 58px;
+  background: url(../../img/UI-index/qution-icon.png) no-repeat;
+}
+main .ui-content .ui-problem > .problem-container > .qlist > dt > em {
+  height: 30px;
+  line-height: 30px;
+  background: #00d0b0;
+  display: inline-block;
+  vertical-align: top;
+  margin: 7px 0 0 0;
+  position: relative;
+  border-radius: 0 2px 2px 0;
+  padding: 0 20px;
+  color: #ffffff;
+  font-size: 20px;
+}
+main .ui-content .ui-problem > .problem-container > .qlist > dt > em > i {
+  width: 11px;
+  height: 30px;
+  position: absolute;
+  left: -11px;
+  top: 0;
+  background: url(../../img/UI-index/qtips.png) no-repeat;
+}
+main .ui-content .ui-problem > .problem-container > .qlist > dd {
+  padding: 5px 0 0 0;
+}
+main .ui-content .ui-problem > .problem-container > .qlist > dd > p {
+  color: #a9a9aa;
+  font-size: 15px;
+  line-height: 22px;
+  text-indent: 2em;
+  padding-bottom: 10px;
+}
+main .ui-content .ui-problem > .problem-container > a {
+  display: block;
+  width: 250px;
+  height: 45px;
+  background: #00d0b0;
+  border-radius: 5px;
+  border: 1px solid #00d0b0;
+  text-align: center;
+  line-height: 42px;
+  color: #fff;
+  margin: 30px auto;
+}
+main .ui-content .ui-problem > .problem-container > a:hover {
+  background: #F8F8F8;
+  color: #00d0b0;
+}
+footer {
+  width: 100%;
+  min-width: 1340px;
+  overflow: hidden;
+}
+footer > .ui-footer {
+  width: 100%;
+  height: 250px;
+  background: #333;
+  padding: 80px 130px;
+}
+footer > .ui-footer img {
+  float: left;
+}
+footer > .ui-footer > div {
+  float: left;
+  width: 33%;
+  height: 76px;
+  color: #707070;
+  text-align: center;
+}
+footer > .ui-footer > div.foot-logo {
+  border-right: 1px solid #5a5959;
+}
+footer > .ui-footer > div.contact {
+  border-left: 1px solid #141414;
+  border-right: 1px solid #5a5959;
+  padding: 0px;
+  background: url(../../img/UI-index/pnum.png) no-repeat 54px 14px;
+}
+footer > .ui-footer > div.contact > h2 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 70px;
+  text-indent: 2em;
+}
+footer > .ui-footer > div.code {
+  border-left: 1px solid #141414;
+}
+footer > .ui-footer > div.code > ul {
+  padding-left: 80px;
+  margin-top: -20px;
+}
+footer > .ui-footer > div.code > ul > li {
+  margin: 0 20px;
+  float: left;
+}
+footer > .ui-footer > div.code > ul > li > img {
+  width: 90px;
+}
+footer > .ui-footer > div.code > ul > li > p {
+  font-size: 12px;
+  line-height: 20px;
+}

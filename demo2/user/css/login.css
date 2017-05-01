@@ -1,0 +1,67 @@
+/*登录模态框*/
+#loginModal .col-left{
+	width: 225px;
+	height: 319px;
+	background: url(../img/sprite_0.png) no-repeat 0 -717px;
+	float: left;
+	border-radius: 10px 0 0 10px;
+}
+
+#loginModal .col-right{
+	width: 313px;
+	height: 319px;
+	color: #b2b2b2;
+	float: left;
+	background: #FFF;
+	border-radius: 0 10px 10px 0;
+}
+
+.marginB10 {
+    margin-bottom: 10px;
+}
+
+#loginModal #btnRegister{
+	color: #ff9600;
+}
+
+#loginModal .threeLogin {
+    position: absolute;
+    left: 30px;
+    bottom: 15px;
+}
+
+#loginModal .modal-body {
+    height: 263px;
+}
+
+#loginModal .modal-body .login-box{
+	padding: 0 10px;
+	margin: 15px 0;
+}
+
+#loginModal .threeLogin>a{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/login_img.png) no-repeat 0 0;
+    vertical-align: middle;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#loginModal .threeLogin>.nwx{
+	background-position: -40px 0;
+}
+
+#loginModal .threeLogin>.nqq:hover{
+	background-position-y:-20px;
+}
+
+#loginModal .threeLogin>.nwx:hover{
+	background-position-y:-20px;
+}
+
+#userMsgName{
+	cursor: pointer;
+	flex: 1; margin-right:5px; text-overflow: ellipsis; white-space: nowrap;overflow: hidden;width: 80px;
+}

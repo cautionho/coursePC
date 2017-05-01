@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>莘 + 学院</title>
+
+		<!--图标-->
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/com.css" />
+
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iOS-course/main.css" />
+		<link rel="stylesheet" type="text/css" href="../css/ios_study_footer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/modal.css" />
+		<link rel="stylesheet" type="text/css" href="../css/goTop.css" />
+
+		<link rel="stylesheet" type="text/css" href="../css/加载页面.css" />
+
+		<script src="../js/jquery2.2.2.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/util.js" defer></script>
+		<script src="../js/modal.js"></script>
+
+		<script src="../js/header.js" defer></script>
+		<script src="../js/login.js" defer></script>
+		<script src="../js/iOS-course/main.js" defer></script>
+		<script src="../js/mySystem.js"></script>
+		<script src="../js/goTop.js" defer></script>
+		<script src="../js/template.js"></script>
+	</head>
+
+	<body>
+
+		<!--页面等待-->
+		<div class="beginAnamition">
+			<div class="waitAnimation">
+			</div>
+		</div>
+
+		<!-- 头部  分离 -->
+		<header id="head">
+			<section class="logo col-lg-3 col-xs-3">
+				<a href="xJia.html"><img src="../img/logo2.png" /></a>
+			</section>
+			<section class="search col-lg-7 col-xs-7">
+				<input type="search" class="form-control col-sm-10" id="search" />
+				<button type="button" id="searchBtn"><a href="javascript;"></a></button>
+
+				<div class="hot-words">
+					<a href="http://www.maiziedu.com/search/course/产品经理-1" target="_blank">产品经理</a>
+					<a href="http://www.maiziedu.com/search/course/web前端-1" target="_blank">web前端</a>
+					<a class="last" href="http://www.maiziedu.com/search/course/ui-1" target="_blank">ui</a>
+				</div>
+
+				<ul id="list">
+
+				</ul>
+
+				<!--下载app-->
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#appModal" class="app"></a>
+			</section>
+
+			<!--未登录前-->
+			<section class="form col-lg-2 col-xs-2" id="dologinbox">
+				<a class="btn btn-success btn-sm" href="./resign.html">注册</a>
+
+				<!--点击登录弹出登录模态框-->
+				<a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#loginModal">登录</a>
+			</section>
+
+			<!--登录后-->
+			<section class="form col-lg-2 col-xs-2" id="userMsg" style="display: none; padding-left:50px;">
+				<ul class="user" style="display: flex;text-align: center;">
+					<li class="fl" style="margin-right: 20px; width: 45px;height: 45px;border-radius: 50%;background: url(../img/iOS-img/2_small.jpg);"></li>
+					<li id="userMsgName" style="flex: 1; margin-right:5px; text-overflow: ellipsis; white-space: nowrap;overflow: hidden;width: 80px;"></li>
+					<li>
+						<a href="javascript:void(0)" style="font-size: 12px;" id="loginout">退出</a>
+					</li>
+				</ul>
+			</section>
+
+		</header>
+
+		<!--登录模态框-->
+		<!--登录-->
+		<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div style="display:table; width:100%; height:100%;">
+				<div style="vertical-align:middle; display:table-cell;">
+					<div class="modal-dialog" style="width:540px;">
+						<div class="modal-content" style="border: none;">
+							<div class="col-left"></div>
+							<div class="col-right">
+								<div class="modal-header">
+									<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+								</div>
+								<div class="modal-body">
+									<section class="box-login v5-input-txt" id="box-login">
+										<form id="login_form" action="dologin.php" method="post" autocomplete="off">
+
+											<ul>
+												<li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+												<li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+
+											</ul>
+										</form>
+										<p class="good-tips marginB10 text12">
+											<a href="fogetPwd.html" id="btnForgetpsw" class="fr text12">忘记密码？</a>还没有账号？
+											<a href="resign.html" id="btnRegister">立即注册</a>
+										</p>
+										<div class="login-box marginB10">
+											<button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin marginB10">登录</button>
+											<div id="login-form-tips" class="tips-error text12" style="display: none;">错误提示</div>
+										</div>
+
+										<div class="threeLogin text12"><span>其他方式登录</span>
+											<a class="nqq" href="/user/connect/?partner=qq"></a>
+											<a class="nwx" href="/user/connect/?partner=wechat"></a>
+											<!--<a class="nwb"></a>-->
+										</div>
+
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--下载app模态框-->
+		<div class="modal fade in" id="appModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content">
+				<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<div><img src="../img/appcode.png" width="200" /><span><br />扫码下载APP</span></div>
+			</div>
+		</div>
+
+		<main>
+
+			<!--头部大图-->
+			<div class="ios-title" id="coursetitle">
+				<script type="text/html" id="coursename">
+					{{each data}}
+					<h2>{{$value.courseName}}</h2>
+					<p>{{$value.introduction}}</p>
+
+					<div class="top-title-btn">
+						<a href="javascript:void(0);">开始学习</a>
+					</div>
+					{{/each}}
+				</script>
+			</div>
+
+			<nav class="ios-nav" id="course">
+				<a href="#course" id="go-ios-intro">课程介绍</a>
+				<a href="#course" id="go-ios-active">课程互动</a>
+			</nav>
+
+			<!------------------------课程简介开始----------------------------->
+			<section class="ios-intro" id="ios-intro">
+
+				<!--课程大纲开始-->
+				<section class="ios-point">
+					<!--文字描述部分-->
+
+					<div class="ios-point-title" id="point">
+						<script type="text/html" id="baseOutline">
+							{{each data}}
+							<h2 class="ios-h2">课程大纲</h2>
+							<p class="ios-p">{{$value.introduction}}</p>
+
+							<ul>
+								<li>
+									<i>1</i>
+									<p>{{$value.baseOutline[0]}}</p>
+								</li>
+								<li>
+									<i>2</i>
+									<p>{{$value.baseOutline[1]}}</p>
+								</li>
+								<li>
+									<i>3</i>
+									<p>{{$value.baseOutline[2]}}</p>
+								</li>
+								<li>
+									<i>4</i>
+									<p>{{$value.baseOutline[3]}}</p>
+								</li>
+								<li class="last"></li>
+							</ul>
+							{{/each}}
+						</script>
+					</div>
+
+					<!--图片特效描述部分-->
+					<div class="ios-point-img" id="courseOutline">
+						<ul id="ios-point-img-container">
+
+						</ul>
+						<!--滚动条-->
+						<div class="ios-point-bar">
+							<div id="scrollbar"></div>
+						</div>
+
+					</div>
+
+				</section>
+				<!--课程大纲结束-->
+
+				<!--课程老师开始-->
+				<section class="ios-teacher">
+
+					<h2 class="ios-h2">课程老师</h2>
+					<p class="ios-p">来自一线互联网公司的专家导师</p>
+
+					<div class="ios-teacher-container" id="demo">
+
+						<script type="text/html" id="courseTeacher">
+							{{each data}}
+							<ul class="ios-teacher-img">
+								<li class="first" data-num="0">
+									<img src="{{$value.teachers[0].pictureUrl}}" alt="" />
+									<div>
+										<p>{{$value.teachers[0].teachName}}</p>
+										<h2>{{$value.teachers[0].keyWord}}</h2>
+										<p>{{$value.teachers[0].introduction}}</p>
+									</div>
+								</li>
+								<li data-num="1">
+									<img src="{{$value.teachers[1].pictureUrl}}" />
+									<div>
+										<p>{{$value.teachers[1].teachName}}</p>
+										<h2>{{$value.teachers[1].keyWord}}</h2>
+										<p>{{$value.teachers[1].introduction}}</p>
+									</div>
+								</li>
+							</ul>
+							
+
+							<ol class="ios-teacher-num">
+								<li data-num="0">
+									<div></div>
+									<img src="{{$value.teachers[0].headUrl}}" width="100%" />
+								</li>
+								<li data-num="1">
+									<div></div>
+									<img src="{{$value.teachers[1].headUrl}}" width="100%" />
+								</li>
+
+							</ol>
+							{{/each}}
+						</script>
+					</div>
+
+					<!--学生作品-->
+					<div class="student-works">
+						<h2 class="ios-h2">学生作品</h2>
+						<p class="ios-p">3个月获取1-2年的项目实战经验</p>
+						<div class='silder-box silder-box-3'>
+							<div class='silder'>
+								<ul class="imgWarp">
+									<li data-num="0" style="display: block;">
+										<img src="../img/iOS-img/20160707172455_55153.png">
+									</li>
+									<li data-num="1" style="display: none;">
+										<img src="../img/iOS-img/20160707172505_24630.png">
+									</li>
+									<li data-num="2" style="display: none;">
+										<img src="../img/iOS-img/20160707172547_72577.png">
+									</li>
+								</ul>
+
+								<ul class="sliceImg">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+
+								<ol class="stuWorkNum">
+									<li data-num="0"></li>
+									<li data-num="1"></li>
+									<li data-num="2"></li>
+								</ol>
+							</div>
+							<div class='silder-button btl'></div>
+							<div class='silder-button btr'></div>
+						</div>
+
+					</div>
+				</section>
+				<!--课程老师结束-->
+
+				<!--学员成功故事-->
+				<section class="stu-success">
+					<div class="stu-story">
+						<h2>学员成功故事</h2>
+						<p>从建筑行业转行进入IT，感谢在学习路上遇到麦子学院。当无数次想放弃的时候，你需要在这个过程中不断的获得成就感，就类似于打游戏通关的一样，你就可以一步一步坚持下来。</p>
+						<div>
+							<p>毕业学员</p>
+							<h2>张云瑞</h2>
+							<h3>python工程师</h3>
+						</div>
+
+					</div>
+					<div class="play-btn" data-toggle="modal" data-target="#videoModal" onclick="openVideo()"></div>
+
+				</section>
+
+				<section class="why-study">
+					<p class="ios-p">我们的学员已经加入这些一线的互联网公司</p>
+
+					<ol>
+						<li>
+							<img src="../img/iOS-img/tengxun.png" />
+						</li>
+						<li>
+							<img src="../img/iOS-img/alibaba.png" />
+						</li>
+						<li>
+							<img src="../img/iOS-img/baidu_2.png" />
+						</li>
+						<li>
+							<img src="../img/iOS-img/xinlang.png" />
+						</li>
+					</ol>
+
+					<h2 class="ios-h2">为什么你应该学习该课程</h2>
+					<p class="ios-p">3个月获取1-2年的商业项目实战经验</p>
+
+					<div class="study-select">
+						<ul class="why-study-title">
+							<li id="select-one">您将收获什么</li>
+							<li id="select-two">什么是职业课程</li>
+						</ul>
+
+						<div class="tab-content getWhat">
+							<ul>
+								<li>让面试官眼前一亮的技术作品集</li>
+								<li>个性化的商业项目实战辅导</li>
+								<li>全程1对1陪同的专业老师</li>
+								<li>一线互联网公司岗位推荐与精准职业规划</li>
+								<li>无限制使用课程所有视频及学习资料</li>
+								<li>和专业老师，优秀学员在线1对1沟通</li>
+								<li>来自一线互联网企业的专家教学</li>
+								<li>增加1-2年的实战工作经验</li>
+								<li>模拟真实班级的在线直播课</li>
+								<li>完全自由的学习时间支配</li>
+							</ul>
+						</div>
+						<div class="tab-content whatCareer">
+							<div>
+								<p>麦子学院职业课程是由麦子学院同多家国内外一线互联网公司共同打造，以实战及就业为导向的在线职业课程。我们采用国际公认金字塔教学模式，对学习的技能立即应用到实践项目中，学习有效性高达90%...</p>
+								<ul>
+									<li>参与商业实战项目</li>
+									<li>面对面直播授课</li>
+									<li>1对1教学辅导</li>
+									<li>签订保就业协议</li>
+									<li>精准职业规划</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</section>
+
+				<!------------------------课程简介结束----------------------------->
+			</section>
+
+			<!------------------------课程互动开始----------------------------->
+			<section class="ios-active" id="ios-active" style="display: none;">
+
+				<!--相关作品开始-->
+				<div class="about-works">
+
+					<h2 class="ios-h2">相关作品</h2>
+
+					<ul class="works-list">
+
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/iOS-img/works1.jpg" alt="线上买房、看房APP内容框架分析">
+								<p class="num-total">
+									<span class="views-num">1214</span>
+									<span class="praise-num">70</span>
+									<span class="answer-num">0</span>
+								</p>
+							</a>
+							<div class="info-box">
+								<a class="title" href="javascript:void(0)">线上买房、看房APP内容框架分析</a>
+								<div class="user-info">
+									<a class="user" href="javascript:void(0)" target="_blank"><img src="../img/iOS-img/2_small.jpg"></a>
+									<a class="nike-name" href="javascript:void(0)" target="_blank">小虾米</a>
+
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/iOS-img/works2.jpg" alt="我家瑜伽APP上线功能分析">
+								<p class="num-total">
+									<span class="views-num">1197</span>
+									<span class="praise-num">78</span>
+									<span class="answer-num">0</span>
+								</p>
+							</a>
+							<div class="info-box">
+								<a class="title" href="javascript:void(0)">我家瑜伽APP上线功能分析</a>
+								<div class="user-info">
+									<a class="user" href="javascript:void(0)"><img src="../img/iOS-img/2_small.jpg"></a>
+									<a class="nike-name" href="javascript:void(0)">浪人</a>
+
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/iOS-img/works3.jpg" alt="好专线APP项目制作">
+								<p class="num-total">
+									<span class="views-num">1005</span>
+									<span class="praise-num">54</span>
+									<span class="answer-num">0</span>
+								</p>
+							</a>
+							<div class="info-box">
+								<a class="title" href="javascript:void(0)">好专线APP项目制作</a>
+								<div class="user-info">
+									<a class="user" href="javascript:void(0)"><img src="../img/iOS-img/2_small.jpg"></a>
+									<a class="nike-name" href="javascript:void(0)">多少个明天</a>
+
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/iOS-img/work4.jpg" alt="购物APP功能模块浅谈">
+								<p class="num-total">
+									<span class="views-num">1234</span>
+									<span class="praise-num">67</span>
+									<span class="answer-num">0</span>
+								</p>
+							</a>
+							<div class="info-box">
+								<a class="title" href="javascript:void(0)">购物APP功能模块浅谈</a>
+								<div class="user-info">
+									<a class="user" href="javascript:void(0)"><img src="../img/iOS-img/2_small.jpg"></a>
+									<a class="nike-name" href="javascript:void(0)">我大嫂是我前女友</a>
+
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/iOS-img/work5.jpg" alt="袋鼠先生APP内容及功能分析">
+								<p class="num-total">
+									<span class="views-num">1142</span>
+									<span class="praise-num">77</span>
+									<span class="answer-num">0</span>
+								</p>
+							</a>
+							<div class="info-box">
+								<a class="title" href="javascript:void(0)">袋鼠先生APP内容及功能分析</a>
+								<div class="user-info">
+									<a class="user" href="javascript:void(0)"><img src="../img/iOS-img/2_small.jpg"></a>
+									<a class="nike-name" href="javascript:void(0)">海哭的声音</a>
+
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/iOS-img/work6.jpg" alt="陈氏太极老架APP项目制作展示">
+								<p class="num-total">
+									<span class="views-num">1243</span>
+									<span class="prais-num">70</span>
+									<span class="answer-num">0</span>
+								</p>
+							</a>
+							<div class="info-box">
+								<a class="title" href="javascript:void(0)">陈氏太极老架APP项目制作展示</a>
+								<div class="user-info">
+									<a class="user" href="javascript:void(0)"><img src="../img/iOS-img/2_small.jpg"></a>
+									<a class="nike-name" href="javascript:void(0)">囚我到老</a>
+
+								</div>
+							</div>
+						</li>
+
+					</ul>
+
+					<!--相关作品结束-->
+				</div>
+
+				<!--相关问答开始-->
+				<div class="about-question">
+					<h2 class="ios-h2">相关问答</h2>
+
+					<ul class="question-container">
+						<li>
+							<div class="question-left">
+								<img src="../img/iOS-img/question1.jpg" />
+							</div>
+							<div class="question-right">
+								<div class="from">
+									<a href="javascript:void(0)" class="nike-name">123</a>
+									<b>8个月前</b>
+									<a href="javascript:void(0)">什么是多线程</a>
+								</div>
+
+								<p class="ios-p">哪位大神指导iOS多线程有哪些实现方式呀？</p>
+
+								<div class="answer">
+									<div class="question-left">
+										<img src="../img/iOS-img/answer1.jpg" />
+									</div>
+									<div class="question-right">
+										<div class="from">
+											<a href="javascript:void(0)" class="nike-name">123</a>
+											<b>8个月前</b>
+										</div>
+										<p class="ios-p">回复唯独心跳还清晰:在学习完iOS多线程及异步任务处理视频课程之后，我也总结了一下iOS多线程的实现方式，主要有以下三个方面吧~你可以参考下！ NSThread、Cocoa Operation 还有GCD~ 我个人认为第三个是Apple开发的一个多核编程的解决方法。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="question-left">
+								<img src="../img/iOS-img/question1.jpg" />
+							</div>
+							<div class="question-right">
+								<div class="from">
+									<a href="javascript:void(0)" class="nike-name">123</a>
+									<b>8个月前</b>
+									<a href="javascript:void(0)">什么是多线程</a>
+								</div>
+
+								<p class="ios-p">哪位大神指导iOS多线程有哪些实现方式呀？</p>
+
+								<div class="answer">
+									<div class="question-left">
+										<img src="../img/iOS-img/answer1.jpg" />
+									</div>
+									<div class="question-right">
+										<div class="from">
+											<a href="javascript:void(0)" class="nike-name">123</a>
+											<b>8个月前</b>
+										</div>
+										<p class="ios-p">回复唯独心跳还清晰:在学习完iOS多线程及异步任务处理视频课程之后，我也总结了一下iOS多线程的实现方式，主要有以下三个方面吧~你可以参考下！ NSThread、Cocoa Operation 还有GCD~ 我个人认为第三个是Apple开发的一个多核编程的解决方法。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="question-left">
+								<img src="../img/iOS-img/question1.jpg" />
+							</div>
+							<div class="question-right">
+								<div class="from">
+									<a href="javascript:void(0)" class="nike-name">123</a>
+									<b>8个月前</b>
+									<a href="javascript:void(0)">什么是多线程</a>
+								</div>
+
+								<p class="ios-p">哪位大神指导iOS多线程有哪些实现方式呀？</p>
+
+								<div class="answer">
+									<div class="question-left">
+										<img src="../img/iOS-img/answer1.jpg" />
+									</div>
+									<div class="question-right">
+										<div class="from">
+											<a href="javascript:void(0)" class="nike-name">123</a>
+											<b>8个月前</b>
+										</div>
+										<p class="ios-p">回复唯独心跳还清晰:在学习完iOS多线程及异步任务处理视频课程之后，我也总结了一下iOS多线程的实现方式，主要有以下三个方面吧~你可以参考下！ NSThread、Cocoa Operation 还有GCD~ 我个人认为第三个是Apple开发的一个多核编程的解决方法。</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+				<!--相关问答结束-->
+
+				<!------------------------课程互动结束----------------------------->
+			</section>
+
+		</main>
+
+		<footer>
+
+			<div class="foot-container">
+				<div class="foot-logo">
+					<img src="../img/iOS-img/footLogo.png" />
+				</div>
+				<div class="foot-about">
+					<a href="javascript:void(0)">关于我们</a>|
+					<a href="javascript:void(0)">加入我们</a>|
+					<a href="javascript:void(0)">联系我们</a>
+					<p>Copyright © 2012-2016 麦子学院 All Right Reserved. 蜀ICP备13014270号-4</p>
+				</div>
+				<div class="foot-tel">
+					<span>服务热线：400-862-8862</span>
+					<a href="javascript:void(0)"></a>
+					<div class="wechatcode"></div>
+					<a href="javascript:void(0)"></a>
+
+				</div>
+			</div>
+
+		</footer>
+
+		<!--回到顶部功能区-->
+		<div class="goTopBox">
+			<a href="javascript:void(0)" id="chatOnline"></a>
+			<a href="javascript:void(0)" id="callme"></a>
+			<a href="xJia.html" id="goHome">首页</a>
+			<a href="javascript:void(0)" id="goTop"></a>
+			
+		</div>
+
+		<!--//视频模态框-->
+		<div class="modal fade in" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content" style="background: transparent; height: 100%;width: 100%;">
+				<button type="button" id="video_close" class="close" data-dismiss="modal" style=" margin-left: calc(50% + 380px);margin-top: calc(50% - 620px);"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<video width="800" height="" style="margin-left: calc(50% - 400px);margin-top: calc(50% - 600px);">
+					<source src="../video/xyft1new.mp4" type="video/mp4"></source>
+					<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+						<param name="movie" value="myvideo.swf" />
+						<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+					</object> 当前浏览器不支持 video直接播放，点击这里下载视频：
+					<a href="myvideo.webm">下载视频</a>
+				</video>
+			</div>
+		</div>
+
+	</body>
+
+</html>

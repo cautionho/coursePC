@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery2.2.2.min.js"></script>
+	</head>
+
+	<body>
+
+		<script>
+		</script>
+
+		<button type="button" id="sendAjax">点击发送ajax</button>
+		
+		<div>
+		<p>test</p>
+		</div>
+
+		<script>
+			$(function() {
+
+				var nowSever = '';
+
+				$.ajax({
+					type: "get",
+					url: "../js/url.json",
+					async: true,
+					success: function(data) {
+
+						nowSever = data.localurl;
+						console.log(nowSever);
+					}
+				});
+				
+				$('#sendAjax').on('click',func);
+
+				function func() {
+					var value = $('p').text();
+
+					$.ajax({
+						type: "post",
+						url: nowSever + '/service/userController/bindingOrNot',
+						data: {
+							jsonData: JSON.stringify({
+								"data": value,
+							})
+						},
+						async: true,
+						success: function(data) {
+							console.log(data);
+							$('div').html(data);
+						}
+					})
+				}
+
+			})
+		</script>
+
+	</body>
+
+</html>

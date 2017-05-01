@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+//定义变量
+@width:100%;
+
+//通用
+
+//边框
+.border(@color:#000){
+    border:1px solid @color;
+}
+
+
+body{
+    width:@width;
+    height: 100%;
+    background: #454545;
+    padding: 0 20px;
+}
+
+#title{
+    width: @width;
+    height: 80px;
+    padding: 15px;
+
+    h1{
+       display: inline-block; 
+       font-size: 32px;
+       font-weight: 800;
+       height: 50px;
+       line-height:50px;
+       color: #fff;
+    }
+    
+    #admin>li{
+        float: right;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+#container{
+    padding-top: 100px;
+    
+    >nav{
+        height: 550px;
+        background: #373737;
+        padding-top: 20px;
+        border-radius: 10px;
+        overflow: auto;
+        
+        >ul>li{
+            background: #414141;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        >ul>li[class="active"]>a{
+            color: #fff;
+        }
+        
+        >ul>ul>li{
+          background: transparent;
+          padding: 10px 15px;
+          color: #fff;
+          font-size: 12px;
+          cursor: pointer;
+        }
+    }
+    
+    a{
+        color: #B8B8B8;
+    }
+    
+   
+    
+    #content{
+        height:550px;
+        background: #373737;
+        border-radius: 10px;
+        margin-left: 50px;
+        padding: 10px;
+        
+        >div{
+            width: @width;
+            height: 100%;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            
+            >ul{
+            width: @width;
+            height: 100px;
+            margin-top: 20px;
+            
+                >li{
+                   margin: 0 20px;
+                   width: 200px;
+                   height: 100px;
+                   float: left; 
+                }
+            
+            }
+            
+            >table>caption{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 24px;
+            }  
+        }
+    }
+    
+}

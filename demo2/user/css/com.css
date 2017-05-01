@@ -1,0 +1,41 @@
+/*右浮动*/
+.fr{
+	float: right;
+}
+
+/*左浮动*/
+.fl{
+	float: left;
+}
+
+/*字体为12px*/
+.text12{
+	font-size: 12px;
+}
+
+/*字母字体  图标*/
+.iconText{
+	font-family: 'icon-family';
+	font-style: normal;
+}
+
+/*字体居中*/
+.textCenter{
+	text-align: center;
+}
+
+/*被选中时候的样式*/
+.choose{
+	border-bottom:2px solid #5ECFBA;
+	color:#5ECFBA;
+}
+
+/*相对定位*/
+.positionRelative{
+	position: relative;
+}
+
+/*绝对定位*/
+.positionAbsolute{
+	position: absolute;
+}

@@ -1,0 +1,72 @@
+footer {
+  width: 100%;
+  min-width: 1340px;
+  background: #383637;
+  height: 114px;
+  color: #999;
+}
+footer .foot-container {
+  width: 1130px;
+  height: inherit;
+  margin: 0 auto;
+  padding: 39px 0;
+}
+footer .foot-container div {
+  float: left;
+}
+footer .foot-container .foot-about {
+  padding: 0 40px;
+  font-size: 12px;
+}
+footer .foot-container .foot-about a {
+  padding: 0 10px;
+  color: #999;
+}
+footer .foot-container .foot-about p {
+  line-height: 20px;
+  padding-left: 10px;
+}
+footer .foot-container .foot-tel {
+  position: relative;
+}
+footer .foot-container .foot-tel span {
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+}
+footer .foot-container .foot-tel a {
+  margin-left: 20px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  background: url(../img/iOS-img/article_Icon.png) no-repeat 0 0;
+  border: 50%;
+  margin-top: -5px;
+}
+footer .foot-container .foot-tel a:hover {
+  background-position: 0 -40px;
+}
+footer .foot-container .foot-tel a:hover + div {
+  opacity: 1;
+  transform: scale(1);
+  height: 130px;
+  top: -135px;
+}
+footer .foot-container .foot-tel a:last-of-type {
+  background-position: 0 -80px;
+}
+footer .foot-container .foot-tel a:last-of-type:hover {
+  background-position: 0 -120px;
+}
+footer .foot-container .foot-tel .wechatcode {
+  position: absolute;
+  width: 118px;
+  height: 130px;
+  opacity: 0;
+  transition: all .5s;
+  background: url(../img/iOS-img/weixin3.png) no-repeat 0 0;
+  top: -70px;
+  transform: scale(0);
+  right: 20px;
+}

@@ -1,0 +1,86 @@
+/*自定义字体*/
+@font-face {
+  font-family: 'moonico';
+  src: url('../fonts/icomoon.eot');
+	/*IE9*/
+  src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), 
+  /* IE6-IE8 */ 
+  url('../fonts/icomoon.woff') format('woff'), 
+  /* chrome、firefox */ 
+  url('../fonts/icomoon.ttf') format('truetype'), 
+  /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ 
+  url('../fonts/icomoon.svg#uxiconfont') format('svg');
+
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background: none;
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+dd,
+dt,
+dl {
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
+}
+ul,
+li {
+  list-style: none;
+  list-style-type: none;
+}
+img {
+  border: none;
+}
+a,
+input,
+textarea,
+button {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+}
+
+h1,
+h1 a {
+  color: #272727;
+  font-size: 22px;
+}
+h3,
+h3 a {
+  color: #010101;
+  font-size: 16px;
+}
+a:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+body {
+  background: #F6F6F6;
+  font-family: "Microsoft YaHei";
+}

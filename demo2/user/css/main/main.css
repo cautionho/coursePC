@@ -1,0 +1,777 @@
+@charset "utf-8";
+body {
+	min-width: 1340px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+main {
+	margin-top: 4px;
+	max-width: 1366px;
+	margin: 0 auto;
+}
+
+main>nav {
+	width: 200px;
+	position: fixed;
+	left: 0;
+	padding: 0;
+	top: 75px;
+	box-shadow: 1px 5px 5px #eee;
+	background: #fff;
+	z-index: 999;
+}
+
+main>nav>ul {
+	padding: 20px;
+}
+
+main>nav>ul:not(.last) {
+	border-bottom: 1px solid #eee;
+}
+
+main>nav>ul li {
+	font-size: 12px;
+	padding: 10px;
+	text-indent: 1em;
+}
+
+main>nav>ul li:not(.navbar-header) {
+	background: url(../../img/sprite_2.png) no-repeat 0 5px;
+}
+
+main>nav>ul li:nth-of-type(2) {
+	background-position: 0 -86px;
+}
+
+main>nav>ul li:nth-of-type(3) {
+	background-position: 0 -56px;
+}
+
+main>nav>ul li:nth-of-type(5) {
+	background-position: 0 -24px;
+}
+
+main>nav>ul li:nth-of-type(6) {
+	background-position: 0 -114px;
+}
+
+main>nav>ul li:nth-of-type(7) {
+	background-position: 0 -146px;
+}
+
+main>nav>ul li:nth-of-type(8) {
+	background-position: 0 -175px;
+}
+
+main>nav>ul li:nth-of-type(9) {
+	background-position: 0 -642px;
+}
+
+main>nav>ul li[class="navbar-header"] {
+	font-weight: 800;
+}
+
+main>nav>ul li a {
+	color: #acacac;
+}
+
+main>nav>ul li a:hover {
+	color: #fc9d07;
+	font-weight: 800;
+}
+
+main>nav>ul:nth-of-type(2)>li:nth-of-type(2) {
+	background-position: 0 -518px;
+}
+
+main>nav>ul:last-of-type>li:nth-of-type(2) {
+	background-position: 0 -375px;
+}
+
+main .banner {
+	width: 100%;
+	height: 430px;
+	padding-bottom: 30px;
+	overflow: hidden;
+}
+
+main .banner>.img-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+main .banner>.img-wrap>img {
+	position: absolute;
+	display: none;
+}
+
+main .banner>.img-wrap>img:nth-of-type(1) {
+	display: block;
+}
+
+main .banner>.img-wrap>ul {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	z-index: 99;
+}
+
+main .banner>.img-wrap>ul>li {
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.8);
+	margin: 0 4px;
+	position: relative;
+	transition: all .5s;
+}
+
+main .banner>.img-wrap>ul>li:nth-of-type(1) {
+	width: 20px;
+	background: #5ecfba;
+}
+
+main .short {
+	width: 20px;
+	border: 2px solid #5ecfba;
+	background: #5ecfba;
+}
+
+main>section {
+	margin-left: 200px;
+	width: calc(100% - 200px);
+}
+
+main>section:nth-of-type(2) .content {
+	width: 100%;
+	background: #fff;
+	margin-bottom: 40px;
+	box-shadow: 0 1px 10px #bbb;
+	margin: 40px auto 0px;
+	padding: 10px 30px 50px;
+	text-align: center;
+	position: relative;
+}
+
+main>section:nth-of-type(2) .content>h2 {
+	text-align: center;
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+	color: #3b3b3b;
+}
+
+main>section:nth-of-type(2) .content>p {
+	text-align: center;
+	font-size: 14px;
+	color: #a5a5a5;
+	line-height: 20px;
+}
+
+main>section:nth-of-type(2) .content>a.more {
+	position: absolute;
+	right: 80px;
+	top: 15px;
+	border-radius: 20px;
+	border: 2px solid #5ecfba;
+	color: #5ecfba;
+	width: 150px;
+}
+
+main>section:nth-of-type(2) .content>a.more:hover {
+	background: #5ecfba;
+	color: #fff;
+}
+
+main>section:nth-of-type(2) .content>a.more.beteacher {
+	top: 30px;
+}
+
+main>section:nth-of-type(2) .content>.large {
+	overflow: hidden;
+	padding: 0 30px;
+}
+
+main>section:nth-of-type(2) .content>.large>li {
+	float: left;
+	width: 21%;
+	margin: 12px 2%;
+}
+
+main>section:nth-of-type(2) .content>.large>li>a {
+	display: inline-block;
+	width: 100%;
+	height: 130px;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+main>section:nth-of-type(2) .content>.large>li img {
+	width: 100%;
+	transition: all .5s;
+}
+
+main>section:nth-of-type(2) .content>.large>li>a:hover>img {
+	position: relative;
+	width: 108%;
+	margin-left: -5%;
+	margin-top: -3%;
+}
+
+main>section:nth-of-type(2) .content>.large>li>a:hover+h5 {
+	color: #ff9a1b;
+}
+
+main>section:nth-of-type(2) .content>.large>li>h5 {
+	font-size: 14px;
+	line-height: 32px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+main>section:nth-of-type(2) .content>div {
+	position: relative;
+	overflow: hidden;
+	height: 500px;
+	padding-top: 50px;
+	padding-left: 30px;
+}
+
+main>section:nth-of-type(2) .content>div>div {
+	width: 80px;
+	position: absolute;
+	bottom: 10px;
+}
+
+main>section:nth-of-type(2) .content>div>div>button {
+	width: 30px;
+	border: none;
+	height: 5px;
+	margin-right: 5px;
+}
+
+main>section:nth-of-type(2) .content>div>div>button:nth-of-type(1):checked {
+	background-color: #5ecfba;
+}
+
+main>section:nth-of-type(2) .content>div>div>button:nth-of-type(2):checked {
+	background-color: #5ecfba;
+}
+
+main>section:nth-of-type(2) .content .teacher {
+	min-width: 1200px;
+	position: relative;
+	/*overflow: hidden;*/
+}
+
+main>section:nth-of-type(2) .content .teacher>li {
+	width: 230px;
+	margin: 0 20px;
+	height: 288px;
+	border-radius: 5px;
+	position: relative;
+	float: left;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(1) {
+	background: url(../../img/teacher-1.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(2) {
+	background: url(../../img/teacher-2.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(3) {
+	background: url(../../img/teacher-3.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(4) {
+	background: url(../../img/teacher-4.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(5) {
+	background: url(../../img/teacher-5.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(6) {
+	background: url(../../img/teacher-6.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(7) {
+	background: url(../../img/teacher-7.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li:nth-of-type(8) {
+	background: url(../../img/teacher-8.png) no-repeat 0 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>.cover {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: transparent;
+	z-index: 9;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>.cover a {
+	display: block;
+	width: 80%;
+	height: 40px;
+	margin: 0 auto;
+	line-height: 34px;
+	border-radius: 20px;
+	font-size: 14px;
+	text-align: center;
+	color: #01c26f;
+	border: 2px solid #01c26f;
+	transform: translateY(180px);
+	opacity: 0;
+	transition: all .5s;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>.cover:hover>a {
+	opacity: 1;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>.cover:hover+div {
+	opacity: 1;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>.cover:hover+div>img {
+	transform: translateY(80px);
+}
+
+main>section:nth-of-type(2) .content .teacher>li>div:nth-of-type(2) {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+	padding: 15px;
+	color: #fff;
+	text-align: center;
+	transition: all 1s;
+	opacity: 0;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>div:nth-of-type(2)>h4 {
+	line-height: 30px;
+	font-size: 18px;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>div:nth-of-type(2)>h5 {
+	font-size: 14px;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>div:nth-of-type(2)>hr {
+	border-color: rgba(200, 200, 200, 0.5);
+}
+
+main>section:nth-of-type(2) .content .teacher>li>div:nth-of-type(2)>p {
+	font-size: 12px;
+	line-height: 20px;
+	text-align: left;
+	height: 60px;
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+main>section:nth-of-type(2) .content .teacher>li>div:nth-of-type(2)>img {
+	transition: all 1s;
+	transform: translateY(-20px);
+}
+
+main>section:nth-of-type(2) .content .teacher-name {
+	position: relative;
+	overflow: hidden;
+}
+
+main>section:nth-of-type(2) .content .teacher-name>li {
+	width: 230px;
+	margin: 0 20px;
+	border-radius: 5px;
+	position: relative;
+	float: left;
+	text-align: center;
+	padding-top: 15px;
+}
+
+main>section:nth-of-type(2) .content .teacher-name>li>h5 {
+	line-height: 30px;
+	font-size: 18px;
+	color: #01c26f;
+	transition: all 1s;
+}
+
+main>section:nth-of-type(2) .content .teacher-name>li>p {
+	line-height: 20px;
+	font-size: 12px;
+	color: #969696;
+}
+
+main>section:nth-of-type(2) .content .forum {
+	display: flex;
+	text-align: left;
+}
+
+main>section:nth-of-type(2) .content .forum>li {
+	flex: 1;
+	padding: 20px;
+}
+
+main>section:nth-of-type(2) .content .forum>li>h5 {
+	font-size: 14px;
+	line-height: 40px;
+}
+
+main>section:nth-of-type(2) .content .forum>li>h5:before {
+	content: '';
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	background: #ccc;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+main>section:nth-of-type(2) .content .forum>li>h5>a {
+	color: #5ecfba;
+}
+
+main>section:nth-of-type(2) .content .forum>li>a>img {
+	border-radius: 5px;
+	position: relative;
+}
+
+main>section:nth-of-type(2) .content .forum>li>a>h6 {
+	font-size: 12px;
+	width: 230px;
+	color: #3B3B3B;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+main>section:nth-of-type(2) .content .forum>li>p {
+	font-size: 12px;
+	height: 40px;
+	overflow: hidden;
+	line-height: 22px;
+	color: #aeaeae;
+}
+
+main>section:nth-of-type(2) .content .forum>li>ul {
+	font-size: 12px;
+	padding-top: 15px;
+	width: 220px;
+}
+
+main>section:nth-of-type(2) .content .forum>li>ul>li {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+main>section:nth-of-type(2) .content .forum>li>ul>li>a {
+	color: #818181;
+}
+
+main>section:nth-of-type(2) .content .forum>li>ul>li>a:hover {
+	color: #5ecfba;
+}
+
+main>section:nth-of-type(2) .content .forum>li>ul>li:before {
+	content: '';
+	display: inline-block;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	background: #aaa;
+	margin-bottom: 3px;
+	margin-right: 5px;
+}
+
+main>section:nth-of-type(2) .course {
+	width: 100%;
+	padding: 50px 0;
+	overflow: hidden;
+	display: flex;
+}
+
+main>section:nth-of-type(2) .course>li {
+	flex: 1;
+	overflow: hidden;
+	height: 300px;
+	float: left;
+	box-shadow: 0px 2px 5px #ccc;
+	margin: 0 10px;
+	padding-top: 15px;
+	position: relative;
+	background: url(../../img/sprite_1.png) no-repeat 1px 0;
+}
+
+main>section:nth-of-type(2) .course>li:nth-of-type(2) {
+	background-position: 1px -891px;
+}
+
+main>section:nth-of-type(2) .course>li:nth-of-type(3) {
+	background-position: 1px -2664px;
+}
+
+main>section:nth-of-type(2) .course>li:nth-of-type(4) {
+	background-position: 1px -1476px;
+}
+
+main>section:nth-of-type(2) .course>li>h3 {
+	font-size: 14px;
+	padding: 0 30px;
+	line-height: 30px;
+}
+
+main>section:nth-of-type(2) .course>li>p {
+	font-size: 12px;
+	padding: 0 30px;
+	color: #c5c5c5;
+	line-height: 16px;
+}
+
+main>section:nth-of-type(2) .course>li>span {
+	position: absolute;
+	right: 12px;
+	bottom: 110px;
+	font-size: 14px;
+	color: #999;
+}
+
+main>section:nth-of-type(2) .course>li>a {
+	background: #ff9a1b;
+	font-size: 14px;
+	color: #fff;
+	height: 40px;
+	width: 80%;
+	line-height: 40px;
+	display: inline-block;
+	position: absolute;
+	text-align: center;
+	bottom: 30px;
+	left: 10%;
+	border-radius: 20px;
+}
+
+main>section:nth-of-type(2) .course>li:hover {
+	background-color: rgba(150, 150, 150, 0.1);
+}
+
+main>section:nth-of-type(2) .course>li:hover>h3 {
+	color: #ff9a1b;
+}
+
+main>section:nth-of-type(2) .route-1>li:nth-of-type(2) {
+	background-position-y: -297px;
+}
+
+main>section:nth-of-type(2) .route-1>li:nth-of-type(3) {
+	background-position-y: -2367px;
+}
+
+main>section:nth-of-type(2) .route-1>li:last-of-type {
+	background-position-y: -891px;
+}
+
+main>section:nth-of-type(2) .route-1>li>a {
+	background: #01c26f;
+}
+
+main>section:nth-of-type(2) .route-2>li:nth-of-type(1) {
+	background-position-y: -3258px;
+}
+
+main>section:nth-of-type(2) .route-2>li:nth-of-type(2) {
+	background-position-y: -2070px;
+}
+
+main>section:nth-of-type(2) .route-2>li:nth-of-type(3) {
+	background-position-y: -2664px;
+}
+
+main>section:nth-of-type(2) .route-2>li:last-of-type {
+	background-position-y: -1476px;
+}
+
+main>section:nth-of-type(2) .route-2>li>a {
+	background: #01c26f;
+}
+
+main>section>.understand {
+	width: 100%;
+	overflow: hidden;
+	height: 240px;
+	margin-bottom: 40px;
+	box-shadow: 0 1px 10px #bbb;
+}
+
+main>section>.understand>ul {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+}
+
+main>section>.understand>ul>li {
+	flex: 1;
+	position: relative;
+	overflow: hidden;
+}
+
+main>section>.understand>ul>li>div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	z-index: 1;
+}
+
+main>section>.understand>ul>li>div>h3 {
+	font-size: 16px;
+	line-height: 30px;
+}
+
+main>section>.understand>ul>li>div>p {
+	font-size: 12px;
+	line-height: 20px;
+	color: #a5a5a5;
+}
+
+main>section>.understand>ul>li>div>button {
+	width: 42px;
+	height: 42px;
+	margin-top: 40px;
+	border: none;
+	border-radius: 50%;
+	background: url(../../img/sprite_0.png) no-repeat 0 0;
+}
+
+main>section>.understand>ul>li>div+img {
+	width: 100%;
+	position: relative;
+	transition: all .8s;
+}
+
+main>section>.understand>ul>li>div:hover>button {
+	background-position: -47px 0;
+}
+
+main>section>.understand>ul>li>div:hover+img {
+	margin-top: -5px;
+}
+
+main>section>.understand>ul>li:nth-of-type(1) {
+	flex: 2;
+}
+
+main>section .downloadApp {
+	background: url(../../img/application.png) no-repeat 0 0, #ffffff;
+	padding: 20px;
+	width: 100%;
+	height: 550px;
+	box-shadow: 0 1px 10px #bbb;
+	margin-bottom: 30px;
+}
+
+main>section .downloadApp>div {
+	width: 50%;
+	height: 100%;
+	float: right;
+	padding: 20px;
+}
+
+main>section .downloadApp>div>hr {
+	float: right;
+}
+
+main>section .downloadApp>div>h2 {
+	font-size: 24px;
+}
+
+main>section .downloadApp>div>p {
+	clear: both;
+	text-align: right;
+	font-size: 14px;
+	color: rgba(61, 61, 61, 0.6);
+}
+
+main>section .downloadApp>div>ul {
+	display: flex;
+	overflow: hidden;
+	padding: 50px 0;
+}
+
+main>section .downloadApp>div>ul>li {
+	flex: 1;
+	float: left;
+	height: 280px;
+	text-align: center;
+}
+
+main>section .downloadApp>div>ul>li>div {
+	width: 100%;
+	height: 90px;
+	background: url(../../img/sprite_0.png) no-repeat 0 0;
+	margin-bottom: 15px;
+}
+
+main>section .downloadApp>div>ul>li:nth-of-type(1)>div {
+	background-position: 20px -69px;
+}
+
+main>section .downloadApp>div>ul>li:nth-of-type(2)>div {
+	background-position: 30px -160px;
+}
+
+main>section .downloadApp>div>ul>li:nth-of-type(3)>div {
+	background-position: 30px -251px;
+}
+
+main>section .downloadApp>div>ul>li:nth-of-type(4)>div {
+	background: url(../../img/appcode.png) no-repeat 18px 0;
+	background-size: contain;
+}
+
+main>section .downloadApp>div>ul>li>h5 {
+	font-size: 14px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+main>section .downloadApp>div>ul>li>a {
+	display: inline-block;
+	width: 90px;
+	height: 30px;
+	line-height: 28px;
+	border-radius: 20px;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+main>section .downloadApp>div>ul>li>a.dis {
+	border: 1px dashed #bebebf;
+	color: #c2c2c3;
+	cursor: default;
+}
+
+main>section .downloadApp>div>ul>li>a.down {
+	border: 1px solid #01c26f;
+	color: #01c26f;
+}

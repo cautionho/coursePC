@@ -1,0 +1,45 @@
+.goTopBox{
+	width: 41px;
+	position: fixed;
+	right: 10px;
+	z-index: 99;
+	bottom: 50px;
+}
+
+.goTopBox > a{
+	display: inline-block;
+	height: 41px;
+	margin: 2px 0;
+	width: 41px;
+	border-radius: 50%;
+	position: relative;
+	line-height: 41px;
+	text-align: center;
+	background: #fff;
+	color: #5ECFBA;
+	font-size: 12px;
+	
+}
+
+.goTopBox > a:nth-of-type(1){
+	background: url(../img/下载.png) no-repeat 0 0;
+}
+
+.goTopBox > a:nth-of-type(2){
+	background: url(../img/sprite_0.png) no-repeat 0px -395px;
+}
+
+.goTopBox > a:nth-of-type(2):hover{
+	background-position: -48px -395px;
+}
+
+.goTopBox > a:last-of-type{
+	background: url(../img/sprite_0.png) no-repeat 0px -497px;
+	display: none;
+}
+
+.goTopBox > a:last-of-type:hover{
+	background-position: -48px -497px;
+}
+
+

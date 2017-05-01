@@ -1,0 +1,125 @@
+@charset "utf-8";
+body {
+	width: 100%;
+	height: 100%;
+	background: #454545;
+	padding: 0 20px;
+}
+
+#canvas{
+	background: #000;
+}
+
+#title {
+	width: 100%;
+	height: 80px;
+	padding: 15px;
+}
+
+#title h1 {
+	display: inline-block;
+	font-size: 32px;
+	font-weight: 800;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+}
+
+#title #admin>li {
+	float: right;
+	margin-right: 3rem;
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+}
+
+#container {
+	padding-top: 100px;
+}
+
+#container>nav {
+	height: 550px;
+	background: #373737;
+	padding-top: 20px;
+	border-radius: 10px;
+	overflow: auto;
+	display: none;
+}
+
+#container>nav>ul>li {
+	background: #414141;
+	margin: 10px 0;
+	border-radius: 5px;
+}
+
+#container>nav>ul>li[class="active"]>a {
+	color: #fff;
+}
+
+#container>nav>ul>ul>li {
+	background: transparent;
+	padding: 10px 15px;
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#container a {
+	color: #46B8DA;
+}
+
+#container #content {
+	height: 550px;
+	background: #373737;
+	border-radius: 10px;
+	margin-left: 50px;
+	padding: 10px;
+}
+
+#container #content>div {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	border-radius: 5px;
+	overflow: auto;
+	display: none;
+	padding: 0px 0 20px;
+}
+
+#container #content>div>ul {
+	width: 100%;
+	height: 100px;
+	margin-top: 20px;
+}
+
+#container #content>div>ul>li {
+	margin: 0 20px;
+	width: 200px;
+	height: 100px;
+	float: left;
+}
+
+#container #content>div>table>caption {
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 24px;
+}
+
+.block {
+	display: block !important;
+}
+
+/*分页样式*/
+
+#container #content>div>.pagination{
+	width: auto;
+	display: block;
+}
+
+#container #content>div>.pagination>li{
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	float: none;
+}

@@ -1,0 +1,105 @@
+.comment
+{
+	width: 710px;
+	position: relative;
+	background: #fff;
+	padding: 20px 50px 50px;
+	border-radius: 5px;
+	text-align: left;
+}
+
+.comment h3
+{
+	height: 28px;
+	line-height: 28px;
+}
+
+.com_form
+{
+	width: 100%;
+	position: relative;
+}
+
+.input
+{
+	width: 99%;
+	height: 60px;
+	border: 1px solid #ccc
+}
+
+.com_form p
+{
+	height: 28px;
+	line-height: 28px;
+	position: relative;
+	margin-top: 10px;
+}
+
+span.emotion
+{
+	width: 42px;
+	height: 20px;
+	padding-left: 20px;
+	cursor: pointer
+}
+
+span.emotion:hover
+{
+	background-position: 2px -28px
+}
+
+.qqFace
+{
+	margin-top: 4px;
+	background: #fff;
+	padding: 2px;
+	border: 1px #dfe6f6 solid;
+}
+
+.qqFace table td
+{
+	padding: 0px;
+}
+
+.qqFace table td img
+{
+	cursor: pointer;
+	border: 1px #fff solid;
+}
+
+.qqFace table td img:hover
+{
+	border: 1px #0066cc solid;
+}
+
+.show
+{
+	margin: 20px auto;
+	background: #fff;
+	padding: 5px;
+	/*border: 1px solid #DDD;*/
+	vertical-align: top;
+	text-align: left;
+}
+
+.sub_btn
+{
+	position: absolute;
+	right: 0px;
+	top: 0;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	vertical-align: middle;
+	outline: none;
+	cursor: pointer;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.6);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+

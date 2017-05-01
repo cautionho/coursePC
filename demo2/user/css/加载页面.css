@@ -1,0 +1,38 @@
+html{
+	height: 100%;
+}
+
+.beginAnamition{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.9);
+	z-index: 9999;
+	/*display: flex;*/
+	/*display: -ms-flexbox;*/
+	/*display: -webkit-flex;*/
+	overflow: hidden;
+	position: fixed;
+}
+
+.waitAnimation{
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	margin-top:25%;
+	/*border: 1px solid red;*/
+	border: 5px dotted rgba(255,255,255,.8);
+	border-radius: 50%;
+	/*animation: roll 10s linear;*/
+	transform: all .5s;
+	animation: roll 1.5s linear infinite;
+}
+
+@keyframes roll{
+	/*0% {transform:rotateZ(0deg)}
+	100% {transform : rotateZ(360deg)}*/
+	0%{border-right-color: #101010;}
+	33%{border-bottom-color: #101010;}
+	66%{border-left-color: #101010;}
+	100%{border-top-color: #101010;}
+}
+

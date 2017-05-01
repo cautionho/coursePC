@@ -1,0 +1,141 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+
+		<link rel="stylesheet" type="text/css" href="css/forum/forum.css"/>
+
+		<link rel="stylesheet" type="text/css" href="css/forum/postSomething.css">
+
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+
+		<!--<script src="js/jquery.qqFace.js"></script>-->
+
+		<script src="js/forum/postSomething.js" defer=""></script>
+
+		<script src="./js/main.min.js"></script>
+
+		<script src="js/vue.min.js"></script>
+
+	</head>
+
+	<body>
+		<div id="head">
+			<div class="head-container">
+				<a href="forum.html" class="logo"></a>
+				<div class="login-btn-content">
+					<a href="#">登录
+						<div class="line-dotted"></div>
+					</a>
+					<a href="../user/index/resign.html">注册</a>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div class="left-side">
+
+			</div>
+
+			<div class="right-side">
+				<div class="search-container">
+					<ul class="search-type">
+						<span>帖子</span>
+						<div class="btn-subtype"></div>
+						<div class="subtype-wrap">
+							<a href="javascript:;">用户</a>
+						</div>
+					</ul>
+					<input type="text" class="search-text" placeholder="请输入搜索内容...">
+					<button class="btn-search"></button>
+				</div>
+				<div class="clear"></div>
+				<div class="btn-wrap">
+					<a href="#" class="btn-theme"><span></span> 发帖</a>
+					<div class="reports-wrap">
+						<div class="theme-info-wrap">
+							<div><span></span> 38729人</div>
+							<div class="localtime"><span></span> 2015-11-30</div>
+						</div>
+					</div>
+				</div>
+				<div class="hot-wrap">
+					<div class="title">今日热帖</div>
+					<ul class="ul-hot">
+						<li>
+							<a href="#">西铁城光动能男表BM8475-26E开箱</a>
+						</li>
+						<li>
+							<a href="#">大婶爱数码，2013年度数码历历数~</a>
+						</li>
+						<li>
+							<a href="#">小米移动电源的宿敌？ -- AIKa 锋芒</a>
+						</li>
+						<li>
+							<a href="#">标记你的生活 -- 「Pinco品酷」数字</a>
+						</li>
+						<li>
+							<a href="#">不止轻薄！--OZAKI iPhone5S超薄保护套</a>
+						</li>
+						<li>
+							<a href="#">搞机历程2013孤独的搞机历程</a>
+						</li>
+						<li>
+							<a href="#">居家旅行好帮手——奥睿科多口USB充电器体</a>
+						</li>
+						<li>
+							<a href="#">我与插座有个约会——实用插座体验</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="comment">
+				<div>
+					<!--选择板块-->
+					<div class="form-group">
+						<label for="sectionOption" class="control-label">板块</label>
+						<select name="sectionOption" id="sectionOption" class="form-control">
+							<option v-for="item in sections" :value="item.sectionName">{{item.sectionName}}</option>
+						</select>
+					</div>
+					<!--输入标题-->
+					<div class="form-group">
+						<label for="postTitle" class="control-label">标题</label>
+						<input type="text" id="postTitle" class="form-control" style="width: 100%; height: 30px;"/>
+					</div>
+
+					<div class="form-group">
+						<label for="postIntro" class="control-label">简介</label>
+						<textarea name="postIntro" id="postIntro" class="form-control" rows="" cols="" style="width: 100%; height: 100px;"></textarea>
+					</div>
+
+				</div>
+				<div class="com_form form-group">
+					<label for="saytext" class="control-label">内容</label>
+					<textarea class="form-control" style="width: 100%; height: 200px;" id="saytext" name="saytext"></textarea>
+					<p>
+						<a href="javascript:void(0)" type="button" id="subPost" class="btn btn-success sub_btn">提交</a>
+						<!--<span class="emotion">表情</span></p>-->
+				</div>
+			</div>
+			<div class="clear"></div>
+
+		</div>
+		<div id="foot">
+			<div class="foot-wrap">
+				<a href="http://www.amazfit.com/about.html" target="_blank">关于我们</a><span>|</span>
+				<a href="http://weibo.com/amazfit" target="_blank">新浪微博</a><span>|</span>
+				<a href="javascript:;" id="wechat">官方微信<img id="wechat_act" src="" alt=""></a>
+				<p><span>01062667706 京ICP备15043545号-1</span>Copyright © 2015 Huami Co., Ltd. All rights reserved. </p>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>欢迎注册麦子会员账号</title>
+    
+    <!--图标-->
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+    
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+   	<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/resign.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+    
+    <!--页面等待-->
+	    <link rel="stylesheet" type="text/css" href="../css/加载页面.css"/>
+    
+    <script src="../js/jquery2.2.2.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/resign.js" defer></script>
+    <script src="../js/login.js" defer></script>
+    <!--<script src="js/header.js" defer></script>-->
+    
+    <title></title>
+  </head>
+  <body>
+  	<!--页面等待-->
+		<div class="beginAnamition">
+			<div class="waitAnimation">
+			</div>
+		</div>
+  	
+		<div class="outset outZindex positionAbsolute">
+
+		<main class="container positionRelative">
+		
+			<!-- 注册框 -->
+			<section id="resign-form" class="col-sm-8">
+			
+				<!-- 选项卡 -->
+				<ul id="resign-option">
+					<li class="choose"><i class="iconText">\</i>&nbsp;&nbsp;手机注册</li>
+					<li><i class="iconText">~</i>&nbsp;&nbsp;邮箱注册</li>
+				</ul>
+			
+				<form action="javascript:void(0)" method="post" class="positionRelative form-group">
+					<input type="tel" value="" name="userPhone" class="form-control"/><span class="info"></span>
+					<label for="userPhone" class="text12">请输入手机号码</label>
+					<input type="password" value="" name="pwd" class="form-control"/><span class="info"></span>
+					<label for="pwd" class="text12">设置您的登录密码</label>
+					
+					<input type="submit" value="注册" class="btn-info form-control" id="resign_btn" disabled>
+				</form>
+				
+			</section>
+			
+			
+			
+			<!-- 第三方登录 -->
+			<section id="resign-three" class="positionRelative text12 col-sm-4">
+				
+				<h2 class="textCenter">
+					<span class="positionRelative">使用合作方账号登录</span>
+				</h2>
+				
+				<button class="btn-success" name="wechat">微信登录</button>
+				<button class="btn-info" name="qq">QQ登录</button>
+				
+				<span class="positionAbsolute">已有账号?&nbsp;&nbsp;<a href="javascript:void(0);" id="goLogin" data-toggle="modal" data-target="#loginModal" >马上登录</a></span>
+				
+			</section>
+			
+			
+			<footer class="positionAbsolute textCenter text12">
+				<p>© 2012-2016 <a href="./firstPage.html">xJia.html</a></p>
+				<p>蜀ICP备13014270号-4 Version 5.0.0 release20160127 </p>
+			</footer>
+		
+			
+		</main>
+		
+		<!--登录模态框-->
+		<!--登录-->
+		<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
+		<div style="display:table; width:100%; height:100%;">
+		<div style="vertical-align:middle; display:table-cell;">
+		<div class="modal-dialog" style="width:540px;">
+	    <div class="modal-content" style="border: none;">
+	        <div class="col-left"></div>
+	        <div class="col-right">
+	            <div class="modal-header">
+	                <button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	                <h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+	            </div>
+	            <div class="modal-body">
+	                <section class="box-login v5-input-txt" id="box-login">
+	                    <form id="login_form" action="dologin.php" method="post" autocomplete="off">
+	                        
+	                        <ul>
+	                            <li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+	                            <li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+	                            
+	                        </ul>
+	                    </form>
+	                    <p class="good-tips marginB10 text12"><a href="fogetPwd.html" id="btnForgetpsw" class="fr text12">忘记密码？</a>还没有账号？<a href="resign.html" id="btnRegister">立即注册</a></p>
+	                    <div class="login-box marginB10">
+	                        <button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin marginB10">登录</button>
+	                        <div id="login-form-tips" class="tips-error text12" style="display: none;">错误提示</div>
+	                    </div>
+	
+	                    
+	                    <div class="threeLogin text12"><span>其他方式登录</span><a class="nqq" href="/user/connect/?partner=qq"></a><a class="nwx" href="/user/connect/?partner=wechat"></a><!--<a class="nwb"></a>--></div>
+	                    
+	                </section>
+	            </div>
+	        </div>
+	    </div>
+	   </div></div></div></div>
+			
+		</div>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+body{
+	background: url(../../img/bg.png) no-repeat center center;
+	background-size: cover;
+}
+
+.container{
+	
+	width: 100%;
+	display: flex;
+	
+}
+
+.container>.loginform{
+	margin: auto;
+	width: 600px;
+	height: 300px;
+	background: rgba(255,255,255,.8);
+	border-radius: 20px;
+	padding: 0px 0 10px;
+	
+}
+.uname,.upass{
+	margin-top: 5px;
+	display: block;
+	font-size:14px;
+	color:#000;
+	height:18px;
+	line-height: 18px;
+}

@@ -1,0 +1,167 @@
+body{
+	background: #f5f5f5;
+}
+
+main{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.container>h1{
+	padding-left: 5px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+	color: #777;
+}
+
+/*第一个简介的样式*/
+.studyNow-intro{
+	width: 100%;
+	padding:30px 40px 0;
+	background: #fff;
+}
+
+.studyNow-intro>h2{
+	font-size: 30px;
+	color: #1BBC9B;
+	height: 50px;
+	line-height: 50px;
+}
+
+.studyNow-intro>p{
+	line-height: 20px;
+	color: #797979;
+
+}
+
+.studyNow-intro>div{
+	width: 100%;
+	padding: 20px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.studyNow-intro>div>span{
+	color: #666;
+	padding: 0 20px;
+	font-size: 1em;
+}
+
+.studyNow-intro>div>span>b{
+	font-family: 'icon-family1';
+	padding-right:12px;
+	font-size: 20px;
+	color: #999;
+}
+
+/*主体部分盒子 全部继承此类*/
+.studyNow-step{
+	width: 100%;
+	padding: 30px 40px 0;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+}
+
+.studyNow-step>h3{
+	font-size: 20px;
+	color: #1BBC9B;
+	line-height: 50px;
+	padding-left: 1em;
+}
+
+.studyNow-step>p{
+	color: #797979;
+	padding-left: 1em;
+}
+
+.studyNow-step .courseList li>span{
+	color: #c0c0c0;
+	font-size: 12px;
+	margin-right: 1rem;
+}
+
+.studyNow-step .courseList li>a{
+	font-size: 14px;
+	color: #999;
+}
+
+.studyNow-step .courseList li:hover>a,.studyNow-step .courseList li:hover>span{
+	color: #1BBC9B;
+}
+
+.studyNow-step>div{
+	/*overflow: hidden;*/
+	padding-top: 20px;
+}
+
+.studyNow-step .step{
+	overflow:hidden;
+	width: 100%;
+}
+
+.studyNow-step .step>li{
+	float: left;
+	width: 30%;
+	height: 300px;
+	border: 1px solid #eee;
+	margin-bottom: 60px;
+	position: relative;
+	margin-left: calc((100% - 90%)/6);;
+}
+
+.studyNow-step .step>li:nth-of-type(3n-1){
+	margin-left: calc((100% - 90%)/3);;
+	margin-right: calc((100% - 90%)/6);
+}
+
+.studyNow-step .step>li>img{
+	width: 100%;
+}
+
+.studyNow-step .step .step-intro{
+	width: 100%;
+	padding: 10px;
+	position: absolute;
+	top: 211px;
+	background: #fff;
+}
+
+.studyNow-step .step .step-intro>a{
+	line-height: 30px;
+	font-size: 18px;
+	color: #4abfa9;
+}
+
+.studyNow-step .step .step-intro>p{
+	font-size: 1em;
+	padding: 5px 0;
+	color: #A1A1A1;
+	display: none;
+}
+
+.studyNow-step .step .step-intro>span{
+	display: block;
+	padding: 5px 0;
+	color: #A1A1A1;
+	font-size: 14px;
+}
+
+.studyNow-step .step>li:hover{
+	box-shadow: 5px 5px 10px #ccc;
+}
+
+.studyNow-step .step>li:hover>div{
+	box-shadow: 5px 15px 20px #ccc;
+	z-index: 1;
+	border: 1px solid #eee;
+}
+
+.studyNow-step .step>li:hover>div>p{
+	display: block;
+}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+#videoModal > .modal-content {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+}
+#videoModal > .modal-content > #video_close {
+  background: #fff;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+#loginModalLabel {
+  font-size: 18px;
+}
+#btnForgetpsw:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+#appModal > div.modal-content {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+#appModal > div.modal-content > div {
+  margin-top: calc(50% - 100px);
+}
+#appModal > div.modal-content > div > span {
+  font-size: 12px;
+}

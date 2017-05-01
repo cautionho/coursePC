@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+@import "../public.less";
+
+#head{
+    min-width: 1340px;
+    width:@width;
+    height: 70px;
+    padding: 12px 15px;
+    box-shadow: 0 1px 5px #ccc;
+    line-height: 45px;
+    background: #fff;
+    
+    >.logo{
+        
+        img{
+            height: 40px;
+        }
+        
+    }
+    
+    >section:nth-of-type(2){
+        height: 100%;
+        display: flex;
+        position: relative;
+        
+        >button{
+            position: absolute;
+            background: url(../../img/sprite_0.png) no-repeat 2px -613px;
+            width: 30px;
+            height: 30px;
+            border: none;
+            right: 30%;
+            top: 8px;
+            
+            >a{
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        .hot-words{
+            position: absolute;
+            top: 6px;
+            right: 35%;
+            font-size: 0;
+            text-align: right;
+            
+            >a{
+                font-size: 12px;
+                margin-right: 5px;
+                padding: 0 10px;
+                line-height: 22px;
+                color: #fff;
+                background: #ebebeb;
+                border-radius: 50px;
+                min-width: 40px;
+                text-align: center;
+                transition: 0.3s;
+                
+                &:hover{
+                    background: #9d9d9d;
+                }
+            }
+        }
+        
+        >ul{
+            
+            position: absolute;
+            top: 45px;
+            left: 130px;
+            .border(rgba(0,0,0,.1));
+            background: #fff;
+            border-radius: 5px;
+            box-shadow:2px 2px 20px #ccc;
+            display: none;
+            width: 65%;
+            padding: 10px;
+            line-height: 30px;
+            z-index: 999;
+            
+            >li>a{
+                font-size: 12px;
+                color: #333;
+                
+                &:hover{
+                    color:@main-color;
+                }
+            }
+            
+        }
+        
+    }
+    
+    >section>input[type="search"]{
+        border-radius: 20px;
+        width: 70%;
+        margin: auto;
+        
+        &:focus{
+            .border(@main-color);
+            box-shadow: none;
+        }
+    }
+    
+    >section>a{
+        border-radius: 20px;
+        width: 35%;
+        margin-right: 5%;
+        
+        >a{
+            color: #fff;
+        }
+    }
+    
+    >section>a.app{
+        display: inline-block;
+        background: url(../../img/sprite_0.png) no-repeat 0 -648px;
+        width: 167px;
+        height: 60px;
+        float: right;
+    }
+}

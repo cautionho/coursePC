@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>莘+学院 - 专业IT职业教育平台|ui培训|python培训|web前端培训|产品经理培训</title>
+
+		<!--图标-->
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/com.css" />
+
+		<!--登录-->
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<!--头部-->
+		<link rel="stylesheet" type="text/css" href="../css/header/header.css" />
+		<!--主体-->
+		<link rel="stylesheet" type="text/css" href="../css/main/main.css" />
+		<!--尾部-->
+		<link rel="stylesheet" type="text/css" href="../css/footer/footer.css" />
+		<!--模态框-->
+		<link rel="stylesheet" type="text/css" href="../css/modal.css" />
+		<!--回到顶部-->
+		<link rel="stylesheet" type="text/css" href="../css/goTop.css" />
+
+		<!--页面等待-->
+		<link rel="stylesheet" type="text/css" href="../css/加载页面.css" />
+
+		<script src="../js/jquery2.2.2.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/util.js"></script>
+
+		<!--头部-->
+		<script src="../js/header.js" defer></script>
+		<!--登录-->
+		<script src="../js/login.js" defer></script>
+		<!--主体-->
+		<script src="../js/main/main.js" defer></script>
+		<!--模态框-->
+		<script src="../js/modal.js" defer></script>
+		<!--回到顶部-->
+		<script src="../js/goTop.js" defer></script>
+
+
+		<script src="../js/template.js"></script>
+
+		<script src="../js/vue.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!--页面等待-->
+		<div class="beginAnamition">
+			<div class="waitAnimation">
+			</div>
+		</div>
+
+		<!-- 头部  分离 -->
+		<header id="head">
+			<section class="logo col-lg-3 col-xs-3">
+				<a href="xJia.html"><img src="../img/logo2.png" /></a>
+			</section>
+			<section class="search col-lg-7 col-xs-7">
+				<input type="search" class="form-control col-sm-10" id="search" />
+				<button type="button" id="searchBtn"><a href="javascript;"></a></button>
+
+				<div class="hot-words">
+					<a href="http://www.maiziedu.com/search/course/产品经理-1" target="_blank">产品经理</a>
+					<a href="http://www.maiziedu.com/search/course/web前端-1" target="_blank">web前端</a>
+					<a class="last" href="http://www.maiziedu.com/search/course/ui-1" target="_blank">ui</a>
+				</div>
+
+				<ul id="list">
+
+				</ul>
+
+				<!--下载app-->
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#appModal" class="app"></a>
+			</section>
+
+			<!--未登录前-->
+			<section class="form col-lg-2 col-xs-2" id="dologinbox">
+				<a class="btn btn-success btn-sm" href="./resign.html">注册</a>
+
+				<!--点击登录弹出登录模态框-->
+				<a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#loginModal">登录</a>
+			</section>
+
+			<!--登录后 /遍历开始-->
+			<section class="form col-lg-2 col-xs-2" id="userMsg" style="display: none; padding-left:50px;">
+				<script type="text/html" id="loginMsg">
+					{{each data}}
+					<ul class="user" style="display: flex;text-align: center;">
+						<img src="{{$value.head}}" class="fl" id="userHead" style="margin-right: 20px; width: 45px;height: 45px;border-radius: 50%;"></img>
+						<li id="userMsgName">{{$value.nickName || $value.phone || $value.email}}</li>
+						<li>
+							<a href="javascript:void(0)" style="font-size: 12px;" id="loginout">退出</a>
+						</li>
+					</ul>
+					{{/each}}
+				</script>
+			</section>
+			<script>
+				var data = {
+					storage: sessionStorage
+				}
+
+				var data2 = {
+					data: data
+				};
+
+				var html = template('loginMsg', data2);
+				document.getElementById('userMsg').innerHTML = html;
+			</script>
+
+		</header>
+
+		<!--登录模态框-->
+		<!--登录-->
+		<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div style="display:table; width:100%; height:100%;">
+				<div style="vertical-align:middle; display:table-cell;">
+					<div class="modal-dialog" style="width:540px;">
+						<div class="modal-content" style="border: none;">
+							<div class="col-left"></div>
+							<div class="col-right">
+								<div class="modal-header">
+									<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+								</div>
+								<div class="modal-body">
+									<section class="box-login v5-input-txt" id="box-login">
+										<form id="login_form" action="dologin.php" method="post" autocomplete="off">
+
+											<ul>
+												<li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+												<li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+
+											</ul>
+										</form>
+										<p class="good-tips marginB10 text12">
+											<a href="fogetPwd.html" id="btnForgetpsw" class="fr text12">忘记密码？</a>还没有账号？
+											<a href="resign.html" id="btnRegister">立即注册</a>
+										</p>
+										<div class="login-box marginB10">
+											<button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin marginB10">登录</button>
+											<div id="login-form-tips" class="tips-error text12" style="display: none;">错误提示</div>
+										</div>
+
+										<div class="threeLogin text12"><span>其他方式登录</span>
+											<a class="nqq" href="/user/connect/?partner=qq"></a>
+											<a class="nwx" href="/user/connect/?partner=wechat"></a>
+											<!--<a class="nwb"></a>-->
+										</div>
+
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--下载app模态框-->
+		<div class="modal fade in" id="appModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content">
+				<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<div><img src="../img/appcode.png" width="200" /><span><br />扫码下载APP</span></div>
+			</div>
+		</div>
+
+		<!--主体部分-->
+		<main>
+
+			<!--侧边导航栏-->
+			<nav id="nav" style="height: calc(100% - 70px);">
+
+					<!--<ul class="nav-stacked">
+
+						<li class="navbar-header">软件学院</li>
+						<li>
+							<a></a>
+						</li>
+						<li>
+							<a></a>
+						</li>
+						<li>
+							<a></a>
+						</li>
+						<li>
+							<a></a>
+						</li>
+						<li>
+							<a></a>
+						</li>
+						<li>
+							<a></a>
+						</li>
+						<li>
+							<a></a>
+						</li>
+					</ul>
+
+					<ul class="nav-stacked">
+						<li class="navbar-header">设计学院</li>
+						<li>
+							<a></a>
+						</li>
+					</ul>
+
+					<ul class="nav-stacked last">
+						<li class="navbar-header">产品运营学院</li>
+						<li>
+							<a></a>
+						</li>
+					</ul>-->
+			</nav>
+
+			<!--内容部分轮播图-->
+			<section>
+
+				<!--轮播图-->
+				<div class="banner">
+
+					<div class="img-wrap">
+						<img data-num="0" src="../img/banner-1.jpg" width="100%" />
+						<img data-num="1" src="../img/banner-2.jpg" width="100%" />
+						<img data-num="2" src="../img/banner-3.jpg" width="100%" />
+						<img data-num="3" src="../img/banner-4.jpg" width="100%" />
+						<img data-num="4" src="../img/banner-5.jpg" width="100%" />
+
+						<ul class="banner-num">
+							<li data-num="0"></li>
+							<li data-num="1"></li>
+							<li data-num="2"></li>
+							<li data-num="3"></li>
+							<li data-num="4"></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<!--轮播图结束-->
+			</section>
+
+			<section>
+				<!--内容区-->
+				<!--王牌课程-->
+				<div class="content">
+					<h2>王牌课程</h2>
+					<p>践行全球前沿互联网技术</p>
+					<hr class="short" />
+
+					<hr />
+
+					<ul class="course">
+						<li>
+							<h3>产品经理</h3>
+							<p>CEO的学前班</p>
+							<span>月薪 8k-50k</span>
+							<a href="studyNow.html?productManager">
+								立即学习
+							</a>
+						</li>
+						<li>
+							<h3>UI 设计师</h3>
+							<p>互联网行业视觉构筑者</p>
+							<span>月薪 7k-20k</span>
+							<a href="studyNow.html?UI">
+								立即学习
+							</a>
+						</li>
+						<li>
+							<h3>Web 前端开发工程师</h3>
+							<p>实现网站页面或客户端界面的专业人才</p>
+							<span>月薪6k-35k</span>
+							<a href="studyNow.html?HTML">立即学习</a>
+						</li>
+						<li>
+							<h3>Python Web开发工程师</h3>
+							<p>最有钱景和上升空间的web后端开发岗位</p>
+							<span>月薪 8k-25k</span>
+							<a href="studyNow.html?PythonWeb">立即学习</a>
+						</li>
+					</ul>
+
+				</div>
+
+				<!--职业学习路线-->
+				<div class="content">
+					<h2>职业学习路线</h2>
+					<p>独创学习路线助你成就高薪梦想</p>
+					<hr class="short" />
+
+					<hr />
+
+					<ul class="course route-1">
+						<li>
+							<h3>产品经理</h3>
+							<p>CEO的学前班</p>
+							<span>月薪 8k-50k</span>
+							<a href="studyNow.html?productManeger">立即学习</a>
+						</li>
+						<li>
+							<h3>Android 开发工程师</h3>
+							<p>市场缺口最大的移动应用开发岗位</p>
+							<span>月薪 8k-30k</span>
+							<a href="studyNow.html?Android">立即学习</a>
+						</li>
+						<li>
+							<h3>iOS软件工程师</h3>
+							<p>最容易拿高薪的移动应用开发岗位</p>
+							<span>月薪 9k-30k</span>
+							<a href="studyNow.html?iOS">立即学习</a>
+						</li>
+						<li>
+							<h3>UI 设计师</h3>
+							<p>互联网行业视觉构筑者</p>
+							<span>月薪 7k-20k</span>
+							<a href="studyNow.html?UI">立即学习</a>
+						</li>
+					</ul>
+					<ul class="course route-2">
+						<li>
+							<h3>自动化运维+云计算</h3>
+							<p>安全、稳定、快速的网络管家</p>
+							<span>月薪9k-20k</span>
+							<a href="studyNow.html?cloud">立即学习</a>
+						</li>
+						<li>
+							<h3>PHP Web开发工程师</h3>
+							<p>最易入门的千万级网站的web开发岗位</p>
+							<span>月薪6k-25k</span>
+							<a href="studyNow.html?PHP">立即学习</a>
+						</li>
+						<li>
+							<h3>Web 前端开发工程师</h3>
+							<p>实现网站页面或客户端界面的专业人才</p>
+							<span>月薪 6k-35k</span>
+							<a href="studyNow.html?HTML">立即学习</a>
+						</li>
+						<li>
+							<h3>Python Web开发工程师</h3>
+							<p>最有钱景和上升空间的web后端开发岗位</p>
+							<span>月薪 8k-25k</span>
+							<a href="studyNow.html?PythonWeb">立即学习</a>
+						</li>
+					</ul>
+				</div>
+
+				<!--软件开发-->
+				<!--<div class="content">
+					<h2>软件开发</h2>
+					<a href="javascript:void(0)" class="btn more">查看更多课程</a>
+					<hr />
+
+					<ul class="large">
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-1.jpg"/>
+							</a>
+							<h5>Web前端开发之HTML+CSS基础入门</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-2.jpg"/>
+							</a>
+							<h5>node.js项目实战</h5>
+
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-3.jpg"/>
+							</a>
+							<h5>PHP语言编程基础</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-4.png"/>
+							</a>
+							<h5>Python语言编程基础</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-5.jpg"/>
+							</a>
+							<h5>Microsoft SQL Server 2014数据库</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-6.png"/>
+							</a>
+							<h5>Android基础UI控件</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-7.png"/>
+							</a>
+							<h5>Redis入门</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+							<img src="../img/3-8.jpg"/>
+							</a>
+							<h5>iOS开发语言 swift 2.2基础</h5>
+						</li>
+					</ul>
+				</div>-->
+
+				<!--设计创作-->
+				<!--<div class="content">
+					<h2>设计创作</h2>
+					<a href="javascript:void(0)" class="btn more">查看更多课程</a>
+					<hr />
+
+					<ul class="large">
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-1.jpg"/>
+							</a>
+							<h5>UI设计工具：Photoshop基本操作和使用</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-2.png"/>
+							</a>
+							<h5>UI设计理论基础</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-3.png"/>
+							</a>
+							<h5>AE动效设计概论和实操</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-4.png"/>
+							</a>
+							<h5>移动UI设计规范</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-5.jpg"/>
+							</a>
+							<h5>玩转sketch</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-6.png"/>
+							</a>
+							<h5>图形图像基础</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-7.png"/>
+							</a>
+							<h5>用户体验设计概论与实操</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/4-8.png"/>
+							</a>
+							<h5>设计色彩基础 色彩理论基础</h5>
+						</li>
+					</ul>
+
+				</div>-->
+
+				<!--产品运营-->
+				<!--<div class="content">
+					<h2>产品运营</h2>
+					<a href="javascript:void(0)" class="btn more">查看更多课程</a>
+					<hr />
+
+					<ul class="large">
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-1.png"/>
+							</a>
+							<h5>百度 SEM高级优化进阶篇</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-2.png"/>
+							</a>
+							<h5>运营指导产品设计</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-3.png"/>
+							</a>
+							<h5>新媒体运营基础</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-4.jpg"/>
+							</a>
+							<h5>产品经理原型设计工具Axure使用基础</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-5.jpg"/>
+							</a>
+							<h5>思维导图 产品经理常用工具</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-6.jpg"/>
+							</a>
+							<h5>竞品分析</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-7.jpg"/>
+							</a>
+							<h5>产品经理从专能到全能</h5>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img src="../img/5-8.jpg"/>
+							</a>
+							<h5>市场需求文档MRD</h5>
+						</li>
+					</ul>
+				</div>-->
+
+				<!--金牌讲师-->
+				<div class="content">
+					<h2>金牌讲师</h2>
+					<p>300余名优秀讲师全程跟踪教学</p>
+					<a href="javascript:void(0)" class="btn more beteacher">成为莘+讲师</a>
+					<hr class="short" />
+
+					<hr />
+
+					<div>
+						<ul class="teacher">
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+								<div>
+									<h4>王海宁</h4>
+									<h5>Web前端开发金牌讲师</h5>
+									<hr />
+									<p>9年前端开发经验，曾任长虹集团高级前端工程师，中国电信，中国移动三网融合智慧家庭某项目负责人，某大型IT教育集团金牌讲师，精通ARM体系结构与接口开发，Linux应用编程及驱动开发，所讲授课程获得学生的一致好评。</p>
+									<img src="../img/teach-icon-1.png" alt="" />
+								</div>
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+
+								<div>
+									<h4>李景山</h4>
+									<h5>PHP开发金牌讲师</h5>
+									<hr />
+									<p>6年php开发及教学经验，翠花网络创始人、主要负责学员实训、授课经验丰富，讲课内容层次由浅入深，通俗易懂，善于活跃课堂气氛，学生在欢乐的气氛中学到知识，因材施教，注重对学生自我思考与解决问题能力的培养。融资千万级别邦印信息技术有限联合技术创始人，负责百万级网站流量的架构、开发、管理。</p>
+									<img src="../img/teach-icon-2.png" alt="" />
+								</div>
+
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+								<div>
+									<h4>谭钧</h4>
+									<h5>Android 应用开发金牌讲师</h5>
+									<hr />
+									<p>5年的app开发经验，负责过播放、社交、社区O2O、生鲜O2O、校园O2O等十余个项目的研发，对用户体验和精致化的Android开发研究深入。擅长把需求变成应用场景，通过研发转化为商业产品，教授学员研发和团队管理能力极强。多年Android开发及教学经验, 对移动开发有着独到的见解和深入的研究，其授课风格幽默风趣, 内容丰富充实, 善于结合工作、生活中的实际案例, 通过层层引导和深入浅出的方式加深学生对知识点的认识和理解。</p>
+									<img src="../img/teach-icon-3.png" alt="" />
+								</div>
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+								<div>
+									<h4>马青</h4>
+									<h5>UI 设计金牌讲师</h5>
+									<hr />
+									<p>曾任职于上海gamania，上海Massiveblack。参与过多款娱乐产品的的方案界面设计及APP界面设计，熟悉项目开发交互流程，有着丰富的UI设计和培训经验。擅长界面设计、概念设计及传统美术绘画，作品多次发表于国内权威杂志《美术》和《中国版画年鉴》。</p>
+									<img src="../img/teach-icon-4.png" alt="" />
+								</div>
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+								<div>
+									<h4>胡明星</h4>
+									<h5>Python Web开发金牌讲师</h5>
+									<hr />
+									<p>10余年Web开发经验，曾担任国内某在线教育平台研发经理一职，参与过会员营销、财务管理、游戏管理等三十余个大中型Web项目的设计与研发，项目体验人数超过千万，所教授学员超过千余人。负责过的项目：高新人才网，国信安基地网站，国信安百杰网站等。</p>
+									<img src="../img/teach-icon-5.png" alt="" />
+								</div>
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+
+								<div>
+									<h4>敬文涛</h4>
+									<h5>iOS 应用开发金牌讲师</h5>
+									<hr />
+									<p>索尼明星机型系统研发工程师之一，某千万级用户社交App核心成员之一，贵州省电子政务云平台顶层架构师之一，是国内早期的明星IOS工程师。</p>
+									<img src="../img/teach-icon-6.png" alt="" />
+								</div>
+
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+								<div>
+									<h4>葛蓉</h4>
+									<h5>Android 应用开发金牌讲师</h5>
+									<hr />
+									<p>IT行业拥有7年多丰富的软件开发工作经验。曾经参与Android操作系统二十多个大型系统级项目开发，以及负责多媒体类、社交类、工具类等十多个Android应用研发。目前专注于Android研发和讲师工作，擅长把复杂的编程技能转换为浅显易懂的总结和案例，教授知识由浅入深，更加注重学生学习能力和解决问题能力的引导和培养。</p>
+									<img src="../img/teach-icon-7.png" alt="" />
+								</div>
+							</li>
+							<li>
+								<div class="cover">
+									<!--<a href="javascript:void(0);">查看老师简介</a>-->
+								</div>
+								<div>
+									<h4>胡海亮</h4>
+									<h5>软件测试专业负责人</h5>
+									<hr />
+									<p>曾任Camelot Business Inc 集团高级测试工程师、主要从事银行性能测试，精通系统测试/web测试/性能测试等相关技术及理论体系。</p>
+									<img src="../img/teach-icon-8.png" alt="" />
+								</div>
+							</li>
+						</ul>
+
+						<ul class="teacher-name">
+							<li>
+								<h5>王海宁</h5>
+								<p>Web前端 开发金牌讲师</p>
+							</li>
+							<li>
+								<h5>李景山</h5>
+								<p>PHP 开发金牌讲师</p>
+							</li>
+							<li>
+								<h5>谭钧</h5>
+								<p>Android 应用开发金牌讲师</p>
+							</li>
+							<li>
+								<h5>马青</h5>
+								<p>UI 设计金牌讲师</p>
+							</li>
+							<li>
+								<h5>胡明星</h5>
+								<p>Python Web开发金牌讲师</p>
+							</li>
+							<li>
+								<h5>敬文涛</h5>
+								<p>iOS 应用开发金牌讲师</p>
+							</li>
+							<li>
+								<h5>葛蓉</h5>
+								<p>Android 应用开发金牌讲师</p>
+							</li>
+							<li>
+								<h5>胡海亮</h5>
+								<p>软件测试专业负责人</p>
+							</li>
+						</ul>
+
+						<div style="left: calc(50% - 40px);">
+							<button id="moveR"></button>
+							<button id="moveL"></button>
+						</div>
+
+					</div>
+
+				</div>
+
+				<!--干货社区-->
+				<div class="content">
+					<h2>干货社区</h2>
+					<p>第一时间和你分享最有用的资源</p>
+					<hr class="short" />
+
+					<hr />
+					<ul class="forum" id="forum">
+						<li >
+							<h5><a href="../../forum/forum.html">{{sections[0][0].sectionName}}</a></h5>
+							<a href="javascript:void(0);">
+								<img src="../img/forum-1.png" />
+								<!--<h6 title="10张图告诉你Leader和Boss的区别">10张图告诉你Leader和Boss的区别</h6>-->
+							</a>
+							<!--<p>一个为boss和leader都工作过的人是幸运的，因为他知道...</p>-->
+							<ul >
+								<li v-for="item in sections[1][0]">
+									<a href="javascript:void(0);">{{item.postName}}</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h5><a href="javascript:void(0);">{{sections[0][1].sectionName}}</a></h5>
+							<a href="javascript:void(0);">
+								<img src="../img/forum-2.png" />
+								<!--<h6 title="从“品牌定位”的运营角度，来看看小程序为什么这么火！">从“品牌定位”的运营角度，来看看小程序为什么这么火！</h6>-->
+							</a>
+							<!--<p>今天，我们来聊聊运营六字诀心法，品、策、内、推、拉、转这...</p>-->
+							<ul>
+								<li v-for="item in sections[1][1]">
+									<a href="javascript:void(0);">{{item.postName}}</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h5><a href="javascript:void(0);">{{sections[0][2].sectionName}}</a></h5>
+							<a href="javascript:void(0);">
+								<img src="../img/forum-3.png" />
+								<!--<h6 title="产品经理|产品原型之基本布局">产品经理|产品原型之基本布局</h6>-->
+							</a>
+							<!--<p>莘+学院wiki库为莘+学院独创的软件开发|android、iOS、python、php、产品运营，产品经理，智能硬件|嵌入式、物联网，设计|ui设计、游戏原画设计基础教程学习平台，提供了大量的最新原创教程和在线实例，让您可以更好的学习IT技术。</p>-->
+							<ul>
+								<li v-for="item in sections[1][2]">
+									<a href="javascript:void(0);">{{item.postName}}</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<h5><a href="javascript:void(0);">{{sections[0][3].sectionName}}</a></h5>
+							<a href="javascript:void(0);">
+								<img src="../img/forum-4.jpg" height="121" width="227" />
+								<!--<h6>莘+学院春节放假通知</h6>-->
+							</a>
+							<!--<p>莘+学院春节放假通知 亲爱的童鞋们：注意啦！注意啦！注意啦！...</p>-->
+							<ul>
+								<li v-for="item in sections[1][3]">
+									<a href="javascript:void(0);">{{item.postName}}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+
+				<!--快速认识莘+学院-->
+				<div class="understand">
+
+					<ul>
+						<li>
+							<div>
+								<h3>3分钟认识莘+学院</h3>
+								<p>权威教学体系维度保障学习效果</p>
+								<!--模态框弹出视频 js控制点击则播放 关闭则暂停 控制音频的source-->
+								<button data-toggle="modal" data-target="#videoModal" id="video0"></button>
+							</div>
+							<img src="../img/video_0.png" />
+						</li>
+						<li>
+							<div>
+								<h3>就业合作</h3>
+								<p>LinkedIn Data Tech</p>
+								<!--模态框弹出视频-->
+								<button data-toggle="modal" data-target="#videoModal" id="video1"></button>
+							</div>
+							<img src="../img/video_1.png" />
+						</li>
+						<li>
+							<div>
+								<h3>导师专访</h3>
+								<p>多元的教学模式</p>
+								<!--模态框弹出视频-->
+								<button data-toggle="modal" data-target="#videoModal" id="video2"></button>
+							</div>
+							<img src="../img/video_2.png" />
+						</li>
+						<li>
+							<div>
+								<h3>学院访谈</h3>
+								<p>高薪学员代表</p>
+								<!--模态框弹出视频-->
+								<button data-toggle="modal" data-target="#videoModal" id="video3"></button>
+							</div>
+							<img src="../img/video_3.png" />
+						</li>
+					</ul>
+
+				</div>
+
+				<!--视频模态框-->
+				<div class="modal fade in" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					<div class="modal-content" style="background: transparent; height: 100%;width: 100%;">
+						<button type="button" id="video_close" class="close" data-dismiss="modal" style=" margin-left: calc(50% + 380px);margin-top: calc(50% - 620px);"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+						<video width="800" height="" style="margin-left: calc(50% - 400px);margin-top: calc(50% - 600px);">
+							<source type="video/mp4"></source>
+							<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+								<param name="movie" value="myvideo.swf" />
+								<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+							</object> 当前浏览器不支持 video直接播放，点击这里下载视频：
+							<a href="myvideo.webm">下载视频</a>
+						</video>
+					</div>
+				</div>
+
+				<!--下载客户端-->
+				<div class="downloadApp">
+
+					<div>
+						<h2 style="text-align: right;">莘+客户端</h2>
+						<hr class="short" />
+
+						<p>PC / Android / iOS 随时随地，都能学习</p>
+
+						<ul>
+							<li>
+								<div></div>
+								<h5>PC网页版</h5>
+
+								<a href="javascript:void(0);" class="dis">正在访问</a>
+							</li>
+							<li>
+								<div></div>
+								<h5>Android客户端</h5>
+
+								<a href="javascript:void(0);" class="down">下载</a>
+							</li>
+							<li>
+								<div></div>
+								<h5>iOS客户端</h5>
+
+								<a href="javascript:void(0);" class="down">下载</a>
+							</li>
+							<li>
+								<div></div>
+								<h5>二维码</h5>
+
+								<a href="javascript:void(0);" class="dis">扫一扫</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+		</main>
+
+		<!--尾部开始-->
+		<footer class="footer">
+			<div>
+				<div>
+					<section style="width: 100%;height: 100%; overflow: hidden;">
+						<h5>友情链接</h5>
+						<ul>
+							<li>
+								<a href="javascript:void(0);">wiki笔记</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">HTML5中国</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">IT部落窝</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">C语言</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">程序员之家</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">Linux教程</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">嵌入式教程</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">Mysql教程</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">jQuery教程</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">wiki笔记</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">HTML5中国</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">IT部落窝</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">C语言</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">程序员之家</a>
+							</li>
+						</ul>
+
+						<h5>网站导航</h5>
+						<ul class="lastul">
+							<li>
+								<a href="javascript:void(0);">企业直通班</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">关于我们</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">加入我们</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">联系我们</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">下载APP</a>
+							</li>
+						</ul>
+
+					</section>
+				</div>
+
+				<div class="erweima">
+					<ul>
+						<li>
+							<img src="../img/weichat_code.png" />
+							<p>关注莘+学院<br />官方微信</p>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<img src="../img/weibo_code.png" />
+								<p>关注莘+学院<br />新浪微博</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="foot-msg">
+					<hr />
+					<img src="../img/logo_greyx2.png" alt="" width="300" />
+					<p>© 2012-2016 www.maiziedu.com</p>
+					<p>蜀ICP备13014270号-4 Version 5.0.0 release20160127</p>
+				</div>
+
+			</div>
+
+			<!--尾部结束-->
+		</footer>
+
+		<!--回到顶部功能区-->
+		<div class="goTopBox">
+			<a href="javascript:void(0)" id="chatOnline"></a>
+			<a href="javascript:void(0)" id="callme"></a>
+			<a href="xJia.html" id="goHome">首页</a>
+			<a href="javascript:void(0)" id="goTop"></a>
+
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+
+		<!--图标-->
+		<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+
+		<link rel="stylesheet" href="../css/personal/basics.css">
+		<link rel="stylesheet" href="../css/reset.css">
+
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/com.css" />
+
+		<!--登录-->
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<!--头部-->
+		<link rel="stylesheet" type="text/css" href="../css/header/header.css" />
+		<!--尾部-->
+		<link rel="stylesheet" type="text/css" href="../css/ios_study_footer.css" />
+		<!--模态框-->
+		<link rel="stylesheet" type="text/css" href="../css/modal.css" />
+		<!--回到顶部-->
+		<link rel="stylesheet" type="text/css" href="../css/goTop.css" />
+
+		<script src="../js/jquery2.2.2.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../js/util.js" defer></script>
+		<!--回到顶部-->
+		<script src="../js/goTop.js" defer></script>
+		<!--登录-->
+		<script src="../js/login.js" defer></script>
+		<!--头部-->
+		<script src="../js/header.js" defer></script>
+
+		<script src="../js/personal/min.js" defer></script>
+
+		<script src="../js/personal/PCASClass.js"></script>
+
+		<script src="../js/personal/Favicon.js"></script>
+
+		<script src="../js/personal/YMDClass.js"></script>
+
+		<!--遍历插件-->
+		<script src="../js/template.js"></script>
+
+	</head>
+
+	<body>
+		
+		<!--页面等待-->
+		<div class="beginAnamition">
+			<div class="waitAnimation">
+			</div>
+		</div>
+		<!-- 头部  分离 -->
+		<header id="head">
+			<section class="logo col-lg-3 col-xs-3">
+				<a href="xJia.html"><img src="../img/logo2.png" /></a>
+			</section>
+			<section class="search col-lg-7 col-xs-7">
+				<input type="search" class="form-control col-sm-10" id="search" />
+				<button type="button" id="searchBtn"><a href="javascript;"></a></button>
+
+				<div class="hot-words">
+					<a href="http://www.maiziedu.com/search/course/产品经理-1" target="_blank">产品经理</a>
+					<a href="http://www.maiziedu.com/search/course/web前端-1" target="_blank">web前端</a>
+					<a class="last" href="http://www.maiziedu.com/search/course/ui-1" target="_blank">ui</a>
+				</div>
+
+				<ul id="list">
+
+				</ul>
+
+				<!--下载app-->
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#appModal" class="app"></a>
+			</section>
+
+			<!--未登录前-->
+			<section class="form col-lg-2 col-xs-2" id="dologinbox">
+				<!--<a class="btn btn-success btn-sm" href="./resign.html">注册</a>-->
+
+				<!--点击登录弹出登录模态框-->
+				<!--<a type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#loginModal">登录</a>-->
+			</section>
+
+			<!--登录后-->
+			<section class="form col-lg-2 col-xs-2" id="userMsg" style="display: none; padding-left:50px;">
+				<ul class="user" style="display: flex;text-align: center;">
+					<li class="fl" style="margin-right: 20px; width: 45px;height: 45px;border-radius: 50%;background: url(../img/iOS-img/2_small.jpg);"></li>
+					<li id="userMsgName" style="flex: 1; margin-right:5px; text-overflow: ellipsis; white-space: nowrap;overflow: hidden;width: 80px;"></li>
+					<li>
+						<a href="javascript:void(0)" style="font-size: 12px;" id="loginout">退出</a>
+					</li>
+				</ul>
+
+			</section>
+
+		</header>
+
+		<!--登录模态框-->
+		<!--登录-->
+		<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div style="display:table; width:100%; height:100%;">
+				<div style="vertical-align:middle; display:table-cell;">
+					<div class="modal-dialog" style="width:540px;">
+						<div class="modal-content" style="border: none;">
+							<div class="col-left"></div>
+							<div class="col-right">
+								<div class="modal-header">
+									<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="loginModalLabel" style="font-size: 18px;">登录</h4>
+								</div>
+								<div class="modal-body">
+									<section class="box-login v5-input-txt" id="box-login">
+										<form id="login_form" action="dologin.php" method="post" autocomplete="off">
+
+											<ul>
+												<li class="form-group"><input class="form-control" id="id_account_l" maxlength="50" name="username" placeholder="请输入邮箱账号/手机号" type="text"></li>
+												<li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li>
+
+											</ul>
+										</form>
+										<p class="good-tips marginB10 text12">
+											<a href="fogetPwd.html" id="btnForgetpsw" class="fr text12">忘记密码？</a>还没有账号？
+											<a href="resign.html" id="btnRegister">立即注册</a>
+										</p>
+										<div class="login-box marginB10">
+											<button id="login_btn" type="button" class="btn btn-micv5 btn-block globalLogin marginB10">登录</button>
+											<div id="login-form-tips" class="tips-error text12" style="display: none;">错误提示</div>
+										</div>
+
+										<div class="threeLogin text12"><span>其他方式登录</span>
+											<a class="nqq" href="/user/connect/?partner=qq"></a>
+											<a class="nwx" href="/user/connect/?partner=wechat"></a>
+											<!--<a class="nwb"></a>-->
+										</div>
+
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--下载app模态框-->
+		<div class="modal fade in" id="appModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content">
+				<button type="button" id="login_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<div><img src="../img/appcode.png" width="200" /><span><br />扫码下载APP</span></div>
+			</div>
+		</div>
+
+		<!-- 主题内容 -->
+		<main id="content">
+
+			<div style="width: 100%;height: 150px; background: #4b688b; margin-bottom: 20px;">
+				<canvas id="canvas" width="1200" style="display: block; height:100%; margin: 0 auto;"></canvas>
+				<script>
+					var canvas = document.getElementById('canvas');
+
+					var context = null;
+
+					if(canvas.getContext) {
+						context = canvas.getContext('2d');
+					}
+
+					context.strokeStyle = '#fff';
+
+					context.fillStyle = '#fff';
+
+					context.textBaseline = 'middle';
+
+					context.font = '30px 微软雅黑';
+
+					context.fillText('个人中心', canvas.width / 2.2, canvas.height / 2);
+
+					context.beginPath();
+
+					context.arc(canvas.width / 2.3, 68, 10, 0, Math.PI * 2, false);
+
+					context.fill();
+
+					context.beginPath();
+
+					context.lineWidth = 8;
+
+					context.arc(522, 96, 12, Math.PI / 180 * 170, Math.PI / 180 * 10, false);
+
+					context.stroke();
+				</script>
+			</div>
+			<!-- 主题内容开始 -->
+			<div class="main">
+
+				<!-- 左边的内容开始 -->
+				<div class="main-left">
+					<ul>
+						<li>
+							<span></span>
+							<a>我的问答</a>
+							<i></i>
+						</li>
+						<li id="showMsg">
+							<span></span>
+							<a>基本资料</a>
+							<i></i>
+						</li>
+						<li>
+							<span></span>
+							<a>账号设置</a>
+							<i></i>
+						</li>
+					</ul>
+				</div>
+				<!-- 左边的内容结束 -->
+
+				<!-- 右边选项卡内容开始 -->
+				<div class="main-right">
+					<!-- 右边对应的第一个选项卡的内容开始 -->
+					<div id="main-right1" class="ddd">
+						<h2>问答</h2>
+						<ul id="s2">
+							<li>我的提问</li>
+							<span>|</span>
+							<li>我的回答</li>
+							<i></i>
+						</ul>
+						<ul id="s3">
+							<button>全部</button>
+							<button>未读</button>
+						</ul>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+					<!-- 右边对应的第一个选项卡的内容结束 -->
+
+					<!-- 右边对应的第二个选项卡的内容开始 -->
+					<div id="main-right2" class="ddd">
+						<h2>基本资料</h2>
+						<table id="proShow">
+							<script type="text/html" id="profile1">
+								{{each data}}
+								<tr height="96px" width="850px">
+									<td width="96px">头像</td>
+									<td>
+										<img src="{{$value.head}}" alt="">
+									</td>
+								</tr>
+
+								<tr height="50px">
+									<td>昵称</td>
+									<td>
+										{{$value.nickName}}
+									</td>
+								</tr>
+
+								<tr height="50px">
+									<td>电话</td>
+									<td>
+										{{$value.phone}}
+									</td>
+								</tr>
+
+								<tr height="50px">
+									<td>邮箱</td>
+									<td>
+										{{$value.email}}
+									</td>
+								</tr>
+
+								<tr height="50px">
+									<td>性别</td>
+									<td>
+										{{$value.sex}}
+									</td>
+								</tr>
+
+								<tr height="50px">
+									<td>出生年月</td>
+									<td>
+										{{$value.birth}}
+									</td>
+								</tr>
+
+								<tr height="50px">
+									<td style="padding-top:30px">地址</td>
+									<td>
+										{{$value.address}}
+									</td>
+								</tr>
+
+								<!--结束遍历-->
+								{{/each}}
+							</script>
+						</table>
+					</div>
+
+					<!-- 右边对应的第二个选项卡的内容结束 -->
+
+					<!-- 右边对应的第三个选项卡的内容开始 -->
+					<div id="main-right3" class="ddd">
+
+						<h2>账号设置</h2>
+						<table id="pro">
+
+							<!--开始遍历-->
+							<script type="text/html" id="profile">
+								{{each data}}
+								<tr height="100px" width="850px">
+									<td width="96px">头像</td>
+									<td>
+
+										<div id="preview">
+											<img id="imghead" style="border-radius:50%;" border="0" src="{{$value.head}}" width="60" onclick="$('#previewImg').click();">
+										</div>
+										<input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+
+									</td>
+								</tr>
+
+								<tr height="68px">
+									<td>昵称</td>
+									<td><input type="text" value="{{$value.nickName}}" id="nick"><b></b></td>
+								</tr>
+
+								<tr height="68px">
+									<td>电话</td>
+									<td>
+										<cite>{{$value.phone}}</cite>
+										<b id="changePhone">修改/绑定/解绑</b>
+									</td>
+								</tr>
+
+								<tr height="68px">
+									<td>邮箱</td>
+									<td>
+										<q>{{$value.email}}</q>
+										<b id="changeEmail">修改/绑定/解绑</b>
+									</td>
+								</tr>
+
+								<tr height="68px">
+									<td>性别</td>
+									<td id="s1">
+										<span data-sex="0" style="display:block;"></span>
+										<i>男</i>
+										<span data-sex="1" style="display:block;"></span>
+										<i>女</i>
+									</td>
+								</tr>
+
+								<!--结束遍历-->
+								{{/each}}
+							</script>
+						</table>
+						<table>
+							<tr>
+								<td style="padding-right: 40px;">出生年月</td>
+								<td id="birthday">
+									<select name="year1" class="di"></select>
+									<select name="month1" class="di"></select>
+									<select name="day1" class="di"></select>
+								</td>
+							</tr>
+
+							<tr height="68px">
+								<td style="padding-top:30px">地址</td>
+								<td id="addr">
+									<select name="P2" class="di"></select>
+									<select name="C2" class="di"></select><br>
+								</td>
+							</tr>
+
+							<tr height="68px">
+								<td></td>
+								<td><button id="saveProfile">保存</button></td>
+							</tr>
+
+						</table>
+
+						<h2>安全设置</h2>
+						<table id="safe">
+							<script type="text/html" id="security">
+								{{each data}}
+
+								<tr>
+									<td style="width:100px;height:60px">莘＋账号</td>
+									<td>{{$value.email || $value.phone}}</td>
+								</tr>
+								<tr>
+									<td>密码</td>
+									<td><b style="float: left;" id="changePwd">修改密码</b></td>
+								</tr>
+								{{/each}}
+							</script>
+
+						</table>
+					</div>
+					<script language="javascript">
+						new PCAS("P2", "C2", "吉林省");
+					</script>
+					<script>
+						new YMDselect('year1', 'month1', 'day1');
+					</script>
+
+					<script>
+						var data = {
+							storage: sessionStorage
+						}
+						var data2 = {
+							data: data
+						};
+
+						var html = template('profile', data2);
+						document.getElementById('pro').innerHTML = html;
+					</script>
+
+					<script>
+						var data = {
+							storage: sessionStorage
+						}
+						var data2 = {
+							data: data
+						};
+
+						var html = template('profile1', data2);
+						document.getElementById('proShow').innerHTML = html;
+					</script>
+
+					<script>
+						var data = {
+							storage: sessionStorage
+						}
+
+						var data2 = {
+							data: data
+						};
+
+						var html = template('security', data2);
+						document.getElementById('safe').innerHTML = html;
+					</script>
+					<!-- 右边对应的第三个选项卡的内容结束 -->
+
+				</div>
+				<!-- 右边选项卡内容结束 -->
+
+			</div>
+			<!-- 主题内容结束 -->
+
+		</main>
+		<!-- 主题内容 -->
+
+		<footer>
+
+			<div class="foot-container">
+				<div class="foot-logo">
+					<img src="../img/iOS-img/footLogo.png" />
+				</div>
+				<div class="foot-about">
+					<a href="javascript:void(0)">关于我们</a>|
+					<a href="javascript:void(0)">加入我们</a>|
+					<a href="javascript:void(0)">联系我们</a>
+					<p>Copyright © 2012-2016 莘＋学院 All Right Reserved. 蜀ICP备13014270号-4</p>
+				</div>
+				<div class="foot-tel">
+					<span>服务热线：400-862-8862</span>
+					<a href="javascript:void(0)"></a>
+					<div class="wechatcode"></div>
+					<a href="javascript:void(0)"></a>
+
+				</div>
+			</div>
+
+		</footer>
+
+		<!--回到顶部功能区-->
+		<div class="goTopBox">
+			<a href="javascript:void(0)" id="chatOnline"></a>
+			<a href="javascript:void(0)" id="callme"></a>
+			<a href="xJia.html" id="goHome">首页</a>
+			<a href="javascript:void(0)" id="goTop"></a>
+			
+		</div>
+
+	</body>
+
+</html>

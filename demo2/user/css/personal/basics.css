@@ -1,0 +1,346 @@
+body{
+	min-height: 1200px;
+}
+
+
+#content{
+	width:100%;
+	/*height:800px;*/
+	background:#F5F5F5;
+	display:block;
+	padding-bottom:20px;
+	min-width: 1340px;
+	min-height: 1200px;
+	margin: 0 auto;
+}
+
+#content:after{
+	content:'';
+	display:block;
+	clear: both;	
+}
+
+.main{
+	width:84%;
+	height:100%;
+	margin:0px auto;
+	background:#F5F5F5;
+}
+
+/*左边的样式开始*/
+.main .main-left{
+	width:200px;
+	height:100%;
+	overflow:hidden;
+	float:left;
+}
+
+.main .main-left >ul{
+	width:100%;
+	background:#fff;
+	margin-bottom:15px;
+	font-family:微软雅黑;
+	color:#666;
+}
+
+.main .main-left > ul > li{
+	width:100%;
+	height:52px;
+	background:#fff;
+	border-bottom:1px solid #f5f5f5;
+	cursor: pointer;
+}
+
+.main .main-left > ul > li > span{
+	width:30px;
+	height:18px;
+	margin:17px 0px 17px 10px;
+	display:block;
+	float: left;
+	background:url(../../img/personal/personal.png) no-repeat 0px -114px;
+}
+.main .main-left > ul > li:nth-of-type(2) > span{
+	background:url(../../img/personal/personal.png) no-repeat 0px -150px;
+}
+
+.main .main-left > ul > li:nth-of-type(3) > span{
+	background:url(../../img/personal/personal.png) no-repeat 0px -343px;
+}
+
+.main .main-left > ul > li > a{
+	display:block;
+	width:135px;
+	height:52px;
+	float:left;
+	line-height:51px;
+	padding-left:10px;
+}
+
+.main .main-left > ul > li > i{
+	width:15px;
+	height:15px;
+	margin:16px 0px;
+	display:none;
+	float: right;
+	background:url(../../img/personal/personal.png) no-repeat 3px 3px;
+}
+/*左边的样式结束*/
+
+.main .main-right{
+	overflow: hidden;
+}
+
+/*右边对应的第一个选项卡的样式开始*/
+.main #main-right1{
+	width:850px;
+	float:left;
+	margin-left:30px;
+	background:#fff;
+	padding:10px 10px 10px 40px;
+	display:none;
+}
+
+.main #main-right1 > h2{
+	width:100%;
+	height:45px;
+	font-size:20px;
+	color:#666;
+	line-height:45px;
+	font-family:微软雅黑;
+}
+
+.main #main-right1 > ul:nth-of-type(1){
+	height:31px;
+	border-bottom:1px solid #ccc;
+}
+
+.main #main-right1 > ul > li{
+	float: left;
+	font-size:15px;
+	cursor:pointer;
+}
+
+.main #main-right1 > ul > span{
+	float: left;
+	margin:0 15px;
+}
+.main #main-right1 > ul > i{
+	width:70px;
+	height:2px;
+	display:block;
+	background:#5ecfba;
+	position: relative;
+	top:2.1em;
+	left:-5px;
+}
+
+.main #main-right1 > ul:nth-of-type(2){
+	padding-top:10px;
+}
+
+.main #main-right1 > ul:nth-of-type(2) > button{
+	height:25px;
+	width:40px;
+	background:#5ecfba;
+	margin-right:10px;
+	border:none;
+	outline:none;
+	border-bottom:1px solid #ccc;
+	font-size:12px;
+	color:#fff;
+}
+
+.main #main-right1 > ul:nth-of-type(2) > button:nth-of-type(2){
+	background:#f5f5f5;
+	color:#999;
+}
+/*右边对应的第一个选项卡的样式结束*/
+
+
+/*右边对应的第二个选项卡的样式开始*/
+.main #main-right2{
+	width:850px;
+	float:left;
+	margin-left:30px;
+	background:#fff;
+	padding:10px 10px 10px 40px;
+	display:none;
+
+}
+
+.main #main-right2 > h2{
+	width:100%;
+	height:45px;
+	font-size:20px;
+	color:#666;
+	line-height:45px;
+	font-family:微软雅黑;
+}
+
+.main #main-right2 > table img{
+	width:60px;
+	height:60px;
+	border-radius:50%;
+	position:relative;
+}
+
+.main #main-right2 > table .traverse{
+	width:90px;
+	height:50px;
+	border-radius:50%;
+	float:left;
+	line-height:85px;
+
+}
+
+.main #main-right2 > table tr{
+	height:50px;
+}
+
+.main #main-right2 > table tr td{
+	height:50px;
+	padding: 0px 0 46px;
+}
+
+
+/*右边对应的第二个选项卡的样式结束*/
+
+
+
+/*右边对应的第三个选项卡的样式结束*/
+.main #main-right3{
+	width:850px;
+	float:left;
+	margin-left:30px;
+	background:#fff;
+	padding:10px 10px 10px 40px;
+	/*display:none;*/
+}
+
+.main #main-right3 > h2{
+	width:100%;
+	height:45px;
+	font-size:20px;
+	color:#666;
+	line-height:45px;
+	font-family:'微软雅黑';
+}
+
+
+
+.main #main-right3 > table a{
+	height:20px;
+	line-height:68px;
+	position:relative;
+	top:-10px;
+	left:50px;
+	float:left;
+	color:#ccc;
+}
+
+.main #main-right3 > table a:before{
+	content: '';
+	display: block;
+    height:20px;
+	width:25px;
+	background:url(../../img/personal/personal.png) no-repeat -5px -418px;
+	margin-right:5px;
+	position: relative;
+	left: -20px;
+	top:44px;
+}
+
+.main #main-right3 > table strong{
+	height:25px;
+	width:50px;
+	position:relative;
+	top:20px;
+	left:70px;
+}
+.main #main-right3 > table strong:after{
+	content: '上传头像';
+	position:absolute;
+	top:30px;
+	left:-3px;
+	color:#5ecfba;
+	cursor:pointer;
+}
+
+.main #main-right3 > table input{
+	width:260px;
+	padding:8px 6px;
+	border:1px solid #ccc;
+	border:none;
+	outline:none;
+}
+
+.main #main-right3 > table > tr{
+	height:68px;
+}
+
+.main #main-right3 > table i{
+	display:block;
+	width:20px;
+	height:20px;
+	float:left;
+	font-style: normal;
+}
+
+.main #main-right3 > table span{
+	width:16px;
+	height:16px;
+	display:block;
+	border-radius:50%;
+	float: left;
+	margin:0 5px;
+	background:url(../../img/personal/personal.png) no-repeat -16px -510px;
+}
+
+.main #main-right3 > table span:nth-of-type(2){
+	background:url(../../img/personal/personal.png) no-repeat 0px -510px;
+}
+
+.main #main-right3 button{
+	width:80px;
+	height:40px;
+	background:#5ecfba;
+	border-radius:4px;
+	border:none;
+	color:#fff;
+	cursor:pointer;
+}
+
+.main #main-right3 > table  b {
+	float:right;
+	margin-top:0em;
+	color:#5ecfba;
+	font-weight:400;
+	position:relative;
+	top:3px;
+	cursor: pointer;
+}
+
+.di{
+	width:85px;
+	height:25px;
+	margin-right:15px;
+}
+
+#s1{
+	position: relative;
+	top:5px;
+}
+
+
+.main #main-right3 > table b{
+	font-style:normal;
+	color:#5ecfba;
+	cursor: pointer;
+}
+
+#ds{
+	width:80px;
+	position: relative;
+	top:0px;
+	left:110px;
+}

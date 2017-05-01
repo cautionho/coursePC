@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<link rel="stylesheet" href="css/forum/forum.css">
+
+		<link rel="stylesheet" type="text/css" href="css/forum/postSomething.css" />
+
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+
+		<!--<script src="js/jquery.qqFace.js"></script>-->
+
+		<!--<script src="js/forum/postSomething.js" defer></script>-->
+		<script src="js/forum/postContent.js" defer></script>
+
+		<!--<script src="./js/main.min.js"></script>-->
+		<!--<script src="js/forum/main.js" defer></script>-->
+
+		<script src="js/vue.min.js"></script>
+		<script src="js/util.js"></script>
+
+	</head>
+
+	<body>
+		<div id="head">
+			<div class="head-container">
+				<a href="forum.html" class="logo"></a>
+				<div class="login-btn-content">
+					<a href="#">登录
+						<div class="line-dotted"></div>
+					</a>
+					<a href="#">注册</a>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div class="left-side" v-for="item in current">
+				<ul class="subnav contant-subnav">
+					<li>
+						<a href="#" class="active">{{item.describe}}</a>
+					</li>
+				</ul>
+				<div class="space-40"></div>
+				<div class="main-container">
+					<ul class="main-ul" style="margin-top:0px;">
+						<li>
+							<img src="./img/hico01.gif" width="50" height="50" alt="">
+							<div class="main-ul-contant">
+								<h1>{{item.postName}}</h1>
+								<small style="margin-top:0px;font-size:12px;">发表于：{{item.create}} 作者：用户名</small>
+							</div>
+							<!--<div class="tag-talk" title="回复数"><span>&#xe903;</span> 回复数</div>
+							<div class="tag-see" title="查看数"><span>&#xe000;</span> 查看量</div>-->
+						</li>
+					</ul>
+					<div class="clear"></div>
+					<div class="contant-head-info">{{item.describe}}</div>
+					<div class="contant-info">
+						{{item.content}}
+					</div>
+					<div class="contant-btn">
+						<a href="javascript:;"><span>&#xe902;</span> 收藏</a>
+						<a href="javascript:;"><span>&#xe904;</span> 顶</a>
+						<a href="javascript:;"><span class="ico-cai">&#xe904;</span> 踩</a>
+					</div>
+				</div>
+				<div class="comment-container">
+					<div class="title">全部评论</div>
+					<ul class="comment-ul show">
+						<li v-for="item in reply">
+							<!--<img src="./img/hico02.gif" alt="">-->
+							<div class="comment-ul-contant">
+								<small><a href="#">{{item.nickName || item.userId}}</a>　回复时间：{{item.create}}</small>
+								<p>{{item.content}}</p>
+								<!--<div class="comment-btns">-->
+									<!--<a href="javascript:;"><span>&#xe904;</span> (450)</a>-->
+								<!--</div>-->
+							</div>
+							<div class="clear"></div>
+						</li>
+					</ul>
+					<!--<div class="page">
+						<a href="#" class="prev">&lt;</a>
+						<a href="#" class="active">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#" class="next">&gt;</a>
+					</div>-->
+				</div>
+			</div>
+
+			<div class="right-side">
+				<div class="search-container">
+					<ul class="search-type">
+						<span>帖子</span>
+						<div class="btn-subtype"></div>
+						<div class="subtype-wrap">
+							<a href="javascript:;">用户</a>
+						</div>
+					</ul>
+					<input type="text" class="search-text" placeholder="请输入搜索内容..." />
+					<button class="btn-search">&#xe036;</button>
+				</div>
+				<div class="clear"></div>
+				<div class="btn-wrap">
+					<a href="post.html" class="btn-theme"><span>&#xe900;</span> 发帖</a>
+					<div class="reports-wrap">
+						<div class="theme-info-wrap">
+							<div><span>&#xe901;</span> 38729人</div>
+							<div class="localtime"><span>&#xe014;</span> 2015-11-30</div>
+						</div>
+					</div>
+				</div>
+				<div class="hot-wrap">
+					<div class="title">今日热帖</div>
+					<ul class="ul-hot">
+						<li>
+							<a href="#">西铁城光动能男表BM8475-26E开箱</a>
+						</li>
+						<li>
+							<a href="#">大婶爱数码，2013年度数码历历数~</a>
+						</li>
+						<li>
+							<a href="#">小米移动电源的宿敌？ -- AIKa 锋芒</a>
+						</li>
+						<li>
+							<a href="#">标记你的生活 -- 「Pinco品酷」数字</a>
+						</li>
+						<li>
+							<a href="#">不止轻薄！--OZAKI iPhone5S超薄保护套</a>
+						</li>
+						<li>
+							<a href="#">搞机历程2013孤独的搞机历程</a>
+						</li>
+						<li>
+							<a href="#">居家旅行好帮手——奥睿科多口USB充电器体</a>
+						</li>
+						<li>
+							<a href="#">我与插座有个约会——实用插座体验</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="comment">
+				<!--<div id="show">显示提交的东西</div>-->
+				<div class="com_form">
+					<textarea class="input" id="saytext" name="saytext" style="height: 200px;" placeholder="输入评论....."></textarea>
+					<p>
+						<input type="button" class="btn btn-success sub_btn" id="subReply" value="提交">
+						<!--<span class="emotion">表情</span></p>-->
+				</div>
+			</div>
+		</div>
+		<div id="foot">
+			<div class="foot-wrap">
+				<a href="http://www.amazfit.com/about.html" target="_blank">关于我们</a><span>|</span>
+				<a href="http://weibo.com/amazfit" target="_blank">新浪微博</a><span>|</span>
+				<a href="javascript:;" id="wechat">官方微信<img id="wechat_act" src="" alt=""></a>
+				<p><span>01062667706 京ICP备15043545号-1</span>Copyright © 2015 Huami Co., Ltd. All rights reserved. </p>
+			</div>
+		</div>
+
+	</body>
+
+</html>

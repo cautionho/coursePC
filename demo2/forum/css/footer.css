@@ -1,0 +1,49 @@
+#foot {
+  height: 60px;
+  background: #000;
+  margin-top: 30px;
+  clear: both;
+}
+#foot .foot-wrap {
+  width: 1160px;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+#foot a {
+  float: left;
+  margin: 0 15px;
+  color: #ddd;
+  line-height: 60px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#foot a:hover {
+  color: #fff;
+}
+#foot span {
+  float: left;
+  color: #999;
+  height: 60px;
+  line-height: 60px;
+  padding-right: 5px;
+}
+#foot p {
+  float: right;
+  margin-right: 15px;
+  line-height: 60px;
+  color: #ddd;
+  font-size: 12px;
+}
+#foot #wechat_act {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  margin-left: -60px;
+  width: 120px;
+  height: 120px;
+  display: none;
+}

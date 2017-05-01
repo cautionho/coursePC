@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="css/manageLogin/manageLogin.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css"/>
+		
+		<script src="js/jquery2.2.2.min.js"></script>
+		<script src="js/manageLogin/manageLogin.js" defer></script>
+		
+	</head>
+	<body>
+		
+		<div class="container">
+			
+			<div class="loginform">
+				<h3 class="text-center">Login</h3>
+				<div class="form-group col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-8 col-xs-8 col-md-8 col-lg-8">
+					<label for="adminName" class="control-label">username：</label>
+					<input type="text" class="form-control input-sm" autofocus name="adminName" id="adminName" />
+					<span class="uname">Please input username</span>
+				</div>
+				<div class="form-group col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-8 col-xs-8 col-md-8 col-lg-8">
+					<label for="adminPwd" class="control-label">password：</label>
+					<input type="password" class="form-control input-sm" name="adminPwd" id="adminPwd" />
+					<span class="upass">Please input password</span>
+				</div>
+				
+				<div class="btn-group col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-sm-8 col-xs-8 col-md-8 col-lg-8">
+					<input type="button" class="btn-block btn btn-info btn-sm" disabled value="login" id="adminLogin"/>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</body>
+</html>

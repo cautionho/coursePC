@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+
+		<link rel="stylesheet" type="text/css" href="css/forum/forum.css" />
+
+		<script src="./js/jquery-1.11.2.min.js"></script>
+		<script src="../user/js/bootstrap.js"></script>
+
+		<script src="js/forum/main.js" defer></script>
+
+		<script src="js/vue.min.js"></script>
+
+		<script src="js/util.js"></script>
+	</head>
+
+	<body>
+		<header id="head">
+			<!--未登录-->
+			<div class="head-container" id="forumLogin">
+				<a href="javascript:void(0)" class="logo"></a>
+				<div class="login-btn-content">
+					<a href="javascript:void(0)">登录
+						<div class="line-dotted"></div>
+					</a>
+					<a href="../user/index/resign.html">注册</a>
+				</div>
+			</div>
+
+			<!--已登录-->
+			<div class="head-container" id="forumLoginMsg" style="display: none;">
+				<a href="./forum.html" class="logo"></a>
+				<div class="login-btn-content">
+					<a href="../user/index/basics.html">{{userName}}</a>
+				</div>
+			</div>
+
+		</header>
+
+		<main id="main">
+			<!--* ----------板块 ---------- -->
+			<div class="left-side">
+				<ul class="subnav">
+					<li>
+						<a href="forum.html" class="active">首页</a>
+					</li>
+					<li v-for="item in sections" @mousedown="getSection($event)">
+						<a href="javascript:void(0)">{{item.sectionName}}</a>
+					</li>
+				</ul>
+				<div class="space-40"></div>
+				<div class="main-container">
+					<div class="main-h1">
+						<h1></h1>
+						<dl>
+							<!--<dt>版主：汪大人</dt>-->
+						</dl>
+<!--						<a href="#" class="btn-collection">&#xe902; 收藏</a>-->
+					</div>
+
+					<!--热帖-->
+					<ul class="main-ul">
+						<li v-for="item in hotPost" @mouseover="showDel($event)" @mousedown="goDetails($event)">
+							<div class="main-ul-contant" >
+								<h3><a href="#">{{item.postName}}</a><span class="tag-top">置顶</span></h3>
+								<small>{{item.describe}}</small>
+								<span hidden class="postId">{{item.postId}}</span>
+								<!--发帖用户的ID-->
+								<span hidden class="userId">{{item.userId}}</span>
+								<a href="#" class="btn-collection isDel" @mousedown="delCurrent($event)" style="float: right;font-size: 12px; display: none;">删除</a>
+							</div>
+						</li>
+					</ul>
+					<!--普通帖子-->
+					<div>
+						<ul class="main-ul">
+							<li v-for="item in post" @mouseover="showDel($event)">
+								<div class="main-ul-contant" >
+									<h3><a href="#">{{item.postName}}</a></h3>
+									<small>{{item.describe}}</small>
+									<span hidden class="postId">{{item.postId}}</span>
+									<span hidden class="userId">{{item.userId}}</span>
+									<a href="#" class="btn-collection isDel" @mousedown="delCurrent($event)" style="float: right;font-size: 12px; display: none;">删除</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="clear"></div>
+					<div class="page">
+						<a href="javascript:void(0)" class="prev">«</a>
+						<a href="javascript:void(0)" class="active">1</a>
+						<a href="#" class="next">»</a>
+					</div>
+				</div>
+			</div>
+			<div class="right-side">
+				<div class="search-container">
+					<ul class="search-type">
+						<span>帖子</span>
+						<div class="btn-subtype"></div>
+						<div class="subtype-wrap">
+							<a href="javascript:;">用户</a>
+						</div>
+					</ul>
+					<input type="text" class="search-text" placeholder="请输入搜索内容..." />
+					<button class="btn-search">&#xe036;</button>
+				</div>
+				<div class="clear"></div>
+				<div class="btn-wrap">
+					<a href="post.html" class="btn-theme"><span>&#xe900;</span> 发帖</a>
+					<div class="reports-wrap">
+						<div class="theme-info-wrap">
+							<div><span>&#xe901;</span> 38729人</div>
+							<div><span>&#xe014;</span> 2015-11-30</div>
+						</div>
+					</div>
+				</div>
+				<div class="hot-wrap">
+					<div class="title">今日热帖</div>
+					<ul class="ul-hot">
+						<li v-for="item in hotPost">
+							<a href="#">{{item.postName}}</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</main>
+		<footer id="foot">
+			<div class="foot-wrap">
+				<a href="http://www.amazfit.com/about.html" target="_blank">关于我们</a><span>|</span>
+				<a href="http://weibo.com/amazfit" target="_blank">新浪微博</a><span>|</span>
+				<a href="javascript:;" id="wechat">官方微信<img id="wechat_act" src="" alt=""></a>
+				<p><span>01062667706 京ICP备15043545号-1</span>Copyright © 2015 Huami Co., Ltd. All rights reserved. </p>
+			</div>
+		</footer>
+
+	</body>
+
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/manage.css" />
+
+		<script src="js/jquery2.2.2.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/manage/manage.js"></script>
+		<!--引入vue  使用MVVM模式开发-->
+		<script src="js/vue.min.js"></script>
+		<!--<script src="js/welcome/welcome.js" defer></script>-->
+
+		<title>后台管理系统</title>
+	</head>
+
+	<body>
+
+		<header id="title" class="col-sm-12">
+			<div class="col-sm-10">
+				<h1>后台管理系统</h1>
+			</div>
+
+			<div class="col-sm-2">
+				<ul id="admin">
+					<li>{{managerName}}</li>
+				</ul>
+			</div>
+
+		</header>
+
+		<main id="container">
+			<!--系统管理员导航-->
+			<nav class="col-sm-2" class="systemAdmin" :class={"block":lv==1}>
+				<ul class="nav nav-pills nav-stacked dropdown">
+					<li class="active">
+						<a href="javascript:void(0)">课程管理</a>
+					</li>
+					<ul>
+						<li @click="get(1)">增加课程</li>
+						<li @click="get(2)">删除课程</li>
+						<li @click="get(3)">修改课程</li>
+					</ul>
+
+					<li>
+						<a href="javascript:void(0)">论坛管理</a>
+					</li>
+					<ul style="display: none;">
+						<li @click="get(4)">版块管理</li>
+						<li @click="get(5)">版主管理</li>
+						<li @click="get(6)">帖子管理</li>
+						<li @click="get(7)">用户管理</li>
+					</ul>
+
+					<li>
+						<a href="javascript:void(0)">网站管理</a>
+					</li>
+					<ul style="display: none;">
+						<li @click="get(8)">讲师管理</li>
+						<li @click="get(9)">管理员管理</li>
+					</ul>
+
+				</ul>
+			</nav>
+
+			<!--论坛坛主导航-->
+			<nav class="col-sm-2" class="bigAdmin" :class={"block":lv==2}>
+				<ul class="nav nav-pills nav-stacked dropdown">
+					<li class="active">
+						<a href="javascript:void(0)">论坛管理</a>
+					</li>
+					<ul>
+						<li @click="get(4)">版块管理</li>
+						<li @click="get(5)">版主管理</li>
+						<li @click="get(6)">帖子管理</li>
+						<li @click="get(7)">用户管理</li>
+					</ul>
+
+					<li>
+						<a href="javascript:void(0)">管理员管理</a>
+					</li>
+					<ul style="display: none;">
+						<li @click="get(9)">管理员管理</li>
+					</ul>
+
+				</ul>
+			</nav>
+
+
+			<!--论坛版主导航-->
+			<nav class="col-sm-2" class="bigAdmin" :class={"block":lv==3}>
+				<ul class="nav nav-pills nav-stacked dropdown">
+					<li class="active">
+						<a href="javascript:void(0)">论坛管理</a>
+					</li>
+					<ul>
+						<li @click="get(6)">帖子管理</li>
+						<li @click="get(7)">用户管理</li>
+					</ul>
+
+					<li>
+						<a href="javascript:void(0)">管理员管理</a>
+					</li>
+					<ul style="display: none;">
+						<li @click="get(9)">管理员管理</li>
+					</ul>
+
+				</ul>
+			</nav>
+
+			<section id="content" class="col-sm-9">
+				<div class="welcome" :class={"block":num==0}>
+					<canvas id="canvas"></canvas>
+				</div>
+
+				<div id="addCourse" :class={"block":num==1}>
+					<table class="table table-striped table-hover">
+						<caption>增加课程</caption>
+						<tr>
+							<td>课程名</td>
+							<td><input type="text" /></td>
+						</tr>
+						<tr>
+							<td>课程讲师</td>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<td>课程简介</td>
+							<td><textarea name="" rows="3" cols="60"></textarea></td>
+						</tr>
+						<tr>
+							<td>课程大纲</td>
+							<td><textarea name="" id="" cols="60" rows="3"></textarea></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="delCourse" :class={"block":num==2}>
+					<table class="table table-striped table-hover">
+						<caption>删除课程</caption>
+						<tr>
+							<td>课程名</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Python</td>
+							<td style="text-align: center;"><button class="btn btn-danger">删除</button></td>
+						</tr>
+						<tr>
+							<td>web前端</td>
+							<td style="text-align: center;"><button class="btn btn-danger">删除</button></td>
+						</tr>
+						<tr>
+							<td>ios</td>
+							<td style="text-align: center;"><button class="btn btn-danger">删除</button></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="editCourse" :class={"block":num==3}>
+					<table class="table table-striped table-hover">
+						按下修改键 获取课程信息
+						<caption>修改课程</caption>
+						<tr>
+							<td>课程名</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Python</td>
+							<td style="text-align: center;"><button class="btn btn-danger">修改</button></td>
+						</tr>
+						<tr>
+							<td>web前端</td>
+							<td style="text-align: center;"><button class="btn btn-danger">修改</button></td>
+						</tr>
+						<tr>
+							<td>ios</td>
+							<td style="text-align: center;"><button class="btn btn-danger">修改</button></td>
+						</tr>
+					</table>
+				</div>
+
+				<div id="editCourseDetials">
+					<table class="table table-striped table-hover">
+						按下修改键 获取课程信息
+						<caption>修改课程</caption>
+						<tr>
+							<td>课程名</td>
+							<td>课程名</td>
+						</tr>
+						<tr>
+							<td>课程讲师</td>
+							<td><input type="text" name="" id="" value="原来的讲师" /></td>
+						</tr>
+						<tr>
+							<td>简介</td>
+							<td><textarea name="" rows="3" cols="60">原来的简介</textarea></td>
+						</tr>
+
+						<tr>
+							<td>课程大纲</td>
+							<td><textarea name="" rows="3" cols="60">原来的大纲</textarea></td>
+						</tr>
+					</table>
+				</div>
+
+				<!---------------------论坛版块管理--------------------->
+				<div id="forumPart" :class={"block":num==4}>
+					<table class="table table-striped table-hover">
+						<caption>版块管理</caption>
+						<tr>
+							<td>板块</td>
+							<td style="text-align: center;">操作</td>
+						</tr>
+						<tr v-for="item in section">
+							<td>{{item.sectionName}}</td>
+							<td style="text-align: center;"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addForumPart" @click="sectionType($event)">修改</button>
+								<button type="button" class="btn btn-danger" @click="deleteCurrent($event)">删除</button>
+								<textarea hidden name="" rows="" cols="">{{item.sectionId}}</textarea>
+							</td>
+						</tr>
+					</table>
+					<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#addForumPart" @click="sectionType($event)">新增板块</button>
+				</div>
+
+
+				<!-------------------------帖子管理---------------------------->
+				<div id="forumPart" :class={"block":num==6}>
+					<table class="table table-striped table-hover">
+						<caption>帖子</caption>
+						<tr>
+							<td colspan="3" class="form-inline">
+								<label class="control-label" for="sectionOption">板块</label>
+								<select class="form-control" id="sectionOption" name="sectionOption">
+									<option v-for="item in section" :value="item.sectionName">{{item.sectionName}}</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>帖子</td>
+							<td>发布时间</td>
+							<td style="text-align: center;">操作</td>
+						</tr>
+						<tr v-for="item in post">
+							<td><a href="javascript:void(0)" @click="get(10)">{{item.postName}}</a></td>
+							<td></td>
+							<td style="text-align: center;">
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#addPost" @click="editPost($event)">修改</button>
+								<button type="button" class="btn btn-danger" @click="deletePost($event)">删除</button>
+								<textarea hidden name="" rows="" cols="">{{item.postId}}</textarea>
+							</td>
+						</tr>
+					</table>
+					<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#addPost" @click="editPost($event)">新增帖子</button>
+					<ul class="pagination"></ul>
+				</div>
+
+				<!-----------------------管理员管理-------------------------->
+				<div id="managerPart" :class={"block":num==9}>
+					<table class="table table-striped table-hover">
+						<caption>管理员管理</caption>
+						<tr>
+							<td>管理员</td>
+							<td>权限等级</td>
+							<td style="text-align: center;">操作</td>
+						</tr>
+						<tr v-for="item in admin">
+							<td>{{item.managerName}}</td>
+							<td>{{item.managerLevel}}</td>
+							<td style="text-align: center;"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#adminHandler" @click="adminType($event)">修改</button>
+								<button type="button" class="btn btn-danger" @click="deleteAdmin($event)">删除</button>
+								<textarea hidden name="" rows="" cols="">{{item.managerId}}</textarea>
+							</td>
+						</tr>
+					</table>
+					<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#adminHandler" @click="adminType($event)">新增管理员</button>
+				</div>
+
+
+				<!----------------------帖子详情----------------------->
+				<div :class={"block":num==10}>
+					<table class="table table-striped table-hover">
+						<caption class="text-center">{{postDetial.postName}}</caption>
+						<tr>
+							<td>发布时间</td>
+							<td>{{postDetial.createTime}}</td>
+						</tr>
+						<tr>
+							<td>内容</td>
+							<td>{{postDetial.content}}</td>
+						</tr>
+					</table>
+					<div class="post-reply"></div>
+				</div>
+
+			</section>
+
+
+		<!--新增论坛版块模态框-->
+		<div class="modal fade in" id="addForumPart" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content" style="width: 500px;margin-top: 10%;margin-left: calc(50% - 250px);">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom: 10px;">板块名</label>
+						<input type="text" class="form-control" id="partName" />
+					</div>
+
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom: 10px;">板块简介</label>
+						<textarea name="" class="form-control" rows="" cols="" id="partIntro"></textarea>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success" type="button" id="partEdit" data-dismiss="modal">确定</button>
+					<button class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+
+		<!--------------------------管理员模态框------------------------------>
+		<div class="modal fade in" id="adminHandler" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content" style="width: 500px;margin-top: 10%;margin-left: calc(50% - 250px);">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label for="adminAcount" class="control-label" style="margin-bottom: 10px;">新增的管理员账号</label>
+						<input type="text" class="form-control" id="adminAcount" style="margin-bottom: 10px;"/>
+
+						<label for="adminLevel" class="control-label" style="margin-bottom: 10px;">管理员等级</label>
+						<select name="adminLevel" id="adminLevel" class="form-control" style="margin-bottom: 10px;">
+							<option value="1">1(系统管理员)</option>
+							<option value="2">2(论坛管理员)</option>
+							<option value="3">3(论坛版主)</option>
+						</select>
+
+						<!--<div class="form-control" style="display: none;">-->
+							<label for="adminPart" class="control-label" style="margin-bottom: 10px; display: none;">负责板块</label>
+							<select name="adminPart" id="adminPart" class="form-control" style="margin-bottom: 10px; display: none;">
+								<option v-for="item in section" :value="item.sectionName">{{item.sectionName}}</option>
+							</select>
+						<!--</div>-->
+
+						<label for="adminPwd" class="control-label" style="margin-bottom: 10px;">密码</label>
+						<input type="password" class="form-control" id="adminPwd" />
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success submit-comment" data-dismiss="modal" id="adminEdit">确定</button>
+					<button class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+
+		<!---------------------------帖子模态框--------------------------------->
+		<div class="modal fade in" id="addPost" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-content" style="width: 500px;margin-top: 5%;margin-left: calc(50% - 250px);">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom: 10px;">板块名</label>
+						<!--<input class="form-control" id="currentSection" type="text"/>-->
+						<select class="form-control" id="currentSection" name="sectionOption">
+							<option v-for="item in section" :value="item.sectionName">{{item.sectionName}}</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="postLevel" style="margin-bottom: 10px;">帖子等级</label>
+						<select name="postLevel" class="form-control" id="postLevel">
+							<option value="1">置顶帖</option>
+							<option value="2">普通帖</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom: 10px;">帖子名</label>
+						<input type="text" id="postName" class="form-control" />
+					</div>
+
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom: 10px;">帖子简介</label>
+						<textarea name="" id="postIntro" class="form-control" rows="" cols=""></textarea>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom: 10px;">帖子内容</label>
+						<textarea name="" id="postContent" class="form-control" id="" cols="" rows=""></textarea>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label" style="margin-bottom:10px;">作者</label>
+						<input type="text" disabled id="postAuthor" class="form-control" />
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success" type="button" data-dismiss="modal" id="postPost">确定</button>
+					<button class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</main>
+		<script>
+			$(function() {
+
+				$('#container nav>ul>li').on('click', function() {
+
+					$(this).next().slideToggle();
+					$(this).addClass('active').siblings().removeClass('active');
+					$(this).children().css('color', '#fff')
+						.end().siblings('li').children().css('color', '#46B8DA');
+
+				})
+
+			})
+
+
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,194 @@
+body{
+	background:#F5F5F5;
+}
+
+html{
+	height: 100%;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #5ECFBA;
+}
+
+/*等待动画*/
+@keyframes roll{
+	0% {transform:rotateZ(0deg)}
+	100%{transform:rotateZ(360deg)}
+}
+
+.wait{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 5px dotted #ccc;
+	margin-left: .5em;
+	position: relative;
+	top: 5px;
+	animation: roll 2s linear infinite;
+}
+
+.info{
+	font-size: 12px;
+}
+
+.outset{
+	left: 0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	min-width: 900px;
+}
+
+.outZindex{
+	z-index: -5;
+}
+
+/*注册框容器*/
+.container{
+	width:900px;
+	height:450px;
+	background:#fff;	
+	margin: auto;
+	padding:60px;
+	display:flex;
+	z-index: -4;
+}
+
+.container #resign-option{
+	width:90%;
+	display:flex;
+	border-bottom:1px solid #ddd;
+}
+
+.container #resign-option>li{
+	float:left;
+	flex:1;
+	text-align:center;
+	height:70px;
+	line-height:40px;
+	position:relative;
+	cursor:pointer;
+}
+
+.container #resign-option>li>i{
+	font-size:30px;
+	display:inline-block;
+	height:50px;
+	line-height:50px;
+	position:relative;
+	top:5px;
+}
+
+/*左边注册部分*/
+#resign-form{
+	/*flex:1.5;*/
+	border-right:1px solid #eee;
+	margin:0 auto;
+	width:100%;
+	height:100%;
+	z-index: -3;
+}
+
+#resign-form input{
+	width:280px;
+	height:45px;
+	margin:10px 0;
+	border: 1px solid #5ECFBA;
+	text-indent: 10px;
+	background: transparent;
+	z-index: -1;
+	display: inline-block;
+}
+
+#resign-form>form{
+	margin:0 auto;
+	padding:30px;
+}
+
+#resign-form>form>input[type="submit"]{
+	background:#5ECFBA;
+	border:0px;
+	width:280px;
+	height:40px;
+	text-indent: 0;
+}
+
+#resign-form>form>label{
+	display: inline-block;
+	position: absolute;
+	top:50px;
+	left: 40px;
+	bottom: 5px;
+	font-weight: normal;
+	height: 25px;
+	line-height: 25px;
+	transform: translateY(0);
+	color: rgb(192,192,192);
+	z-index: -2;
+}
+
+#resign-form>form>label:nth-of-type(2){
+	top: 115px;
+}
+
+/*右边第三方登录*/
+#resign-three{
+	flex:0.8;
+	padding:80px 0px 120px 50px;
+}
+
+#resign-three>h2{
+	border-bottom: 1px solid #eee;
+}
+
+#resign-three>h2>span{
+	display: inline-block;
+	width: 150px;
+	background: #fff;
+	top: 6px;
+	color: #aaa;
+}
+
+#resign-three>button{
+	position: relative;
+	top: 50px;
+	display:block;
+	width: 200px;
+	margin: 0 auto;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: none;
+}
+
+#resign-three>button[name="wechat"]:before{
+	
+}
+
+#resign-three>button[name="qq"]:before{
+	
+}
+
+#resign-three>span{
+	bottom: 75px;
+	left: calc(50% - 40px);
+	font-size: 14px;
+}
+
+footer{
+	bottom: -100px;
+	left: 0;
+	/*background: red;*/
+	height: 80px;
+	width: 900px;
+}
+
+footer>p{
+	line-height: 20px;
+	color: #aaa;
+}

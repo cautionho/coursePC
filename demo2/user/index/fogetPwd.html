@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+	    <title>找回密码</title>
+	    
+	    <!--图标-->
+	    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+	    
+	    <link href="../css/bootstrap.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+	   	<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+	    
+	    <!--回到顶部-->
+	    <link rel="stylesheet" type="text/css" href="../css/goTop.css"/>
+	    
+	    <!--本页样式-->
+	    <link rel="stylesheet" type="text/css" href="../css/fogetPwd/forgetPwd.css"/>
+	    
+	    <script src="../js/jquery2.2.2.min.js"></script>
+	    <script src="../js/bootstrap.js"></script>
+	    <script src="../js/util.js" defer></script>
+	    
+	    <!--回到顶部-->
+	    <script src="../js/goTop.js" defer></script>
+	    
+	    <script src="../js/resetPwd/resetPwd.js" defer></script>
+
+	</head>
+	<body>
+		
+		<header>
+			<a href="xJia.html"><img src="../img/logo2.png" height="50"/></a>
+		</header>
+		
+		
+		<main>
+			<div class="forgetPwdContainer">
+				<section class="forgetPwdForm">
+					<div class="foget-user">
+						<ul class="forget-user-nav">
+							<li>确认账号</li>
+							<li>安全验证</li>
+							<li>重置密码</li>
+						</ul>
+						
+						<form action="javascript:void(0)" method="post" class="form-inline" id="usernameform">
+							<p>请填写您需要找回密码的账号</p>
+							<div class="form-group fogetAccount">
+								<input type="text" class="form-control" name="username" id="username" placeholder="请输入手机/邮箱"/>
+							</div><br />
+							<div class="form-group checkCode">
+								<input type="text" class="form-control code" name="code" placeholder="请输入验证码"/>
+								<img src="../img/resetPwd/genimage.png" alt="" />
+								<!--<a href="javascript:void(0)">换一张</a>-->
+							</div>
+							<div class="form-group nextStep">
+								<input type="submit" class="btn btn-info" disabled="disabled" name="next-step" id="next-step" value="下一步" />
+							</div>							
+						</form>
+						
+						<form action="javascript:void(0)" method="post" class="form-inline" id="safecheck" style="display: none;">
+							<p>为了你的安全,请完成安全验证</p>
+							<div class="form-group">
+								<label for="teacherName">您的初中班主任是？</label><br />
+								<input type="text" class="form-control" name="teacherName" id="teacherName"/>
+							</div><br />
+							<div class="form-group">
+								<label for="bornFrom">您的出生地在？</label><br />
+								<input type="text" class="form-control code" name="bornFrom" id="bornFrom"/>
+							</div>
+							<div class="form-group nextStep">
+								<input type="submit" class="btn btn-info" disabled="disabled" name="next-step" id="next-step" value="下一步" />
+							</div>
+						</form>
+						
+					</div>
+				</section>
+			</div>
+		</main>
+		
+		
+		<footer></footer>
+		
+		
+		<!--回到顶部功能区-->
+		<div class="goTopBox">
+			<a href="javascript:void(0)" id="chatOnline"></a>
+			<a href="javascript:void(0)" id="callme"></a>
+			<a href="javascript:void(0)" id="goTop"></a>
+		</div>
+		
+	</body>
+</html>

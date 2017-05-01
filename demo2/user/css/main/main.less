@@ -1,0 +1,879 @@
+@charset "utf-8";
+
+@import "../public.less";
+
+body{
+    min-width: 1340px;
+    position:absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+main{
+    
+    margin-top: 4px;
+    max-width: 1366px;
+    margin:0 auto;
+    //导航
+    >nav{
+       
+       width:200px;
+       position: fixed;
+       left: 0;
+       padding:0; 
+       top: 75px;
+       box-shadow:1px 5px 5px #eee;
+       background: #fff;
+       z-index: 999;
+       
+       >ul{
+           padding: 20px;
+           
+           &:not(.last){
+               border-bottom: 1px solid #eee;
+           }
+           
+           li{
+               font-size: 12px;
+               padding: 10px;
+               text-indent:1em; 
+               
+               &:not(.navbar-header){
+                  background: url(../../img/sprite_2.png) no-repeat 0 5px;
+               }
+               
+               &:nth-of-type(2){
+                   background-position: 0 -86px;
+               }
+               
+               &:nth-of-type(3){
+                   background-position: 0 -56px;
+               }
+               
+               &:nth-of-type(5){
+                   background-position: 0 -24px;
+               }
+               
+               &:nth-of-type(6){
+                   background-position: 0 -114px;
+               }
+               
+               &:nth-of-type(7){
+                   background-position: 0 -146px;
+               }
+               
+               &:nth-of-type(8){
+                   background-position: 0 -175px;
+               }
+               
+               &:nth-of-type(9){
+                   background-position: 0 -642px;
+               }
+               
+               &[class="navbar-header"]{
+                   font-weight: 800;
+               }
+               
+               a{
+                   color: #acacac;
+                   
+                   &:hover{
+                       color: #fc9d07;
+                       font-weight: 800;
+                   }
+               }
+               
+           }
+       }
+       
+       >ul:nth-of-type(2){
+           >li:nth-of-type(2){
+               background-position: 0 -518px;
+           }
+       }
+       
+       >ul:last-of-type{
+           >li:nth-of-type(2){
+               background-position: 0 -375px;
+           }
+       }
+       
+    }
+    
+    //主页轮播图部分
+    .banner{
+        width: @width;
+        height: 430px;
+        padding-bottom: 30px;
+        overflow: hidden;
+        
+        //图片部分开始
+        >.img-wrap{
+            position: relative;
+            width: @width;
+            height: @width;
+            
+            >img{
+                position: absolute;
+                display: none;
+                
+                &:nth-of-type(1){
+                    display: block;
+                }
+            }
+            
+            >ul{
+                position: absolute;
+                bottom: 0;
+                right: 10px;
+                z-index: 99;
+                
+                >li{
+                    float: left;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 5px;
+                    background: rgba(255,255,255,.8);
+                    margin: 0 4px;
+                    position: relative;
+                    transition: all .5s;
+                    
+                    &:nth-of-type(1){
+                        width: 20px;
+                        background: @main-color;
+                    }
+                }
+            }
+        
+        
+        //图片部分结束
+        }
+    }
+    
+    .short{
+      width: 20px;
+      border: 2px solid @main-color;
+      background: @main-color;
+     }
+    
+    
+    //内容部分
+    >section{
+        
+      margin-left: 200px;
+      width: calc(~'100% - 200px');
+
+      
+      &:nth-of-type(2){
+
+//      background: red;
+          
+        //软件开发  设计创作    产品运营  金牌讲师  干货社区样式    
+        .content{
+          width: @width;
+          background: #fff;
+          margin-bottom: 40px;
+          box-shadow: 0 1px 10px #bbb;
+          margin: 40px auto 0px;
+          padding: 10px 30px 50px;
+          text-align: center;
+          position: relative;
+          
+          >h2{
+              text-align: center;
+              font-size: 18px;
+              height:40px;
+              line-height: 40px;
+              color: #3b3b3b;
+          }
+          
+          >p{
+              text-align: center;
+              font-size: 14px;
+              color: #a5a5a5;
+              line-height: 20px;
+          }
+          
+          //查看更多课程按钮
+          >a.more{
+              position: absolute;
+              right: 80px;
+              top: 15px;
+              border-radius:20px;
+              border:2px solid @main-color;
+              color: @main-color;
+              width: 150px;
+              
+              &:hover{
+                  background: @main-color;
+                  color: #fff;
+              }
+              
+              //金牌讲师按钮样式
+              &.beteacher{
+                  top: 30px;
+              }
+              
+          }
+  
+          >.large{
+              overflow: hidden;
+              padding: 0 30px;
+              
+              >li{
+                  float: left;                
+                  width: 21%;
+                  margin: 12px 2%;
+                  
+                  >a{
+                    display: inline-block;
+                    width: @width;
+                    height: 130px; 
+                    overflow: hidden;
+                    border-radius: 10px;
+                  }
+                  
+                  img{
+                      width: 100%;
+                      transition: all .5s; 
+                  }
+                  
+                  >a:hover{
+                      
+                    >img{
+                      position: relative;
+                      width: 108%;
+                      margin-left: -5%;
+                      margin-top: -3%;
+                    }
+                      
+                      +h5{
+                          color: #ff9a1b;
+                      }
+                  }
+                  
+                  >h5{
+                    font-size: 14px;
+                    line-height: 32px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  }
+
+              }
+          }
+          
+          //金牌讲师样式
+          >div{
+              //转页按钮
+              position: relative;
+              overflow: hidden;
+              height: 500px;
+              padding-top: 50px;
+              padding-left: 30px;
+              
+              >div{
+                  width: 80px;
+                  position: absolute;
+                  bottom:10px;
+                  
+                  >button{
+                      width: 30px;
+                      border: none;
+                      height:5px;
+                      margin-right: 5px;
+                      
+                      &:nth-of-type(1):checked{
+                          background-color: @main-color;
+                      }
+                      
+                      &:nth-of-type(2):checked{
+                          background-color: @main-color;
+                      }
+                  }
+              }
+              
+          }
+          
+          .teacher{
+            min-width: 1200px;
+            position: relative;
+            
+            >li{
+                width: 230px;
+                margin: 0 20px;
+                height: 288px;
+                border-radius: 5px;
+                position: relative;
+                float: left;
+                
+                //设置背景图
+                &:nth-of-type(1){
+                    background: url(../../img/teacher-1.png) no-repeat 0 0;
+                }
+                
+                &:nth-of-type(2){
+                    background: url(../../img/teacher-2.png) no-repeat 0 0;
+                }
+                
+                &:nth-of-type(3){
+                    background: url(../../img/teacher-3.png) no-repeat 0 0;
+                }
+                
+                &:nth-of-type(4){
+                    background: url(../../img/teacher-4.png) no-repeat 0 0;
+                }
+                
+                &:nth-of-type(5){
+                    background: url(../../img/teacher-5.png) no-repeat 0 0;
+                }
+                
+                 &:nth-of-type(6){
+                    background: url(../../img/teacher-6.png) no-repeat 0 0;
+                }
+                
+                 &:nth-of-type(7){
+                    background: url(../../img/teacher-7.png) no-repeat 0 0;
+                }
+                
+                 &:nth-of-type(8){
+                    background: url(../../img/teacher-8.png) no-repeat 0 0;
+                }
+                
+                //内嵌div样式
+                //遮罩层  防止hover在li时失焦
+                >.cover{
+                    width: @width;
+                    height: @width;
+                    position: absolute;
+                    background: transparent;
+                    z-index: 9;
+                    
+                    a{
+                        display: block;
+                        width: 80%;
+                        height: 40px;
+                        margin: 0 auto;
+                        line-height: 34px;
+                        border-radius: 20px;
+                        font-size: 14px;
+                        text-align: center;
+                        color: #01c26f;
+                        border: 2px solid #01c26f;
+                        transform: translateY(180px);
+                        opacity: 0;
+                        transition: all .5s;
+                    }
+                    
+                    &:hover{
+                        >a{
+                            opacity: 1;
+                        }
+                        
+                        +div{
+                        opacity: 1;
+                        
+                        >img{
+                            transform: translateY(80px);
+                        }
+                    }
+                    }
+                    
+                }
+                
+                >div:nth-of-type(2){
+                    width: @width;
+                    height: 100%;
+                    position: absolute;
+                    background: rgba(0,0,0,.8);
+                    border-radius: 5px;
+                    padding: 15px;
+                    color: #fff;
+                    text-align: center;
+                    transition: all 1s;
+                    opacity: 0;
+                    
+                    
+                    >h4{
+                        line-height: 30px;
+                        font-size: 18px;
+                    }
+                    
+                    >h5{
+                        font-size: 14px;
+                    }
+                    
+                    >hr{
+                        border-color: rgba(200,200,200,.5);
+                    }
+                    
+                    >p{
+                        font-size: 12px;
+                        line-height: 20px;
+                        text-align: left;
+                        height:60px;
+                        overflow: hidden;
+                    }
+                    
+                    
+                    
+                    >img{
+                        transition: all 1s;
+                        transform: translateY(-20px);
+                    }
+                }
+                
+            }
+                
+          }
+          
+          .teacher-name{
+              
+              position: relative;
+              
+               >li{
+                width: 230px;
+                margin: 0 20px;
+                border-radius: 5px;
+                position: relative;
+                float: left;
+                text-align: center;
+                padding-top: 15px;
+                
+                >h5{
+                    line-height: 30px;
+                    font-size: 18px;
+                    color: #01c26f;
+                    transition: all 1s;
+                }
+                
+                >p{
+                    line-height: 20px;
+                    font-size: 12px;
+                    color: #969696;
+                }
+              
+               }
+          }
+          
+          
+          //论坛  干货社区样式
+          .forum{
+              
+              display: flex;
+              text-align: left;
+             
+              >li{
+                  flex: 1;
+                  padding: 20px;
+     
+                //标题
+                  >h5{
+                      font-size: 14px;
+                      line-height: 40px;
+                      
+                      &:before{
+                          content:'';
+                          display: inline-block;
+                          width: 5px;
+                          height: 5px;
+                          background: #ccc;
+                          margin-right: 5px;
+                          margin-bottom: 2px;
+                      }
+                      
+                      &>a{
+                          color: @main-color;
+                      }
+                  }
+                  
+                  
+                  //图片链接
+                  &>a{   
+                      &>img{
+                          border-radius: 5px;
+                          position: relative;
+                      }
+                      
+                      &>h6{
+                          font-size: 12px;
+                          width: 230px;
+                          color: #3B3B3B;
+                          line-height: 20px;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          white-space: nowrap;
+                      }
+                      
+                  }
+                  
+                  &>p{
+                      font-size: 12px;
+                      height: 40px;
+                      overflow: hidden;
+                      line-height: 22px;
+                      color: #aeaeae;
+                  }
+                  
+                  &>ul{
+                      font-size: 12px;
+                      padding-top: 15px;
+                      width: 220px;
+                      
+                      &>li{
+                          text-overflow: ellipsis;
+                          white-space: nowrap;
+                          overflow: hidden;
+                          line-height: 22px;
+                          
+                          &>a{
+                              color: #818181;
+                              
+                              &:hover{
+                                  color: @main-color;
+                              }
+                          }
+                          
+                          
+                          &:before{
+                              content: '';
+                              display: inline-block;
+                              width: 2px;
+                              height: 2px;
+                              border-radius: 50%;
+                              background: #aaa;
+                              margin-bottom: 3px;
+                              margin-right: 5px;
+                          }
+                      }
+                  }
+              }
+              
+          }
+          
+        }
+          
+          //金牌课程  学习路线样式
+          .course{
+              width: @width;
+              padding: 50px 0;
+              overflow: hidden;
+              display: flex;
+
+              
+              >li{
+                  flex: 1;
+                  overflow: hidden;
+                  height: 300px;
+                  float: left;
+                  box-shadow: 0px 2px 5px #ccc;
+                  margin: 0 10px;
+                  padding-top: 15px;
+                  position: relative;
+                  background: url(../../img/sprite_1.png) no-repeat 1px 0;
+                  
+                  &:nth-of-type(2){
+                      background-position: 1px -891px;
+                  }
+                  
+                  &:nth-of-type(3){
+                      background-position: 1px -2664px;
+                  }
+                  
+                  &:nth-of-type(4){
+                      background-position: 1px -1476px;
+                  }
+                  
+                  >h3{
+                      font-size: 14px;
+                      padding: 0 30px;
+                      line-height: 30px;
+                  }
+                  
+                  >p{
+                      font-size: 12px;
+                      padding:0 30px;
+                      color: #c5c5c5;
+                      line-height: 16px;
+                  }
+                  
+                  >span{
+                      position: absolute;
+                      right: 12px;
+                      bottom: 110px;
+                      font-size: 14px;
+                      color: #999;
+                  }
+                  
+                  >a{
+                      background: #ff9a1b;
+                      font-size: 14px;
+                      color: #fff;
+                      height: 40px;
+                      width: 80%;
+                      line-height: 40px;
+                      display:inline-block;
+                      position: absolute;
+                      text-align: center;
+                      bottom: 30px;
+                      left:10%;
+                      border-radius: 20px;
+                  }
+                  
+                  &:hover{
+                      background-color: rgba(150,150,150,.1);
+                      
+                      >h3{
+                          color: #ff9a1b;
+                      }
+                  }
+              }
+          }
+          
+          //覆盖学习路线的部分样式
+          .route-1{
+              >li{
+                  
+                  &:nth-of-type(2){
+                      background-position-y:-297px;
+                  }
+                  
+                  &:nth-of-type(3){
+                      background-position-y:-2367px;
+                  }
+                  
+                  &:last-of-type{
+                      background-position-y:-891px;
+                  }
+                  
+                  >a{
+                      background: #01c26f;
+                  }
+                  
+              }
+          }
+          
+          .route-2{
+              
+              >li{
+                  
+                  &:nth-of-type(1){
+                      background-position-y: -3258px;
+                  }
+                  
+                  &:nth-of-type(2){
+                      background-position-y: -2070px;
+                  }
+                  
+                  &:nth-of-type(3){
+                      background-position-y: -2664px;
+                  }
+                  
+                  &:last-of-type{
+                      background-position-y: -1476px;
+                  }
+                  
+                  >a{
+                      background: #01c26f;
+                  }
+                  
+              }
+              
+          }
+          
+          
+        }  
+        
+        >.understand{
+            width:@width;
+            overflow: hidden;
+            height: 240px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 10px #bbb;
+            
+            &>ul{
+                width: @width;
+                overflow: hidden;
+                display: flex;
+                
+                &>li{
+                    flex: 1;
+                    position: relative;
+                    overflow: hidden;
+                    
+                    &>div{
+                        position: absolute;
+                        width: @width;
+                        height: @width;
+                        padding: 20px;
+                        z-index: 1;
+                        
+                        &>h3{
+                            font-size: 16px;
+                            line-height: 30px;
+                        }
+                        
+                        &>p{
+                            font-size: 12px;
+                            line-height: 20px;
+                            color: #a5a5a5;
+                        }
+                        
+                        &>button{
+                            width: 42px;
+                            height: 42px;
+                            margin-top: 40px;
+                            border: none;
+                            border-radius: 50%;
+                            background: url(../../img/sprite_0.png) no-repeat 0 0;
+                            
+                        }
+                        
+                        +img{
+                            width: 100%;
+                            position: relative;  
+                            transition: all .8s;
+                        }
+
+                        &:hover{
+                            
+                            >button{
+                                background-position: -47px 0;
+                            }
+                              
+                            
+                            +img{
+                                
+                                margin-top: -5px;
+                            }
+                            
+                              
+                        }
+
+                    }
+                    
+                    
+                }
+                
+                &>li:nth-of-type(1){
+                    flex: 2;
+                }
+                
+            }
+        }
+        
+        //下载App开始
+        .downloadApp{
+            //设置背景
+            background: url(../../img/application.png) no-repeat 0 0,#fff;
+            padding: 20px;
+            width: @width;
+            height: 550px;
+            box-shadow: 0 1px 10px #bbb;
+            margin-bottom: 30px;
+            
+            //放置内容开始
+            >div{
+                
+                width: 50%;
+                height: @width;
+                float: right;
+//              background: pink;
+                padding: 20px;
+                
+                >hr{
+                    float: right;
+                }
+                >h2{
+                    font-size: 24px;
+                }
+                
+                >p{
+                    clear: both;
+                    text-align: right;
+                    font-size: 14px;
+                    color: rgba(61,61,61,0.6);
+                }
+                
+                >ul{
+                   display: flex;
+                   overflow: hidden;
+                   padding: 50px 0;
+                   
+                   >li{
+                       flex: 1;
+                       float: left;
+                       height: 280px;
+                       text-align: center;
+                       
+                       >div{
+                           width: @width;
+                           height: 90px;
+                           background: url(../../img/sprite_0.png) no-repeat 0 0;
+                           margin-bottom: 15px;
+                       }
+                       
+                       &:nth-of-type(1)>div{
+                           background-position:20px -69px;
+                       }
+                       
+                       &:nth-of-type(2)>div{
+                           background-position:30px -160px;
+                       }
+                       
+                       &:nth-of-type(3)>div{
+                           background-position:30px -251px;
+                       }
+                       
+                       &:nth-of-type(4)>div{
+                           background: url(../../img/appcode.png) no-repeat 18px 0;
+                           background-size:contain;
+                       }
+                       
+                       >h5{
+                           font-size: 14px;
+                           line-height: 30px;
+                           margin-bottom: 10px;
+                       }
+                       
+                       >a{
+                           display: inline-block;
+                           width: 90px;
+                           height: 30px;
+                           line-height:28px;
+                           border-radius: 20px;
+                           font-size: 14px;
+                           font-weight: 800;
+                           
+                           &.dis{
+                               border: 1px dashed #bebebf;
+                               color: #c2c2c3;
+                               cursor:default;
+                           }
+                           
+                           
+                           &.down{
+                               border: 1px solid #01c26f;
+                               color: #01c26f;
+                           }
+                       }
+                       
+                   } 
+                }
+            
+            //放置内容结束    
+            }
+            
+        //下载APP结束
+        }
+    
+    //主体第二部分结束    
+    }
+    
+    
+   
+
+}
